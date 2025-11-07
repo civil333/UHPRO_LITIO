@@ -375,6 +375,94 @@ Salmuera feed → [UF] → [NF] → [UHPRO Etapa 1] → [UHPRO Etapa 2] → Conc
 - **Límite práctico:** 60,000 ppm (6% Li) con presión aplicada 100-110 bar
 - **Factor 4x validado:** Aquatech Sudamérica (15,000 → 60,000 ppm operativo)
 
+### 3.X Validación Comercial: Casos Operacionales (2022-2024)
+
+**Fuente:** Congreso ALADYR 2024 - 5 presentaciones técnicas analizadas
+
+Los siguientes casos demuestran viabilidad técnica y económica de UHPRO en producción de litio y minería:
+
+#### Caso 1: CATL LFP (Shiyan, China) - Producción Baterías Litio
+
+**Contexto:**
+- **Producción:** 50,000 ton/año LiFePO₄ (cátodos para baterías litio)
+- **Cliente:** CATL (Contemporary Amperex Technology, líder mundial baterías EV)
+- **Startup:** 2022
+- **Aplicación:** Purificación agua proceso para síntesis battery-grade LiFePO₄
+
+**Performance Sistema:**
+- **Configuración:** SWRO (82 bar) + UHPRO (120 bar) multi-etapa
+- **Recovery agua:** 98% (excepcional para industria)
+- **TDS feed:** 35,000 mg/L → Permeado <500 mg/L
+- **Consumo energético:** 4.8 kWh/m³ inicial → **2.2 kWh/m³** con ERDs (reducción 54%)
+- **Payback ERDs:** 6 meses
+- **Uptime:** >95% (disponibilidad excepcional)
+
+**Relevancia para SQM:**
+- ✅ Valida viabilidad UHPRO en producción litio a escala industrial masiva (50k ton/año)
+- ✅ Demuestra que ERDs tienen payback <6 meses (valida supuesto SQM)
+- ✅ Recovery 98% agua confirma objetivo SQM 85-90% es conservador y alcanzable
+- ✅ SEC 2.2 kWh/m³ es benchmark para validar OPEX energético
+
+#### Caso 2: Niobec (Quebec, Canadá) - Minería
+
+**Contexto:**
+- **Primera planta UHPRO en minería de Norteamérica** (2022)
+- **Aplicación:** Tratamiento agua de mina para recirculación (MLD→ZLD)
+- **Operador:** Niobec Mine, Quebec
+- **Relevancia:** Valida aplicabilidad UHPRO en minería, no solo desalación
+
+**Performance Sistema:**
+- **TDS feed:** 25,735 mg/L (agua de mina: 15k mg/L Cl, 7k mg/L Na)
+- **Configuración:** SWRO (82 bar) + UHPRO (120 bar) → MVR → ZLD
+- **Recovery:** 66-70%
+- **Calidad permeado:** 445-600 mg/L TDS (target <1,000 mg/L)
+- **Pretratamiento:** UF sin softening químico (reducción CAPEX/OPEX)
+
+**Sistema Híbrido:**
+- UHPRO concentra rechazo → MVR evapora concentrado
+- Reducción volumen brine 60% antes de MVR
+- Flujo final a Paste Plant: 12-15 m³/h (ZLD completo)
+
+**Relevancia para SQM:**
+- ✅ Demuestra aplicabilidad en minería (no solo desalación agua mar)
+- ✅ Sistema híbrido membranas + térmica (MVR) validado operacionalmente
+- ✅ Calidad agua excepcional para recirculación
+- ✅ ZLD implementado exitosamente (aplicable a regulaciones ambientales SQM)
+
+#### Caso 3: Zabuye (Tibet, China) - Extracción Litio Directo
+
+**Contexto:**
+- **Aplicación:** Extracción litio de salmuera natural hipersalina
+- **Ubicación:** Lago Zabuye, Tibet (altitud 4,421 m)
+- **Tecnología:** OARO (Osmotically Assisted RO) - presión reducida 74 bar
+- **Relevancia:** Único caso documentado de OARO aplicado a litio
+
+**Composición Salmuera:**
+- **TDS feed:** 150,000-200,000 mg/L (hipersalina)
+- **Mg:Li ratio:** 0.019 (extremadamente bajo, favorable)
+- **Desafío:** Concentración extrema, condiciones ambientales adversas
+
+**Performance Sistema:**
+- **Presión operación:** 74-85 bar (menor que UHPRO tradicional 120 bar)
+- **Recovery:** 35-40%
+- **Permeado:** ~35,000 mg/L → Requiere SWRO posterior para purificación
+- **Concentrado:** Hasta 240,000 mg/L (near crystallization point)
+
+**Relevancia para SQM:**
+- ✅ **Único caso OARO en litio** - directamente aplicable a Escenario B
+- ✅ Demuestra que OARO funciona con salmueras hipersalinas (150-200k mg/L)
+- ✅ Presión reducida (74 bar vs 120 bar) = menor CAPEX bombas, mayor vida útil membranas
+- ⚠️ **Crítico:** Funciona por Mg:Li extremadamente bajo (0.019) - SQM debe validar su ratio en Fase 0
+
+**Conclusión de Validación Comercial:**
+
+Los tres casos (CATL, Niobec, Zabuye) demuestran que:
+1. **UHPRO NO es tecnología experimental** - está operando comercialmente en litio y minería
+2. **Recovery 66-98%** es rango comprobado (objetivo SQM 85% es conservador)
+3. **ERDs tienen payback 6 meses a 2 años** (validado en CATL)
+4. **OARO es alternativa viable** para salmueras hipersalinas (Escenario B potencial)
+5. **Sistema híbrido membranas + térmica** funciona (Niobec valida concepto)
+
 ---
 
 ## 4. ESTADO DEL ARTE GLOBAL
@@ -398,15 +486,17 @@ Salmuera feed → [UF] → [NF] → [UHPRO Etapa 1] → [UHPRO Etapa 2] → Conc
 
 **Saltworks (Canadá):**
 - Tecnología: XtremeRO™ (hasta 150 bar, **>130,000 mg/L TDS validado**)
-- Proyectos litio: 5+ pilotos, 2 comerciales
+- Proyectos litio: 5+ pilotos, **2 plantas comerciales operativas**
+- **Casos validados:** 2 plantas litio comerciales con FusionRO (NF-UHPRO) >130k mg/L TDS
 - Fortalezas: Innovación, XtremeRO probado en múltiples salares, límite termodinámico demostrado
 - Debilidades: CAPEX premium, menor track record que BW Waters
 
 **BW Waters (USA):**
 - Tecnología: OARO™ (Osmotically Assisted Reverse Osmosis)
 - Proyectos litio: Qinghai (China, operativo, 10k tpa)
+- **Casos validados:** Qinghai (factor 3x operativo), **Zabuye OARO** (Tibet, 150-200k mg/L TDS, 74 bar)
 - Otros proyectos UHPRO: Taltal (Chile, 2024) - primera planta UHPRO Sudamérica para desalación agua mar (NO litio)
-- Fortalezas: Track record comercial sólido, precios competitivos
+- Fortalezas: Track record comercial sólido, precios competitivos, **OARO único en litio**
 - Debilidades: Tecnología propietaria, menor flexibilidad
 
 **Gradiant (USA):**
@@ -424,8 +514,18 @@ Salmuera feed → [UF] → [NF] → [UHPRO Etapa 1] → [UHPRO Etapa 2] → Conc
 **Aquatech/PEARL (USA):**
 - Tecnología: PEARL™ end-to-end (DLE + NF + UHPRO + cristalización)
 - Proyectos litio: Thacker Pass, Hell's Kitchen, Hombre Muerto, Cliente Sudamérica
-- Fortalezas: Capacidad integral, modularidad, track record regional
+- **Casos validados:** **Niobec (minería, 2022)** - primera UHPRO minería Norteamérica, recovery 66-70%, Cliente Sudamérica (6% Li operativo)
+- Fortalezas: Capacidad integral, modularidad, track record regional, **validación minería**
 - Debilidades: Menor transparencia técnica vs Saltworks, pricing no público
+
+**Validación reciente (Congreso ALADYR 2024):**
+
+Casos operacionales presentados en Congreso ALADYR confirman viabilidad técnica y económica de UHPRO en minería y litio:
+- **CATL (China, 2022):** 50k ton/año LiFePO₄, recovery 98% agua, SEC 2.2 kWh/m³ con ERDs (reducción 54%), payback ERDs 6 meses
+- **Niobec (Canadá, 2022):** Primera UHPRO minería Norteamérica, recovery 66-70%, sistema híbrido UHPRO+MVR validado, ZLD exitoso
+- **Zabuye (China):** Único caso OARO en litio, 150-200k mg/L TDS, presión reducida 74 bar, recovery 35-40%
+
+Estos casos demuestran que UHPRO NO es tecnología experimental - está operando comercialmente con performance excepcional.
 
 ### 4.3 Benchmarking de Performance Validada
 

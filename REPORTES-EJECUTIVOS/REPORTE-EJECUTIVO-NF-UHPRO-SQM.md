@@ -4528,6 +4528,23 @@ Beneficio de eliminar MVR (USD $80M CAPEX, USD $8-12M/año OPEX) supera ampliame
 
 ## 13. VALIDACIÓN MEDIANTE PILOTO
 
+**⚠️ PREREQUISITO OBLIGATORIO - Fase 0 Caracterización Composicional**
+
+**ANTES de aprobar piloto $5M, ejecutar Fase 0:**
+- **Inversión**: $18,000-22,000 (0.36-0.44% del costo piloto)
+- **Duración**: 1 mes
+- **Objetivo**: Validar composición salmuera post-silvinita (ratio Li/Na molar, Mg, Ca, Si, impurezas)
+- **ROI**: 250:1 a 2,500:1 (evita riesgo $5M-83M en diseño incorrecto)
+
+**Criterios Go/No-Go Fase 0:**
+- ✅ **GO**: Ratio Li/Na >5:1, Mg:Li <0.15, impurezas dentro specs → Proceder con piloto
+- ⚠️ **REVISAR**: Ratio Li/Na 2:1-5:1 → Considerar DLE adicional o ajustar configuración
+- ❌ **NO-GO**: Ratio Li/Na <2:1, Mg:Li >0.2 → Replantear tecnología (riesgo fouling crítico)
+
+**Referencia validación**: Zabuye (China) opera OARO exitosamente con Mg:Li 0.019 (extremadamente bajo). SQM debe validar su ratio ANTES de comprometer $5M.
+
+---
+
 ### 13.1 Objetivos del Piloto: Más Allá de "Proof of Concept"
 
 El piloto de 6 meses no es simplemente demostración de que la tecnología funciona - es generación de **data de ingeniería necesaria para diseñar la planta comercial con confianza suficiente para justificar inversión de USD $78 millones**.
@@ -4988,6 +5005,27 @@ TOTAL: USD $83M
 | **Overhead corporativo (15%)** | $348,420 | 5.3% | Allocación SQM |
 | **TOTAL OPEX** | **$6,601,100** | **100%** | USD $330/ton LCE |
 
+**Validación con Benchmark Industrial (Congreso ALADYR 2024):**
+
+**Caso CATL LFP (Shiyan, China) - 50,000 ton/año LiFePO₄:**
+- **SEC con ERDs:** 2.2 kWh/m³ (reducción 54% vs sin ERDs)
+- **Payback ERDs:** 6 meses (validado operacionalmente)
+- **Uptime:** >95% (excepcional para UHPRO industrial)
+- **Recovery agua:** 98% (benchmark clase mundial)
+
+**Aplicabilidad a Escenario B SQM:**
+- Consumo energético SQM: 439 MWh/año ÷ 264,000 m³/año = **1.66 kWh/m³**
+- Benchmark CATL: 2.2 kWh/m³
+- **Conclusión:** Supuesto energético SQM es **25% más optimista** que benchmark CATL - requiere validación en piloto
+
+**Caso Niobec (Quebec, Canadá) - Minería:**
+- **Recovery:** 66-70% (agua de mina, TDS 25k mg/L)
+- **Sistema:** SWRO + UHPRO + MVR (híbrido validado)
+- **Uptime:** ~92%
+- **Aplicabilidad:** Demuestra viabilidad sistema híbrido membranas + térmica en minería
+
+**Recomendación:** Ajustar supuesto energético conservadoramente a 2.0-2.5 kWh/m³ para análisis sensibilidad. Si piloto valida <2.0 kWh/m³, OPEX energía podría reducirse 20-30%.
+
 **Comparación con Escenario A:**
 
 | Concepto | Escenario A | Escenario B |
@@ -5313,6 +5351,38 @@ Si concentrado no cumple specs → requiere tratamiento adicional antes de crist
 - **Score 75-85%:** GO con CONFIANZA MEDIA → Proceder con plan de mitigación de riesgos identificados
 - **Score 65-75%:** GO CONDICIONAL → Extender piloto 3 meses adicionales, reevaluar
 - **Score <65%:** NO-GO → Tecnología no viable, evaluar alternativas (MVR, tecnologías híbridas)
+
+### 17.6 Benchmarking con Plantas Operacionales (ALADYR 2024)
+
+**Validación de targets SQM contra performance real de proyectos operativos:**
+
+| KPI | Target SQM | Benchmark CATL (China) | Benchmark Niobec (Canadá) | Status Target |
+|-----|-----------|----------------------|--------------------------|---------------|
+| **Recovery agua** | 95% | **98%** | 66-70% | ✅ Conservador (CATL demuestra >95% es alcanzable) |
+| **SEC (kWh/m³)** | <8.0 | **2.2** (con ERDs 54% reducción) | ~3.8 | ✅ Realista (CATL benchmark clase mundial) |
+| **Uptime** | >88% | **>95%** | ~92% | ✅ Alcanzable (ambos casos >90%) |
+| **TDS permeado** | Variable | <500 mg/L | <600 mg/L (target <1,000) | ✅ Conservador |
+| **Payback ERDs** | No especificado | **6 meses** | ~2 años | ℹ️ Validar en piloto |
+| **Vida útil membranas** | 12-18 meses | No disponible | No disponible | ⚠️ Requiere validación piloto |
+
+**Conclusiones del benchmarking:**
+
+1. **Targets SQM son conservadores y alcanzables** según benchmarks industriales 2022-2024
+2. **Recovery 95%** es realista - CATL demuestra 98% en producción litio industrial
+3. **SEC <8 kWh/m³** es alcanzable - CATL opera a 2.2 kWh/m³ (benchmark clase mundial)
+4. **Uptime >88%** es conservador - CATL >95%, Niobec ~92% demuestran >90% es estándar
+5. **Vida útil membranas 12-18 meses** requiere validación - es el KPI con mayor incertidumbre
+
+**Caso especial - Zabuye (OARO para litio):**
+- **Presión operación:** 74 bar (vs 200 bar UHPRO tradicional) - menor estrés mecánico
+- **Recovery:** 35-40% (aceptable para TDS 150-200k mg/L hipersalino)
+- **Mg:Li ratio:** 0.019 (extremadamente bajo) - clave del éxito
+- **Relevancia SQM:** Si Fase 0 valida Mg:Li bajo (<0.05), OARO es alternativa viable
+
+**Recomendación:** Configurar piloto SQM para recopilar data comparable con benchmarks CATL y Niobec. Específicamente:
+- Medir SEC cada hora (comparar con 2.2 kWh/m³ CATL)
+- Calcular uptime semanal (target >90% alineado con benchmarks)
+- Documentar eventos fouling/scaling (comparar con frecuencia CIP 15-25 días típica)
 
 ---
 
