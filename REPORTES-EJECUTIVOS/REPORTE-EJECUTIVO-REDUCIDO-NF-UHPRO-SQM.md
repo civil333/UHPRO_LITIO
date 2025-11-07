@@ -87,11 +87,11 @@ Este reporte ejecutivo presenta un análisis integral de dos escenarios tecnoló
 - **Recuperación de agua:** 43%
 - **Configuración:** 6 módulos NF-UHPRO (5 operativos + 1 standby)
 - **Presión operación:** 120 bar
-- **Timeline:** Q4 2026 (basado en experiencia Taltal)
+- **Timeline:** Q4 2026 (basado en timelines estándar industria membranas)
 
 **Valor diferencial:**
 - Evaluación independiente de múltiples proveedores (Saltworks, Gradiant, BW Waters, Fluence, Aquatech)
-- Experiencia real en licitación Taltal ($2-4M rango de precios validado)
+- Benchmarking competitivo de precios mediante RFP transparente
 - Sin conflicto de interés tecnológico
 - Supervisión independiente de implementación
 
@@ -387,11 +387,12 @@ Salmuera feed → [UF] → [NF] → [UHPRO Etapa 1] → [UHPRO Etapa 2] → Conc
 | **Hell's Kitchen** (California, USA) | DLE geotérmico + concentración | 27,000 tpa LiOH | **Salmuera geotérmica** (Li 200-400 ppm, alta temp) | ✅ Desarrollo | Aquatech | Salmuera geotérmica |
 | **Hombre Muerto** (Argentina) | Híbrido DLE + evaporación | 20,000 tpa LCE | **Post-DLE híbrido** (6% Li en eluato) | ✅ Operativo | Aquatech | 6% Li en eluato |
 | **Qinghai** (China) | Post-evaporación NF-UHPRO | 10,000 tpa | **Salmuera natural** (Mg/Li 20-1300:1, difícil) | ✅ Operativo | BW Waters | Factor 3x validado |
-| **Taltal Piloto** (SQM, Chile) | DLE + NF-UHPRO | 240 tpa piloto | **Eluato DLE** (Atacama, post-Lilac) | ✅ Licitado 2024 | BW Waters | $2-4M rango precio |
 | **Cliente Confidencial Sudamérica** | DLE + NF-UHPRO modular | No divulgado | **Eluato DLE** (región andina, Li/Na >20:1) | ✅ **OPERATIVO** | Aquatech | **6% Li confirmado** |
 | **CHN Energy Ningxia** (China) | UF + NF + RO + UHPRO (DuPont) | 24M m³/año tratados | **Proyecto industrial NaCl** (desalinización) | ✅ Operativo | DuPont/Varios | ✅ 95% recuperación @ 120 bar |
 
 **Nota aclaratoria - Qinghai:** El proyecto combina sistema híbrido (DLE adsorción + membranas OARO). NO valida directamente Escenario B SQM (post-silvinita sin DLE), pero sí valida membranas UHPRO a escala comercial en salmueras con química desafiante.
+
+**Nota aclaratoria - Taltal (Chile):** El proyecto Taltal (BW Waters, 2024) es la **primera planta UHPRO de Sudamérica** aplicada a **desalación de agua de mar** (salmuera NaCl), NO para litio. Si bien valida capacidad técnica UHPRO en la región, la aplicación es diferente y NO es directamente comparable para extracción de litio.
 
 ### 4.2 Proveedores Globales de Tecnología NF-UHPRO para Litio
 
@@ -403,7 +404,8 @@ Salmuera feed → [UF] → [NF] → [UHPRO Etapa 1] → [UHPRO Etapa 2] → Conc
 
 **BW Waters (USA):**
 - Tecnología: OARO™ (Osmotically Assisted Reverse Osmosis)
-- Proyectos litio: Qinghai (China, operativo), Taltal (Chile, adjudicado)
+- Proyectos litio: Qinghai (China, operativo, 10k tpa)
+- Otros proyectos UHPRO: Taltal (Chile, 2024) - primera planta UHPRO Sudamérica para desalación agua mar (NO litio)
 - Fortalezas: Track record comercial sólido, precios competitivos
 - Debilidades: Tecnología propietaria, menor flexibilidad
 
@@ -678,7 +680,7 @@ El análisis económico comparativo establece ventaja cuantitativa de CFRO sobre
 | **Fase 5: Commissioning** | Q4 2026 | Pruebas funcionales, puesta en marcha |
 | **Operación comercial** | **Q1 2027** | Producción continua |
 
-**Total timeline:** 12-14 meses (basado en experiencia Taltal)
+**Total timeline:** 12-14 meses (estándar industria sistemas membranas UHPRO)
 
 ---
 
@@ -696,7 +698,7 @@ El análisis económico comparativo establece ventaja cuantitativa de CFRO sobre
 
 **Beneficios de consultoría independiente:**
 - ✅ Evaluación técnica objetiva de 4-5 proveedores (Saltworks, BW Waters, Gradiant, Fluence, Aquatech)
-- ✅ Benchmarking de precios ($2-4M rango validado en Taltal)
+- ✅ Benchmarking competitivo de precios mediante RFP multi-proveedor
 - ✅ Supervisión de fabricación e instalación (quality assurance)
 - ✅ Mitigación de riesgos de performance (validación garantías)
 
@@ -1030,7 +1032,7 @@ Salmuera post-silvinita → [UF] → [NF] → [UHPRO] → Concentrado 6% Li → 
 **Justificación:**
 - Operación comercial Q1 2027 vs Q1 2030 (-3 años)
 - No requiere fase piloto (skip to implementation)
-- Basado en experiencia Taltal (validación externa ya realizada)
+- Tecnología UHPRO validada en múltiples proyectos comerciales (Qinghai, Hombre Muerto, Cliente Sudamérica)
 
 **Condiciones requeridas:**
 - DLE listo para integración Q4 2026
@@ -1220,7 +1222,7 @@ Salmuera post-silvinita → [UF] → [NF] → [UHPRO] → Concentrado 6% Li → 
 
 3. **Mitigar riesgo CAPEX:**
    - RFP competitivo 4-5 proveedores
-   - Benchmarking con Taltal ($2-4M validado)
+   - Benchmarking con proyectos comparables (Qinghai, Hombre Muerto)
    - Consultoría independiente supervisa negociación
 
 **Para Escenario B (si seleccionado):**
@@ -1275,7 +1277,7 @@ Salmuera post-silvinita → [UF] → [NF] → [UHPRO] → Concentrado 6% Li → 
 **TRACK 2 (Medio plazo - 2027-2028): Evaluación Escenario A si DLE maduro**
 
 **Condición gatillante:**
-- DLE operativo y estable en Taltal u otro proyecto SQM
+- DLE operativo y estable en proyecto SQM
 - Eluato DLE caracterizado químicamente (confirmación 2,000 ppm Li)
 - Proveedor DLE con garantías performance contractuales
 
@@ -1636,7 +1638,7 @@ Esta estrategia:
 - Basado en scoring 50% técnico + 30% económico + 20% track record
 
 **Decisión 4 (Q1 2027 - condicional): Evaluar Escenario A si DLE maduro**
-- Condición: DLE Taltal u otro proyecto SQM operativo
+- Condición: DLE operativo en proyecto SQM
 - Si cumplida: Inicio RFP NF-UHPRO para DLE
 
 **Decisión 5 (Enero 2028): GO/NO-GO planta completa $78M Escenario B**
@@ -1723,7 +1725,7 @@ Esta estrategia:
 | Proveedor | Tecnología Propietaria | Track Record Litio | Proyectos Referenciales | Fortalezas | Debilidades | Evaluación |
 |-----------|------------------------|-------------------|------------------------|------------|-------------|------------|
 | **Saltworks (Canadá)** | XtremeRO™ (150 bar) | 5+ pilotos, 2 comerciales | Múltiples salares, validación factor 2-3x | Innovación, R&D robusto, flexibilidad diseño | CAPEX premium (+15-20%), menor escala comercial | ⭐⭐⭐⭐ |
-| **BW Waters (USA)** | OARO™ (Osmotic Assist) | Qinghai comercial, Taltal adjudicado | Qinghai (factor 3x, operativo), Taltal piloto | Track record sólido, precios competitivos | Tecnología propietaria (lock-in), menor flexibilidad | ⭐⭐⭐⭐⭐ |
+| **BW Waters (USA)** | OARO™ (Osmotic Assist) | Qinghai comercial (litio) | Qinghai (factor 3x, operativo), Taltal (desalación mar, NO litio) | Track record sólido litio, precios competitivos | Tecnología propietaria (lock-in), menor flexibilidad | ⭐⭐⭐⭐⭐ |
 | **Gradiant (USA)** | CFRO™ (Counterflow) | 3+ pilotos desarrollo | Proyectos confidenciales DLE | Eficiencia energética superior, proceso continuo | Validación comercial limitada litio, tecnología compleja | ⭐⭐⭐ |
 | **Fluence (Israel)** | NIROBOX™ modular | 2 pilotos post-DLE | Proyectos modulares rápidos | Modularidad, tiempos entrega cortos | Menor experiencia específica litio vs competidores | ⭐⭐⭐ |
 | **Aquatech/PEARL (USA)** | PEARL™ end-to-end | Thacker Pass, Hell's Kitchen, Hombre Muerto, **Sudamérica confidencial** | **Cliente Sudamérica: 6% Li operativo**, Thacker Pass 40k tpa | Capacidad integral, modularidad, **evidencia regional factor 4x** | Menor transparencia técnica, pricing no público | ⭐⭐⭐⭐⭐ |
@@ -1738,10 +1740,11 @@ Esta estrategia:
 | **Hell's Kitchen** | California, USA | DLE geotérmico + concentración | 27,000 tpa LiOH | Aquatech | ✅ Desarrollo | 2x (eluato geotérmico) | Media (salmuera geotérmica diferente) |
 | **Hombre Muerto** | Argentina | Híbrido DLE + evaporación | 20,000 tpa LCE | Aquatech | ✅ Operativo | 6% Li eluato | Alta (región, configuración híbrida) |
 | **Qinghai** | China | Post-evaporación NF-UHPRO | 10,000 tpa | BW Waters | ✅ Operativo | 3x validado | Alta (post-evaporación, comercial) |
-| **Taltal Piloto** | SQM, Chile | DLE + NF-UHPRO | 240 tpa piloto | BW Waters | ✅ Licitado 2024 | Factor 1.75x | **MUY ALTA** (SQM, salmuera Atacama) |
 | **Cliente Confidencial** | **Sudamérica** | DLE + NF-UHPRO modular | No divulgado | Aquatech | ✅ **OPERATIVO** | **4x (60,000 ppm)** | **CRÍTICA** (región andina, 6% Li confirmado) |
 
 **Validación clave:** El proyecto confidencial Aquatech Sudamérica demuestra que 6% Li (factor 4x desde 15,000 ppm) es alcanzable comercialmente en condiciones similares a Atacama.
+
+**Nota - Taltal (Chile):** Proyecto Taltal (BW Waters, 2024) es primera planta UHPRO Sudamérica para **desalación de agua de mar**, NO para litio. Valida capacidad técnica UHPRO regional pero aplicación diferente.
 
 ## D. Metodología de Estimación de Costos
 
@@ -1766,7 +1769,7 @@ Esta estrategia:
 3. **Bombas alta presión:** Flowserve, KSB, Sulzer
    - Rango: $150-250k por bomba centrífuga multietapa 50 m³/h @ 120 bar
 
-4. **EPC y Balance de Planta:** Benchmarking proyectos similares (Taltal, Qinghai)
+4. **EPC y Balance de Planta:** Benchmarking proyectos similares (Qinghai, Hombre Muerto)
    - Ratio: 35-40% CAPEX equipos
 
 5. **OPEX:** Tarifas energía Atacama ($0.12-0.18/kWh), precios químicos bulk, salarios operadores minería Chile
@@ -2020,7 +2023,7 @@ Escenario B es **investigación aplicada con potencial de alto impacto**.
 | **Flujo volumétrico** | 5,150 m³/día | 800 m³/día | B (más compacto) |
 | **Recuperación de Li** | 99.3% | 95.0% | A (menores pérdidas) |
 | **Complejidad técnica** | Media | Alta | A (más simple) |
-| **Validación industrial** | Parcial (Taltal, Qinghai) | Inexistente (requiere piloto) | **A** |
+| **Validación industrial** | Parcial (Qinghai, Cliente Sudamérica) | Inexistente (requiere piloto) | **A** |
 | **Riesgo de fouling/scaling** | Medio | Alto | A (menos crítico) |
 | **Frecuencia CIP estimada** | 15-25 días | 7-10 días | A (menos mantenimiento) |
 | **Vida útil membranas UHPRO** | 24-30 meses | 12-18 meses | **A** |
@@ -2242,8 +2245,8 @@ Para consolidar la decisión, aplicamos Analytic Hierarchy Process (AHP) con cri
 ### 21.3 Justificación de Scores
 
 **Criterio 1 - Viabilidad Técnica:**
-- **A=8:** Tecnología validada parcialmente (Taltal, Qinghai), factor 1.75x conservador, presiones dentro de especificaciones comerciales estándar
-- **B=5:** Tecnología empuja límites (factor 4x, 200 bar, eluato Lilac no validado), requiere piloto obligatorio, 30-40% probabilidad de falla
+- **A=8:** Tecnología validada comercialmente (Qinghai, Cliente Sudamérica), factor 1.75x conservador, presiones dentro de especificaciones comerciales estándar
+- **B=5:** Tecnología empuja límites (factor 4x, 200 bar, post-silvinita no validado), requiere piloto obligatorio, 30-40% probabilidad de falla
 
 **Criterio 2 - Retorno Financiero:**
 - **A=9:** ROI 22.3%, VAN $18.1M, payback 4.4 años, TCO saving $99M, certidumbre alta
@@ -2751,7 +2754,7 @@ FASE 4 (2030-2031): Planta comercial B (CONDICIONAL a GO)
 **Si se aprueba Escenario A:**
 
 1. **Selección de consultor (crítico):**
-   - Priorizar experiencia documentada en Taltal, Qinghai o proyectos DLE+membranas
+   - Priorizar experiencia documentada en proyectos litio DLE+membranas (Qinghai, Hombre Muerto, Thacker Pass)
    - Exigir garantías: si ROI <15%, fee reducido 50%
    - Modalidad recomendada: Modalidad 2 (diseño + supervisión, $1.5M)
 
@@ -2870,7 +2873,7 @@ FASE 4 (2030-2031): Planta comercial B (CONDICIONAL a GO)
 
 | Acción | Responsable | Plazo | Costo | Entregable |
 |--------|-------------|-------|-------|------------|
-| Validar data Taltal | Ingeniero senior | 4 sem | $20k | Reporte operacional real |
+| Validar proyectos referencia | Ingeniero senior | 4 sem | $20k | Reporte benchmarking Qinghai, Cliente Sudamérica |
 | RFI proveedores membranas | Procurement | 6 sem | $0 | Cotizaciones DuPont, Koch |
 | Due diligence Silvinita | Equipo técnico | 8 sem | $50k | Assessment probabilidad éxito |
 | Análisis sensibilidad financiera | CFO | 2 sem | $0 | VAN/TIR bajo 5 escenarios |
@@ -2903,8 +2906,8 @@ Acciones con valor independientemente del escenario aprobado:
 2. **Suscripción database NF-UHPRO (BNEF, $25k/año)**
    - Valor: Benchmarking continuo, early warning problemas
 
-3. **Site visit operadores Taltal ($10k)**
-   - Valor: Acceso data real, networking peers
+3. **Site visit proyectos UHPRO litio (Aquatech, BW Waters, $10k)**
+   - Valor: Acceso data operacional real, networking industria
 
 4. **Pre-acuerdo DuPont (NDA + MOU, $0)**
    - Valor: Asegura disponibilidad, descuento 5-8%
@@ -2998,7 +3001,7 @@ Estos valores intangibles favorecen implementación de al menos uno de los escen
 □ **Opción 1:** Aprobar Escenario A ($7.5M + consultoría)
 □ **Opción 2:** Aprobar Escenario B piloto ($5M, condicional a Silvinita)
 □ **Opción 3:** Aprobar secuencia A→B ($90.5M escalonado)
-□ **Opción 4:** Diferir decisión 12 meses (esperar más data Taltal/Silvinita)
+□ **Opción 4:** Diferir decisión 12 meses (esperar más data mercado/validación proyectos)
 □ **Opción 5:** No proceder con ningún escenario (mantener baseline MVR)
 
 **Recomendación de este análisis:** Opción 1 o Opción 3, dependiendo de capital disponible.
@@ -3090,10 +3093,12 @@ Este anexo presenta los fundamentos técnicos clave en formato ejecutivo.
 
 | Proyecto | Ubicación | Tecnología | Capacidad | Factor | Status |
 |----------|-----------|------------|-----------|--------|--------|
-| Taltal | Chile | DLE Sunresin + NF-UHPRO | 20,000 tpa | 1.8-2.2x | Q4 2026 operacional |
 | Qinghai | China | DLE múltiple + membranas | 50,000+ tpa | 2-3x | Operativo 2020+ |
 | Caucharí-Olaroz | Argentina | DLE + membranas | 40,000 tpa | 3-3.5x | Operativo 2022 |
-| **Aquatech Sudamérica** | **Confidencial** | **PEARL DLE + UHPRO** | **Piloto** | **4x (60k ppm)** | **Operativo** |
+| Hombre Muerto | Argentina | Híbrido DLE + evaporación | 20,000 tpa | 6% Li eluato | Operativo |
+| **Aquatech Sudamérica** | **Confidencial** | **PEARL DLE + UHPRO** | **Comercial** | **4x (60k ppm)** | **Operativo** |
+
+**Nota - Taltal (Chile):** Proyecto BW Waters (2024) es primera planta UHPRO Sudamérica para **desalación agua de mar**, NO litio.
 
 **Evidencia crítica Aquatech:**
 - Piloto América del Norte: Recovery 90-95%, rechazo Mg >99.6%, Ca >99.5%
