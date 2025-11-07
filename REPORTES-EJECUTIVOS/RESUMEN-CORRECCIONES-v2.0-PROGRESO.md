@@ -527,7 +527,53 @@
 
 ---
 
-## 📋 TRABAJO PENDIENTE (Próximas Sesiones)
+## ✅ VERIFICACIÓN DE TAREAS (Sesión 3b - 7 noviembre 2025)
+
+### Auditoría Estado Real del Documento vs Lista de Tareas Pendientes
+
+**Fecha verificación**: 2025-11-07 (Sesión 3b)
+**Hallazgo principal**: La mayoría de las tareas listadas como "pendientes" en Tarea 9 **YA ESTÁN COMPLETADAS** en el documento actual.
+
+**Verificación detallada**:
+
+✅ **Tarea 9.1** - Sección 3.1 MATIZAR concentración CFRO:
+- **Estado**: ✅ NO APLICA - No hay menciones de "260,000 mg/L" en Sección 3.1
+- **Ubicación real**: Menciones de 260k están en Sección 4.3 (Validación Académica)
+- **Conclusión**: Sección 4.3 ya tiene matizaciones completas sobre NaCl vs LiCl
+
+✅ **Tarea 9.2** - AGREGAR FusionRO a tabla comparativa Sección 4.2:
+- **Estado**: ✅ **COMPLETADA**
+- **Evidencia**: Línea 2073 del reporte completo
+- **Contenido**: Tabla comparativa proveedores incluye Saltworks FusionRO con TDS >200k mg/L NaCl validado
+
+✅ **Tarea 9.4** - Reemplazar Sección 6.1 con TCO cuantitativo:
+- **Estado**: ✅ **COMPLETADA**
+- **Evidencia**: Líneas 2308-2333 del reporte completo
+- **Contenido**: Sección 6.1 YA tiene tabla TCO ejecutiva completa (líneas 2314-2318)
+
+✅ **Tarea 9.5 y 9.6** - Secciones 9.1 y 13 Fase 0:
+- **Estado**: ✅ **COMPLETADAS** (confirmado en Trabajo Sesión 3)
+- **Evidencia**: Líneas 3687 (Sección 9.1) y agregado crítico Sección 13
+
+✅ **Tarea 10** - Agregar Anexo H - Gap NaCl/LiCl:
+- **Estado**: ✅ **COMPLETADA**
+- **Evidencia**: Líneas 7046-7245 del reporte completo (~200 líneas)
+- **Contenido**: Anexo H completo con 6 subsecciones (H.1 a H.6 + referencias)
+
+**Tareas NO verificadas** (requieren revisión adicional):
+- ⏳ Tarea 9.3: Portar corrección pH desde reporte reducido a Sección 5.2
+- ⏳ Tarea 9.5: Ampliar escenarios stress Sección 12
+- ⏳ Tarea 9.6: Matizar timeline Sección 14 (no se encontró referencia clara a "9 años prácticos")
+
+**Actualización de progreso**:
+- Progreso anterior: 85%
+- Progreso real estimado: **~95%** (considerando tareas ya completadas)
+
+**Recomendación**: Verificar con usuario si hay tareas específicas adicionales o si el trabajo está sustancialmente completo.
+
+---
+
+## 📋 TRABAJO PENDIENTE (Próximas Sesiones - ACTUALIZADO)
 
 ### FASE 1: REPORTE COMPLETO - Modificaciones Secciones Existentes
 
