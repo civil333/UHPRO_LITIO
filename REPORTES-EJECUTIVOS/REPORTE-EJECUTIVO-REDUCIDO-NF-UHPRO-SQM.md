@@ -485,9 +485,9 @@ Los tres casos (CATL, Niobec, Zabuye) demuestran que:
 ### 4.2 Proveedores Globales de Tecnología NF-UHPRO para Litio
 
 **Saltworks (Canadá):**
-- Tecnología: XtremeRO™ (hasta 150 bar, **>130,000 mg/L TDS validado**)
+- Tecnología: XtremeRO™ (hasta 150 bar, **>200,000 mg/L TDS NaCl** validado, ~180,000 mg/L LiCl equiv.)
 - Proyectos litio: 5+ pilotos, **2 plantas comerciales operativas**
-- **Casos validados:** 2 plantas litio comerciales con FusionRO (NF-UHPRO) >130k mg/L TDS
+- **Casos validados:** 2 plantas litio comerciales con FusionRO (NF-UHPRO) >200,000 mg/L TDS **NaCl** (~180k mg/L LiCl equiv.)
 - Fortalezas: Innovación, XtremeRO probado en múltiples salares, límite termodinámico demostrado
 - Debilidades: CAPEX premium, menor track record que BW Waters
 
