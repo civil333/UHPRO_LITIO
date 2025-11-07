@@ -9,6 +9,8 @@
 **Total láminas**: 15
 **Base técnica**: Evaluación completa tecnología NF-UHPRO para operaciones litio SQM
 
+**Nota sobre Taltal**: Este blueprint menciona "experiencia Taltal" refiriéndose al proceso de licitación NF-UHPRO 2024 (evaluación de proveedores, precios de mercado, timeline). **Taltal es un proyecto de desalación de agua de mar, NO litio**. La experiencia de licitación y timeline son transferibles; la tecnología de proceso NO es directamente comparable.
+
 ---
 
 ## LÁMINA 1: PORTADA

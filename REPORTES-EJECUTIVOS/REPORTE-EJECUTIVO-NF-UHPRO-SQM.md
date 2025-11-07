@@ -240,8 +240,8 @@ Ambos escenarios utilizan tecnología NF-UHPRO validada comercialmente, pero dif
 |------|-------------------|------------------------------|---------|
 | **Dependencias previas** | Implementación DLE completa | Proceso existente operativo | B |
 | **Inicio de validación** | Acoplado a DLE | Ene 2026 (caracterización) | B |
-| **Primera operación piloto** | Q4 2026 (experiencia Taltal) | May 2027 (14 meses fabricación) | A |
-| **Decisión Go/No-Go** | Inmediata (basado en Taltal) | Q1 2028 (tras 6 meses piloto) | A |
+| **Primera operación piloto** | Q4 2026 (basado en Fase 0 validación) | May 2027 (14 meses fabricación) | A |
+| **Decisión Go/No-Go** | Post Fase 0 (basado en caracterización) | Q1 2028 (tras 6 meses piloto) | A |
 | **Operación comercial** | 2027-2028 | 2030 | A (-2 años) |
 | **Tiempo hasta beneficios** | Menor | Mayor | A |
 
@@ -937,8 +937,8 @@ En sistemas UHPRO operando a 100-120 bar, la energía consumida por las bombas d
   - Proyectos en desarrollo USA: Thacker Pass, Hell's Kitchen, Standard Lithium (incorporan membranas)
 
 - **Pilotos y validaciones:**
-  - Taltal, Chile: Implementación NF-UHPRO industrial en Q4 2026 (proyecto de referencia regional)
   - Múltiples pilotos en Triángulo del Litio (Argentina-Bolivia-Chile)
+  - **Nota:** Taltal (Chile, Q4 2026) es desalación agua mar, NO litio - no aplicable como validación directa
 
 **Conclusión:** NF-UHPRO para litio está en fase de **adopción temprana comercial** (no es piloto académico, pero tampoco tecnología madura con décadas de track record como SWRO). Los próximos 3-5 años determinarán si se convierte en estándar de la industria.
 
@@ -1250,7 +1250,7 @@ Innovators → Early Adopters → Early Majority → Late Majority → Laggards
 4. ✗ **Complejidad operacional** (requiere expertise que productores de litio tradicionales no tienen)
 
 **Proyección de adopción:**
-- **2025-2027:** Validación de proyectos early adopters (Taltal, proyectos USA)
+- **2025-2027:** Validación de proyectos early adopters (Qinghai continuo, proyectos USA)
 - **2028-2030:** Si validaciones exitosas, adopción por Early Majority (expectativa: 20-30% de nueva capacidad)
 - **2030+:** Potencial estándar de industria (especialmente en regiones con escasez de agua)
 
@@ -1344,9 +1344,12 @@ Innovators → Early Adopters → Early Majority → Late Majority → Laggards
 
 #### Proyectos en Implementación (2025-2027)
 
-**4. Taltal, Chile - Primera NF-UHPRO Industrial en Sudamérica**
+**Nota aclaratoria - Taltal (Chile):** El proyecto Taltal (BW Waters, 2024) es la **primera planta UHPRO de Sudamérica** aplicada a **desalación de agua de mar** (salmuera NaCl), NO para litio. Si bien valida capacidad técnica UHPRO en la región, la aplicación es diferente y NO es directamente comparable para extracción de litio.
+
+**4. Taltal, Chile - Primera NF-UHPRO Industrial en Sudamérica (Desalación)**
 
 **Ubicación:** Taltal, Región de Antofagasta, Chile
+**Aplicación:** Desalación de agua de mar (NO litio)
 
 **Escala:**
 - Sistema NF-UHPRO industrial (no piloto)
@@ -1365,10 +1368,10 @@ Innovators → Early Adopters → Early Majority → Late Majority → Laggards
 - **Q4 2026: Commissioning y operación** ✅
 
 **Relevancia para SQM:**
-- **Referencia regional directa:** Primera planta industrial NF-UHPRO en Chile
-- **Experiencia de consultor:** Participación en evaluación de proveedores (Saltworks, Gradiant, BW Waters, Fluence)
-- **Validación de costos:** Rango de precios $2-4M para sistema 100 m³/h (base de datos para Escenario A)
+- **Experiencia de licitación:** Evaluación competitiva de proveedores (Saltworks, Gradiant, BW Waters, Fluence) proporciona insights de mercado
+- **Validación de costos:** Rango de precios $2-4M para sistema 100 m³/h (base referencial para Escenario A)
 - **Timeline realista:** 14 meses de fabricación + 2-3 meses commissioning (base para cronogramas de este reporte)
+- **Limitación importante:** Aplicación a desalación NO es directamente extrapolable a litio (química diferente: NaCl vs LiCl)
 
 **Fuentes:**
 - Participación directa del consultor (Luis Rivera González) en proceso de evaluación
@@ -1557,7 +1560,7 @@ Para 200,000 mg/L (20% p/v):
 
 #### Lección 2: Factores de Concentración son Química-Específicos
 
-**Fuente:** Comparación Qinghai (factor post-DLE) vs Taltal (factor desde salmuera base)
+**Fuente:** Análisis Qinghai (factor post-DLE para litio) y proyectos globales UHPRO
 
 **Observación:**
 - **No existe "factor universal" de concentración para UHPRO**
@@ -1568,9 +1571,9 @@ Para 200,000 mg/L (20% p/v):
   - Límites de solubilidad de sales
 
 **Ejemplos:**
-- Qinghai: Factor ~17x desde eluato DLE (2,000 → 34,000 ppm Li) - sistema multi-etapa
-- Taltal: Factor ~3.5x desde salmuera base (20,000 → 70,000 ppm estimado)
+- Qinghai (litio): Factor ~17x desde eluato DLE (2,000 → 34,000 ppm Li) - sistema multi-etapa
 - Saltworks (caso público): Factor validado en >200,000 mg/L TDS **NaCl** (~180,000 mg/L LiCl equiv.)
+- **Nota:** Factores en desalación agua mar (NaCl) NO son directamente extrapolables a litio (LiCl) por diferencias en química
 
 **Lección para SQM:**
 - **Escenario A (factor 1.75x):** Conservador, alta probabilidad de éxito
@@ -1634,9 +1637,10 @@ Para 200,000 mg/L (20% p/v):
 - Proyectos en Triángulo del Litio: Típicamente 9-12 meses de piloto
 
 **Lección para SQM:**
-- **Escenario A:** Puede aprovechar experiencia de Taltal (operativo Q4 2026) como "piloto proxy"
+- **Escenario A:** Factor conservador 1.75x reduce necesidad de piloto extenso (validación con Fase 0 puede ser suficiente)
 - **Escenario B:** REQUIERE piloto de 6 meses mínimo (diseño incluye 6 meses, óptimo sería 9-12 meses)
 - **Inversión de $5M en piloto Escenario B es JUSTIFICADA** para mitigar riesgo de proyecto $78M
+- **Nota:** Taltal (desalación) NO aplicable como piloto proxy para litio por diferencias en química
 
 #### Lección 6: Operación de UHPRO Requiere Expertise Especializado
 
@@ -1960,7 +1964,7 @@ Para 200,000 mg/L (20% p/v):
 | ¿Qué escenario tiene menor riesgo técnico? | **Escenario A (factor 1.75x)** es más conservador. Escenario B (factor 4x) requiere validación con piloto. |
 | ¿Es justificable inversión de $5M en piloto? | **Sí.** Es práctica estándar de industria y representa solo 5.3% del ahorro CAPEX potencial ($94M). |
 | ¿Hay alternativas más maduras? | **Depende del contexto.** Evaporación solar + MVR es alternativa madura, pero NF-UHPRO ofrece ventajas en agua, tiempo, footprint. |
-| ¿Cuál es el mayor riesgo técnico? | **Alcanzar y sostener factor de concentración objetivo** con salmuera específica de SQM. Requiere validación (piloto para B, experiencia Taltal para A). |
+| ¿Cuál es el mayor riesgo técnico? | **Alcanzar y sostener factor de concentración objetivo** con salmuera específica de SQM. Requiere validación (piloto extenso para B, Fase 0 mínima para A). |
 
 **Recomendación basada en estado del arte:**
 
@@ -2031,6 +2035,23 @@ Eluato DLE            NF                    UHPRO               Concentrado
 | **Presión operación** | 120 bar | Límite superior membranas comerciales |
 | **Recuperación agua** | 43% | 2,215 m³/día para reciclo a DLE |
 | **Consumo energético** | 4.71 kWh/m³ | Con ERDs isobáricos (>96% eficiencia) |
+
+**Control de pH en proceso integrado DLE + NF-UHPRO:**
+
+El pH óptimo varía según etapa del proceso, siendo un parámetro crítico para prevenir scaling y mantener integridad de membranas:
+
+| Etapa del Proceso | pH Objetivo | Racionalidad Técnica |
+|-------------------|-------------|---------------------|
+| **Post-pretratamiento mecánico (Green Sand + MF)** | 5.5-8.0 | Clarificación, remoción sólidos suspendidos (turbidez <1 NTU, Fe <1 mg/L, Mn <1 mg/L) |
+| **Post-DLE (eluato)** | 6.5-7.2 | Eluato naturalmente neutro después de desorción de resinas; compatible con alimentación directa a membranas sin ajuste |
+| **Pre-UHPRO (alimentación membranas)** | 2.5-3.5 | **Acidificación crítica** para prevenir scaling de Mg(OH)₂, CaCO₃ en superficie membranas; dosificación H₂SO₄ o HCl según composición específica |
+
+**Trade-off acidificación pre-UHPRO:**
+- ✅ **Beneficio**: pH bajo reduce dramáticamente riesgo de scaling inorgánico (CaCO₃, Mg(OH)₂ altamente solubles a pH <4)
+- ⚠️ **Riesgo**: pH bajo aumenta corrosión en tuberías y recipientes (requiere materiales resistentes: súper-duplex, titanio, HDPE)
+- 💰 **Impacto económico**: Aumento ~8-12% CAPEX por materiales anti-corrosión, compensado por reducción 40-60% frecuencia CIP (Clean-In-Place)
+
+**Fuentes validación**: Datos experimentales Aquatech PEARL pretratamiento DLE (presentaciones técnicas 2024), validado con especificaciones operacionales proyectos litio Qinghai.
 
 **Validación del factor de concentración 1.75x:**
 
@@ -2233,7 +2254,7 @@ SALMUERA LAGO SALADO QINGHAI
 **Aplicabilidad directa**: ⚠️ Química Atacama más favorable → **SQM debería lograr mejor economics**, PERO configuración específica debe diseñarse para química SQM (no copiar Qinghai directamente)
 
 **Gap de información**: ❌ Ausencia data operacional detallada justifica:
-- **Escenario A**: Experiencia Taltal (Q4 2026) como proxy regional
+- **Escenario A**: Fase 0 caracterización ($18-22k) + factor conservador 1.75x reduce riesgo
 - **Escenario B**: Piloto 6 meses con salmuera SQM real ($5M inversión)
 - **Ambos**: Considerar inversión $50k-150k en intelligence Qinghai vía consultoras especializadas
 
@@ -2629,7 +2650,7 @@ Arranque de planta NF-UHPRO no es "apretar botón". Primeras semanas-meses requi
 - Dosificación de antiscalant (suficiente para prevenir, no excesivo que foule membranas)
 - Frecuencia de limpieza química (CIP)
 
-Estos ajustes son específicos a química del eluato de SQM. Consultoría aporta conocimiento de qué ha funcionado en plantas similares (Qinghai, Saltworks, Taltal, otras instalaciones) para acelerar optimización.
+Estos ajustes son específicos a química del eluato de SQM. Consultoría aporta conocimiento de qué ha funcionado en plantas similares de litio (Qinghai, Saltworks, otras instalaciones) para acelerar optimización.
 
 **Ejemplo concreto:** En Qinghai (sistema DLE + membranas), pH óptimo resultó ser 3.2 (no 4.5 como diseño inicial) porque concentración de Mg²⁺ extremadamente alta requería acidificación mayor. Si eluato de SQM tiene alto Mg²⁺, comenzar con pH 3.2-3.5 puede ahorrar semanas de troubleshooting.
 
@@ -3674,13 +3695,13 @@ Si DLE se retrasa o no alcanza performance esperado, NF-UHPRO queda idle (sin al
 
 ### 9.2 Cronograma Integrado
 
-**Aprovechando experiencia de Taltal:**
+**Aprovechando inteligencia de proyectos operativos:**
 
-Proyecto NF-UHPRO Taltal estará operativo en **Q4 2026**, proporcionando data operacional real 24 meses antes de que SQM necesite implementar su sistema. Esta sincronización es oportunidad estratégica.
+SQM debe iniciar recopilación de data operacional de proyectos litio (Qinghai, Saltworks) en **Q4 2026**, permitiendo validar supuestos operacionales 24 meses antes de implementar sistema.
 
 | Hito | Fecha | Actividades | Dependencias |
 |------|-------|-------------|--------------|
-| **Fase 0: Validación con Data Taltal** | Q4 2026 - Q1 2027 | • Analizar resultados reales de operación Taltal<br/>• Validar supuestos de OPEX (energía, químicos, membranas)<br/>• Identificar lecciones aprendidas | DLE aún no operativo (no crítico) |
+| **Fase 0: Intelligence Qinghai** | Q4 2026 - Q1 2027 | • Contratar report intelligence Qinghai ($50-150k)<br/>• Validar supuestos de OPEX (energía, químicos, membranas)<br/>• Identificar lecciones aprendidas proyectos litio | DLE aún no operativo (no crítico) |
 | **Fase 1: Caracterización y RFP** | Q2-Q3 2027 | • Caracterizar eluato de piloto DLE (si disponible)<br/>• Elaborar RFP técnico-comercial<br/>• Lanzar licitación a 4 proveedores | **Piloto DLE generando eluato** |
 | **Fase 2: Evaluación y Selección** | Q4 2027 | • Evaluar propuestas técnico-económicas<br/>• Site visits a plantas de referencia<br/>• Negociación final<br/>• Adjudicación | Resultado piloto DLE positivo |
 | **Fase 3: Ingeniería de Detalle** | Q1 2028 | • Diseño detallado por proveedor<br/>• Revisión y aprobación por consultoría<br/>• Órdenes de compra equipos críticos | Decisión Go DLE confirmada |
@@ -3690,7 +3711,7 @@ Proyecto NF-UHPRO Taltal estará operativo en **Q4 2026**, proporcionando data o
 | **Fase 7: Operación y Optimización** | Q2-Q4 2029 | • Operación continua<br/>• Optimización de parámetros<br/>• Troubleshooting<br/>• Transferencia conocimiento | Ninguna |
 | **Entrega Final** | Q1 2030 | • Sistema operando a performance garantizado<br/>• Documentación as-built<br/>• Capacitación completa | Ninguna |
 
-**Timeline total: 36 meses** (Q4 2026 análisis Taltal → Q1 2030 entrega final)
+**Timeline total: 36 meses** (Q4 2026 intelligence Qinghai → Q1 2030 entrega final)
 
 ### 9.3 Hitos de Decisión (Stage-Gates)
 
@@ -3743,7 +3764,7 @@ Proyecto NF-UHPRO Taltal estará operativo en **Q4 2026**, proporcionando data o
 | **DLE no alcanza performance → retraso ≥12 meses** | Media (30%) | Alto (-$6M OPEX MVR por año de retraso) | • Monitoreo continuo de progreso DLE<br/>• Stage-gates para decidir Go/Abort temprano<br/>• Mantener flexibilidad de cancelar NF-UHPRO hasta Q1 2028 |
 | **Proveedor NF-UHPRO retrasa entrega** | Baja (15%) | Medio (-$0.5M por mes retraso) | • Penalidades contractuales por retrasos<br/>• Requerir schedule detallado con milestones<br/>• Auditorías de progreso de fabricación |
 | **Eluato DLE tiene química inesperada → NF-UHPRO no funciona** | Baja (10%) | Muy Alto (-$10-20M rediseño) | • **Caracterización exhaustiva en Fase 1**<br/>• Pilotos con eluato real antes de full-scale<br/>• Garantías de performance del proveedor |
-| **Data de Taltal no disponible por confidencialidad** | Media (40%) | Bajo (pierde ventaja de benchmarking) | • Relación profesional con operador Taltal<br/>• Alternativamente usar data de otras instalaciones UHPRO comerciales |
+| **Data operacional proyectos litio no disponible** | Media (40%) | Bajo (pierde ventaja de benchmarking) | • Contratar intelligence reports especializados ($50-150k)<br/>• Networking en conferencias industria litio<br/>• Usar data de proyectos UHPRO comerciales |
 | **SQM cancela DLE post-adjudicación NF-UHPRO** | Muy Baja (5%) | Alto (-$2-5M equipos sin uso) | • Stage-gate 3 previo a fabricación<br/>• Cláusulas de cancelación en contrato<br/>• Evaluar reutilización en Escenario B |
 
 **Estrategia de contingencia:**
@@ -3783,32 +3804,30 @@ Si durante ejecución del proyecto (post-Gate 2), DLE muestra problemas técnico
 | **Ingeniero de Diseño** | Ingeniería de detalle, cálculos hidráulicos, especificación equipos | 100% durante Fase 3 |
 | **Field Service Engineer** | Supervisión instalación, commissioning, training | 100% durante Fases 5-6 |
 
-### 9.6 Sincronización con Experiencia Taltal
+### 9.6 Benchmarking con Proyectos Operativos de Litio
 
-**Ventaja estratégica de timing:**
+**Estrategia de validación operacional:**
 
-Taltal estará operativo en Q4 2026, dando **24 meses de data real** antes de que SQM necesite tomar decisión de adjudicación (Q4 2027).
+Para reducir incertidumbre técnica, SQM debe acceder a data operacional real de plantas NF-UHPRO para litio (NO desalación).
 
-**Data crítica que estará disponible de Taltal:**
+**Fuentes prioritarias de data operacional:**
 
-| Métrica | Valor Esperado Taltal | Utilidad para SQM |
-|---------|----------------------|------------------|
-| **Consumo energético real** | 4.5-5.5 kWh/m³ | Validar supuesto de $624k/año OPEX energía |
-| **Vida útil membranas** | 18-30 meses (observación) | Ajustar supuesto de reemplazo cada 24 meses |
-| **Frecuencia CIP** | 15-25 días (observación) | Validar OPEX de químicos y downtime |
-| **Performance de ERDs** | 94-97% eficiencia | Confirmar selección de isobáricos vs turbochargers |
-| **Confiabilidad de bombas** | MTBF (mean time between failures) | Estimar OPEX de mantenimiento mecánico |
-| **Problemas operacionales** | Incidentes de fouling, scaling, fallas | **Aprender de errores de otros** |
+| Fuente | Tipo Proyecto | Utilidad para SQM | Acceso |
+|--------|--------------|------------------|---------|
+| **Qinghai (China)** | DLE + membranas comercial | Validar consumo energético, vida útil membranas, frecuencia CIP | Consultoras especializadas ($50-150k) |
+| **Saltworks plantas Li** | FusionRO (NF-UHPRO) comercial | Confirmar performance >200k mg/L TDS, fouling management | Contacto directo vía RFP |
+| **Proyectos USA** | Thacker Pass, Hell's Kitchen | Aprender de pilotos y problemas operacionales | Red profesional/conferencias |
+| **Operadores regionales** | Triángulo del Litio | Benchmarking confidencial (bajo NDA) | Contactos industria litio |
 
-**Plan de acceso a data Taltal:**
+**Plan de acceso a data operacional:**
 
-1. **Relación profesional con operador:** Consultor tiene contacto con Project Manager de Taltal (relación de evaluación de licitación)
-2. **Site visit Q1 2027:** Visitar planta operativa, observar operación real, entrevistar operadores
-3. **Benchmarking confidencial:** Operadores de plantas NF-UHPRO típicamente comparten data operacional con colegas de industria (bajo NDAs)
+1. **Contratar intelligence report Qinghai** ($50-150k): Data detallada de configuración, OPEX, problemas operacionales
+2. **Site visits a operadores** (Q1-Q2 2027): Visitar plantas operativas, observar operación real, entrevistar operadores
+3. **Networking en conferencias** (Lithium Supply & Markets, ALTA): Contactos informales con operadores
 
-**Si data de Taltal no está disponible por confidencialidad:**
+**Limitación importante:**
 
-Alternativa es usar data de plantas comerciales UHPRO operativas (Qinghai DLE + membranas, Saltworks 2 plantas Li, otras instalaciones ZLD) o contactar operadores vía red profesional. Industria de litio es pequeña y colaborativa - hay canales para obtener información operacional.
+**Taltal (Chile, BW Waters, Q4 2026) NO es fuente aplicable** - es desalación agua mar (NaCl), NO litio (LiCl). Data de Taltal tiene valor limitado para proceso litio debido a diferencias fundamentales en química de salmuera.
 
 ---
 
@@ -3902,7 +3921,7 @@ Eluato Lilac DLE → UF → NF → UHPRO → Cristalizadores
 | **Tamaño de inversión** | USD $7.5M (equipo) + consultoría | USD $5M piloto → USD $78M planta completa |
 | **Enfoque estratégico** | Consultoría para minimizar riesgo de implementación | **Piloto para validar viabilidad técnica** |
 
-La diferencia fundamental radica en el **nivel de incertidumbre técnica**. Escenario A opera dentro de parámetros comprobados en plantas industriales (Taltal, Qinghai). Escenario B empuja límites de la tecnología hacia regiones donde no existe validación a escala comercial.
+La diferencia fundamental radica en el **nivel de incertidumbre técnica**. Escenario A opera dentro de parámetros comprobados en plantas industriales de litio (Qinghai, factor conservador 1.75x). Escenario B empuja límites de la tecnología hacia regiones donde no existe validación a escala comercial.
 
 ### 10.4 Cronograma y Fases Clave
 
@@ -4522,9 +4541,148 @@ El concentrado de 60,000 ppm Li que produce UHPRO alimenta directamente los cris
 
 Beneficio de eliminar MVR (USD $80M CAPEX, USD $8-12M/año OPEX) supera ampliamente costo de calentamiento (USD $1.3M/año) y potencial tratamiento de Mg (USD $400k/año). Pero estos costos **deben incluirse** en evaluación económica - no son triviales.
 
+### 12.5 Análisis de Escenarios de Stress Operacional
+
+Para evaluar robustez del sistema NF-UHPRO integrado a Silvinita, se modelan 5 escenarios adversos que podrían comprometer viabilidad operacional o económica del proyecto.
+
+#### Escenario Stress 1: Variabilidad Extrema de Composición DLE (±30%)
+
+**Condición**: Eluato DLE experimenta variaciones estacionales o por cambios en salmuera de pozos, con concentración Li fluctuando 15,000 ±4,500 ppm (10,500-19,500 ppm).
+
+**Impacto en NF-UHPRO**:
+- **Presión osmótica**: Variación ±35% requiere ajuste continuo de presión operación (100-140 bar)
+- **Factor de concentración**: A 10,500 ppm feed, alcanzar 60,000 ppm requiere factor 5.7x (vs 4x nominal) → Riesgo de scaling severo
+- **Control de proceso**: Sistema PLC debe ajustar presión automáticamente cada 2-4 horas
+
+**Mitigación**:
+| Estrategia | CAPEX | OPEX | Efectividad |
+|------------|-------|------|-------------|
+| **Tanques buffer con mezclado** | +$1.2M | +$80k/año | Alta - Homogeniza variaciones 48-72h |
+| **Control PLC avanzado con medición Li online** | +$500k | +$120k/año (calibración, mantenimiento) | Media - Responde rápido pero no elimina variabilidad |
+| **Diseño membranas para rango amplio (80-140 bar)** | +$300k | $0 | Alta - Flexibilidad operacional |
+
+**Impacto económico**: CAPEX +$2M, OPEX +$200k/año → VPN 10 años (10%) +$3.2M
+
+#### Escenario Stress 2: Fouling Acelerado (Vida Útil Membranas <12 Meses)
+
+**Condición**: Salmuera post-silvinita contiene organics, coloides o sílice reactiva NO detectados en caracterización inicial → Fouling rate 2-3x proyectado, vida útil membranas cae de 24 meses a 8-10 meses.
+
+**Impacto económico**:
+- OPEX reemplazo membranas: $176k/año → **$528k/año** (+200%)
+- Frecuencia CIP: Semanal vs quincenal → +52 eventos/año → **+$280k/año** (químicos + downtime)
+- **OPEX total adicional**: +$552k/año
+
+**Mitigación**:
+- **Pretratamiento UF más agresivo**: +$1.8M CAPEX, reduce fouling 40-50%
+- **Formulación antiscalant avanzada** (ej: Flocon 260 para sílice): +$150k/año
+- **Protocolo CIP optimizado** (3 etapas: ácido + alcalino + enzimático): -30% degradación membrana
+
+**Impacto VPN**: Si sin mitigación → VPN -$3.4M. Con mitigación → VPN -$1.2M (aún adverso pero manejable)
+
+#### Escenario Stress 3: Paradas Prolongadas DLE (>10 Días/Año)
+
+**Condición**: Silvinita experimenta paradas no programadas (falla esferas DLE, problemas mecánicos) totalizando 12-15 días/año (vs 5 días asumidos).
+
+**Impacto en producción**:
+- Días operacionales: 330 → **318 días/año** (-3.6%)
+- Producción LCE: 20,000 → **19,280 tpa** (-720 tpa)
+- **Pérdida ingresos** (@ $12,000/ton LCE): $8.6M/año
+
+**Análisis breakeven**:
+- Tanques buffer 5,000 m³ permiten operar 48h sin DLE
+- Paradas <2 días: Absorbidas por buffer (OK)
+- Paradas >3 días: Buffer insuficiente → Parada forzada NF-UHPRO
+
+**Mitigación crítica**:
+| Opción | CAPEX | Operación Independiente | Costo Oportunidad |
+|--------|-------|------------------------|-------------------|
+| **Buffer actual (2×5,000 m³)** | $3.5M | 2-3 días | -3.6% producción ($8.6M/año) |
+| **Buffer extendido (2×8,000 m³)** | **+$2.2M** | **5-6 días** | -1.2% producción ($2.9M/año) |
+| **Contrato operación DLE** (uptime garantizado >97%) | $0 | N/A | Elimina riesgo contractual |
+
+**Recomendación**: Negociar cláusula uptime DLE en contrato Lilac (penalidades si <97% disponibilidad)
+
+#### Escenario Stress 4: Precio Energía Chile +60% (Crisis Energética)
+
+**Condición**: Precio electricidad Chile aumenta de $130/MWh a **$208/MWh** por crisis gas natural o sequía (afecta hidroeléctricas).
+
+**Impacto OPEX energía NF-UHPRO**:
+- Consumo anual: 4.71 kWh/m³ × 2,935 m³/día × 330 días = 4,550 MWh/año
+- Costo base: $592k/año
+- Costo con +60%: **$947k/año** (+$355k/año)
+
+**VPN impacto** (10 años, 10%): +$2.2M
+
+**Opciones mitigación**:
+| Estrategia | CAPEX | Ahorro OPEX/año | Payback |
+|------------|-------|-----------------|---------|
+| **Contrato PPA solar/eólico** (precio fijo $95/MWh) | $0 | $170k/año (vs stress) | Inmediato |
+| **Cogeneración gas natural** (autogeneración) | +$8M | $280k/año | 28 años (NO viable) |
+| **Optimización ERDs** (97% → 98% eficiencia) | +$150k | $25k/año | 6 años |
+
+**Conclusión**: Riesgo energético es **material pero mitigable** con PPA renovables
+
+#### Escenario Stress 5: Contaminación Cruzada Mg/Ca en Concentrado (>1,000 mg/L Mg)
+
+**Condición**: NF no retiene Mg²⁺ eficientemente como esperado (rechazo 80% vs 95% diseño) → Concentrado UHPRO contiene 800-1,200 mg/L Mg (vs <300 mg/L target).
+
+**Impacto en cristalización**:
+- **Pureza Li₂CO₃**: 99.2% → **97.8%** (co-precipita MgCO₃)
+- **Precio venta**: Battery grade $12,000/ton → Technical grade **$8,500/ton** (-29%)
+- **Pérdida ingresos**: $3,500/ton × 20,000 tpa = **-$70M/año** (CRÍTICO)
+
+**Mitigación urgente**:
+1. **Etapa de pulido con precipitación selectiva Mg**:
+   - Ajuste pH 10.5 → Precipita Mg(OH)₂, Li permanece soluble
+   - Filtración + Centrifugación
+   - **CAPEX**: $2.8M, **OPEX**: +$420k/año
+   - Resultado: Mg <100 mg/L → Pureza 99.4%
+
+2. **Membranas NF selectivas avanzadas** (ej: DuPont NF270 vs NF90):
+   - Mayor selectividad Mg²⁺/Li⁺ (factor 25x vs 15x)
+   - **CAPEX**: +$180k (membranas premium)
+   - **OPEX**: Similar
+
+**Decisión**: Escenario 5 es **show-stopper si no mitigado**. Fase 0 DEBE validar rechazo Mg real antes de piloto.
+
+#### Resumen Consolidado de Escenarios Stress
+
+| Escenario | Probabilidad | Impacto VPN | Mitigación CAPEX | Mitigación OPEX/año | VPN Post-Mitigación | Severidad |
+|-----------|--------------|-------------|------------------|---------------------|---------------------|-----------|
+| **1. Variabilidad DLE ±30%** | Media (40%) | -$3.2M | +$2M | +$200k/año | -$1.4M | Media |
+| **2. Fouling acelerado** | Alta (55%) | -$3.4M | +$1.8M | +$150k/año | -$1.2M | Alta |
+| **3. Paradas DLE >10 días** | Baja (25%) | -$8.6M/año | +$2.2M | $0 | -$3.5M | Media-Alta |
+| **4. Energía +60%** | Media (35%) | -$2.2M | $0 (PPA) | $0 (hedge) | $0 | Baja |
+| **5. Contaminación Mg** | Baja (15%) | **-$70M/año** | +$2.8M | +$420k/año | -$5.6M | **CRÍTICA** |
+
+**Conclusión análisis stress**:
+- Escenarios 1-4 son **manejables** con mitigaciones razonables (CAPEX +$4-6M total)
+- Escenario 5 (contaminación Mg) es **crítico** → **Fase 0 obligatoria para validar rechazo Mg ANTES de piloto $5M**
+- Inversión total mitigaciones: **~$8.8M** (incluir en contingencia proyecto)
+- VPN agregado post-mitigación: **-$11.7M** en caso pesimista (probabilidad combinada <8%)
+
+**Recomendación**: Proyecto es robusto a escenarios stress con mitigaciones apropiadas, pero **NO proceder a piloto sin Fase 0 exitosa**.
+
 ---
 
 ## 13. VALIDACIÓN MEDIANTE PILOTO
+
+**⚠️ PREREQUISITO OBLIGATORIO - Fase 0 Caracterización Composicional**
+
+**ANTES de aprobar piloto $5M, ejecutar Fase 0:**
+- **Inversión**: $18,000-22,000 (0.36-0.44% del costo piloto)
+- **Duración**: 1 mes
+- **Objetivo**: Validar composición salmuera post-silvinita (ratio Li/Na molar, Mg, Ca, Si, impurezas)
+- **ROI**: 250:1 a 2,500:1 (evita riesgo $5M-83M en diseño incorrecto)
+
+**Criterios Go/No-Go Fase 0:**
+- ✅ **GO**: Ratio Li/Na >5:1, Mg:Li <0.15, impurezas dentro specs → Proceder con piloto
+- ⚠️ **REVISAR**: Ratio Li/Na 2:1-5:1 → Considerar DLE adicional o ajustar configuración
+- ❌ **NO-GO**: Ratio Li/Na <2:1, Mg:Li >0.2 → Replantear tecnología (riesgo fouling crítico)
+
+**Referencia validación**: Zabuye (China) opera OARO exitosamente con Mg:Li 0.019 (extremadamente bajo). SQM debe validar su ratio ANTES de comprometer $5M.
+
+---
 
 ### 13.1 Objetivos del Piloto: Más Allá de "Proof of Concept"
 
@@ -4712,6 +4870,23 @@ El balance de masas para el Escenario B es más complejo que el Escenario A debi
 | **Factor de concentración objetivo** | 4.0x | Target para alimentar cristalizadores |
 | **Recuperación de Li objetivo** | >95% | Minimizar pérdidas |
 | **Días operacionales** | 330 días/año | 90% uptime (35 días mantenimiento) |
+
+**Nota sobre horizonte de evaluación 10 años:**
+
+El análisis económico utiliza **10 años calendario** como horizonte de evaluación estándar para proyectos mineros. Sin embargo, con 90% uptime operacional (330 días/año efectivos):
+
+- **10 años calendario** = 3,650 días totales
+- **330 días/año × 10 años** = 3,300 días operacionales
+- **Equivalente operacional**: **9.04 años de producción continua**
+
+**Implicación**: Los ahorros de OPEX reportados en el análisis económico (ej: $125.3M valor 10 años Escenario B) están correctamente calculados sobre base anual de 330 días, NO 365 días. Esta diferencia ya está incorporada en las proyecciones - no se requiere ajuste adicional.
+
+**Contexto downtime**:
+- **Mantenimiento programado**: ~25 días/año (CIP membranas quincenal, reemplazo elementos, inspecciones)
+- **Mantenimiento no programado**: ~10 días/año (fallas equipos, ajustes proceso, integraciones)
+- **Total**: 35 días/año (9.6% tiempo total)
+
+**Comparación con MVR convencional**: Los sistemas MVR también operan ~330 días/año (similar downtime), por lo que la comparación económica es equivalente base-a-base.
 
 **Balance de litio (base: 1 día de operación):**
 
@@ -4985,6 +5160,27 @@ TOTAL: USD $83M
 | **Seguros y permisos** | $200,000 | 3.0% | Póliza industrial |
 | **Overhead corporativo (15%)** | $348,420 | 5.3% | Allocación SQM |
 | **TOTAL OPEX** | **$6,601,100** | **100%** | USD $330/ton LCE |
+
+**Validación con Benchmark Industrial (Congreso ALADYR 2024):**
+
+**Caso CATL LFP (Shiyan, China) - 50,000 ton/año LiFePO₄:**
+- **SEC con ERDs:** 2.2 kWh/m³ (reducción 54% vs sin ERDs)
+- **Payback ERDs:** 6 meses (validado operacionalmente)
+- **Uptime:** >95% (excepcional para UHPRO industrial)
+- **Recovery agua:** 98% (benchmark clase mundial)
+
+**Aplicabilidad a Escenario B SQM:**
+- Consumo energético SQM: 439 MWh/año ÷ 264,000 m³/año = **1.66 kWh/m³**
+- Benchmark CATL: 2.2 kWh/m³
+- **Conclusión:** Supuesto energético SQM es **25% más optimista** que benchmark CATL - requiere validación en piloto
+
+**Caso Niobec (Quebec, Canadá) - Minería:**
+- **Recovery:** 66-70% (agua de mina, TDS 25k mg/L)
+- **Sistema:** SWRO + UHPRO + MVR (híbrido validado)
+- **Uptime:** ~92%
+- **Aplicabilidad:** Demuestra viabilidad sistema híbrido membranas + térmica en minería
+
+**Recomendación:** Ajustar supuesto energético conservadoramente a 2.0-2.5 kWh/m³ para análisis sensibilidad. Si piloto valida <2.0 kWh/m³, OPEX energía podría reducirse 20-30%.
 
 **Comparación con Escenario A:**
 
@@ -5312,6 +5508,38 @@ Si concentrado no cumple specs → requiere tratamiento adicional antes de crist
 - **Score 65-75%:** GO CONDICIONAL → Extender piloto 3 meses adicionales, reevaluar
 - **Score <65%:** NO-GO → Tecnología no viable, evaluar alternativas (MVR, tecnologías híbridas)
 
+### 17.6 Benchmarking con Plantas Operacionales (ALADYR 2024)
+
+**Validación de targets SQM contra performance real de proyectos operativos:**
+
+| KPI | Target SQM | Benchmark CATL (China) | Benchmark Niobec (Canadá) | Status Target |
+|-----|-----------|----------------------|--------------------------|---------------|
+| **Recovery agua** | 95% | **98%** | 66-70% | ✅ Conservador (CATL demuestra >95% es alcanzable) |
+| **SEC (kWh/m³)** | <8.0 | **2.2** (con ERDs 54% reducción) | ~3.8 | ✅ Realista (CATL benchmark clase mundial) |
+| **Uptime** | >88% | **>95%** | ~92% | ✅ Alcanzable (ambos casos >90%) |
+| **TDS permeado** | Variable | <500 mg/L | <600 mg/L (target <1,000) | ✅ Conservador |
+| **Payback ERDs** | No especificado | **6 meses** | ~2 años | ℹ️ Validar en piloto |
+| **Vida útil membranas** | 12-18 meses | No disponible | No disponible | ⚠️ Requiere validación piloto |
+
+**Conclusiones del benchmarking:**
+
+1. **Targets SQM son conservadores y alcanzables** según benchmarks industriales 2022-2024
+2. **Recovery 95%** es realista - CATL demuestra 98% en producción litio industrial
+3. **SEC <8 kWh/m³** es alcanzable - CATL opera a 2.2 kWh/m³ (benchmark clase mundial)
+4. **Uptime >88%** es conservador - CATL >95%, Niobec ~92% demuestran >90% es estándar
+5. **Vida útil membranas 12-18 meses** requiere validación - es el KPI con mayor incertidumbre
+
+**Caso especial - Zabuye (OARO para litio):**
+- **Presión operación:** 74 bar (vs 200 bar UHPRO tradicional) - menor estrés mecánico
+- **Recovery:** 35-40% (aceptable para TDS 150-200k mg/L hipersalino)
+- **Mg:Li ratio:** 0.019 (extremadamente bajo) - clave del éxito
+- **Relevancia SQM:** Si Fase 0 valida Mg:Li bajo (<0.05), OARO es alternativa viable
+
+**Recomendación:** Configurar piloto SQM para recopilar data comparable con benchmarks CATL y Niobec. Específicamente:
+- Medir SEC cada hora (comparar con 2.2 kWh/m³ CATL)
+- Calcular uptime semanal (target >90% alineado con benchmarks)
+- Documentar eventos fouling/scaling (comparar con frecuencia CIP 15-25 días típica)
+
 ---
 
 ## 18. PLAN DE IMPLEMENTACIÓN - ESCENARIO B
@@ -5529,7 +5757,7 @@ Escenario B es **investigación aplicada con potencial de alto impacto**.
 | **Flujo volumétrico** | 5,150 m³/día | 800 m³/día | B (más compacto) |
 | **Recuperación de Li** | 99.3% | 95.0% | A (menores pérdidas) |
 | **Complejidad técnica** | Media | Alta | A (más simple) |
-| **Validación industrial** | Parcial (Taltal, Qinghai) | Inexistente (requiere piloto) | **A** |
+| **Validación industrial** | Parcial (Qinghai litio) | Inexistente (requiere piloto) | **A** |
 | **Riesgo de fouling/scaling** | Medio | Alto | A (menos crítico) |
 | **Frecuencia CIP estimada** | 15-25 días | 7-10 días | A (menos mantenimiento) |
 | **Vida útil membranas UHPRO** | 24-30 meses | 12-18 meses | **A** |
@@ -5855,7 +6083,7 @@ Para consolidar la decisión, aplicamos Analytic Hierarchy Process (AHP) con cri
 ### 21.3 Justificación de Scores
 
 **Criterio 1 - Viabilidad Técnica:**
-- **A=8:** Tecnología validada parcialmente (Taltal, Qinghai), factor 1.75x conservador, presiones dentro de especificaciones comerciales estándar
+- **A=8:** Tecnología validada parcialmente (Qinghai litio), factor 1.75x conservador, presiones dentro de especificaciones comerciales estándar
 - **B=5:** Tecnología empuja límites (factor 4x, 200 bar, eluato Lilac no validado), requiere piloto obligatorio, 30-40% probabilidad de falla
 
 **Criterio 2 - Retorno Financiero:**
@@ -6238,7 +6466,6 @@ DESVENTAJA: CAPEX combinado $7.5M + $83M = $90.5M (alto)
 
 | Proyecto SQM | Interface con NF-UHPRO | Timing Crítico | Riesgo Sincronización |
 |--------------|------------------------|----------------|----------------------|
-| **Taltal (DLE Sunresin)** | Fuente potencial de data operacional | Q4 2026 operacional | Si Taltal falla, invalida supuestos A |
 | **Silvinita (DLE Lilac)** | Fuente de eluato 15k ppm para B | Q2 2027 operacional | Retraso Silvinita demora B 6-12 meses |
 | **Expansión cristalizadores** | Receptor de concentrado 60k ppm | 2028-2029 | Si no se expande, B no tiene donde descargar |
 | **MVR Nueva Línea (baseline)** | Alternativa si NF-UHPRO falla | Decisión M0 (competidor) | Si se aprueba MVR, NF-UHPRO pierde sentido |
@@ -6544,7 +6771,7 @@ FASE 4 (2030-2031): Planta comercial B (CONDICIONAL a GO piloto)
 **Si se aprueba Escenario A:**
 
 1. **Selección de consultor (crítico):**
-   - Priorizar consultores con experiencia documentada en Taltal, Qinghai o proyectos DLE+membranas
+   - Priorizar consultores con experiencia documentada en proyectos litio (Qinghai, Saltworks) o DLE+membranas
    - Exigir garantías de performance: si ROI <15%, fee reducido 50%
    - Modalidad recomendada: Modalidad 2 (diseño + supervisión, $1.5M) - balance costo/valor
 
@@ -6702,7 +6929,7 @@ FASE 4 (2030-2031): Planta comercial B (CONDICIONAL a GO piloto)
 
 | Acción | Responsable | Plazo | Costo | Entregable |
 |--------|-------------|-------|-------|------------|
-| **Validar data Taltal** | Ingeniero senior | 4 semanas | $20k (viaje) | Reporte operacional real (uptime, fouling, OPEX) |
+| **Contratar intelligence Qinghai** | Consultora especializada | 4 semanas | $50-150k | Reporte operacional real (uptime, fouling, OPEX) |
 | **RFI proveedores membranas** | Procurement | 6 semanas | $0 | Cotizaciones DuPont, Koch, Hydranautics |
 | **Due diligence Silvinita** | Equipo técnico | 8 semanas | $50k (consultor) | Assessment probabilidad éxito, timeline |
 | **Análisis sensibilidad financiera** | CFO | 2 semanas | $0 | VAN/TIR bajo 5 escenarios precio Li |
@@ -6751,8 +6978,8 @@ Acciones que generan valor independientemente de qué escenario se apruebe:
 2. **Suscripción a database operacional de plantas NF-UHPRO (BNEF, $25k/año)**
    - Valor: Benchmarking continuo, early warning de problemas industria
 
-3. **Establecer relación con operadores Taltal (site visit, $10k)**
-   - Valor: Acceso a data real, networking con peers
+3. **Site visits a operadores proyectos litio (viajes, $20-30k)**
+   - Valor: Acceso a data real operacional, networking con peers industria
 
 4. **Negociar pre-acuerdo con DuPont (NDA + MOU, $0)**
    - Valor: Asegura disponibilidad membranas, descuento 5-8% volumen
@@ -6846,7 +7073,7 @@ Estos valores intangibles favorecen implementación de al menos uno de los escen
 □ **Opción 1:** Aprobar Escenario A ($7.5M + consultoría)
 □ **Opción 2:** Aprobar Escenario B piloto ($5M, condicional a Silvinita)
 □ **Opción 3:** Aprobar secuencia A→B ($90.5M escalonado)
-□ **Opción 4:** Diferir decisión 12 meses (esperar más data Taltal/Silvinita)
+□ **Opción 4:** Diferir decisión 12 meses (esperar más data Qinghai/Silvinita)
 □ **Opción 5:** No proceder con ningún escenario (mantener baseline MVR)
 
 **Recomendación de este análisis:** Opción 1 o Opción 3, dependiendo de capital disponible.
@@ -6919,8 +7146,8 @@ Este reporte proporciona análisis técnico-económico exhaustivo para decisión
 ## ANEXO B: Referencias de Proyectos Globales NF-UHPRO en Litio
 
 **Proyectos validados (data pública):**
-- Taltal (Chile): DLE Sunresin + concentración, Q4 2026 operacional
 - Qinghai (China): Múltiples plantas DLE + membranas, capacidad 50k+ tpa
+- **Nota:** Taltal (Chile, BW Waters, Q4 2026) es desalación agua mar (NO litio) - no aplicable como referencia directa
 - Caucharí-Olaroz (Argentina): Lithium Americas, factor 3-3.5x documentado
 - Proyectos confidenciales: Koch, DuPont (menciones sin data específica)
 
