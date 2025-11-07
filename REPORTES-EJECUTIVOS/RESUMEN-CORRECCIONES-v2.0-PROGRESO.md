@@ -2,9 +2,9 @@
 ## Progreso Actualizado: Plan de Corrección Integral NaCl vs LiCl
 
 **Fecha Inicio**: 2025-11-02
-**Última Actualización**: 2025-11-07 (Sesión 3: Integración Casos ALADYR + Correcciones Taltal)
+**Última Actualización**: 2025-11-07 (Sesión 3c: Completar 3 tareas pendientes finales)
 **Proyecto**: SQM NF-UHPRO Reportes Ejecutivos
-**Versión**: v1.0 → v2.0 (en progreso - **85% completado**)
+**Versión**: v1.0 → v2.0 (**98% completado - sustancialmente completo**)
 
 ---
 
@@ -570,6 +570,96 @@
 - Progreso real estimado: **~95%** (considerando tareas ya completadas)
 
 **Recomendación**: Verificar con usuario si hay tareas específicas adicionales o si el trabajo está sustancialmente completo.
+
+---
+
+## ✅ TRABAJO COMPLETADO (Sesión 3c - 7 noviembre 2025)
+
+### 11. **Completar 3 Tareas Finales Pendientes (9.3, 9.5, 9.6)** ⭐ COMPLETADO ✅
+**Fecha**: 2025-11-07
+**Archivo**: REPORTE-EJECUTIVO-NF-UHPRO-SQM.md
+**Extensión**: ~2,500 palabras agregadas
+**Estado**: ✅ **COMPLETADO**
+
+**11.1 Tarea 9.3 - Control pH Sección 5.2** ✅
+- **Ubicación**: Líneas 2039-2054 (después tabla métricas operacionales)
+- **Contenido agregado**:
+  - Tabla control pH por etapa proceso (Post-pretratamiento, Post-DLE, Pre-UHPRO)
+  - pH óptimos: 5.5-8.0 → 6.5-7.2 → 2.5-3.5 (acidificación crítica)
+  - Trade-offs acidificación: +8-12% CAPEX materiales anti-corrosión, -40-60% frecuencia CIP
+  - Racionalidad técnica: Prevención scaling Mg(OH)₂, CaCO₃ en membranas UHPRO
+- **Fuentes**: Datos Aquatech PEARL pretratamiento DLE, proyectos litio Qinghai
+- **Impacto**: Parámetro crítico operacional ahora documentado con especificaciones cuantitativas
+
+**11.2 Tarea 9.5 - Escenarios Stress Sección 12.5** ✅
+- **Ubicación**: Líneas 4544-4664 (nueva subsección completa)
+- **Extensión**: ~1,900 palabras, 5 escenarios adversos modelados
+- **Contenido agregado**:
+
+**Escenario Stress 1: Variabilidad Extrema Composición DLE (±30%)**
+- Condición: Li fluctuando 10,500-19,500 ppm (vs 15,000 ppm nominal)
+- Impacto: Presión osmótica ±35%, factor concentración hasta 5.7x (vs 4x nominal)
+- Mitigación: Tanques buffer (+$1.2M), control PLC avanzado (+$500k), diseño flexible membranas (+$300k)
+- VPN impacto: -$3.2M, post-mitigación: -$1.4M
+
+**Escenario Stress 2: Fouling Acelerado (Vida Útil <12 Meses)**
+- Condición: Organics/sílice NO detectados, vida útil membranas cae 24→8-10 meses
+- Impacto: OPEX reemplazo +200% ($176k→$528k/año), CIP semanal (+$280k/año)
+- Mitigación: Pretratamiento UF agresivo (+$1.8M), antiscalant avanzado (+$150k/año)
+- VPN impacto: -$3.4M, post-mitigación: -$1.2M
+
+**Escenario Stress 3: Paradas Prolongadas DLE (>10 Días/Año)**
+- Condición: Paradas no programadas 12-15 días/año (vs 5 días asumidos)
+- Impacto: 330→318 días operacionales (-3.6%), pérdida $8.6M/año producción
+- Mitigación: Buffer extendido 2×8,000 m³ (+$2.2M) o contrato uptime DLE >97%
+- VPN impacto: -$8.6M/año, post-mitigación: -$3.5M
+
+**Escenario Stress 4: Precio Energía +60% (Crisis Energética)**
+- Condición: Electricidad $130→$208/MWh por crisis gas/sequía
+- Impacto: OPEX energía +$355k/año ($592k→$947k/año)
+- Mitigación: Contrato PPA solar/eólico precio fijo $95/MWh (ahorro $170k/año)
+- VPN impacto: -$2.2M, post-mitigación: $0 (PPA elimina riesgo)
+
+**Escenario Stress 5: Contaminación Mg/Ca en Concentrado (>1,000 mg/L)** ⚠️ CRÍTICO
+- Condición: NF rechazo Mg 80% vs 95% diseño → Concentrado 800-1,200 mg/L Mg
+- Impacto: Pureza Li₂CO₃ 99.2%→97.8%, precio battery→technical grade (-29%)
+- Pérdida ingresos: **-$70M/año** (show-stopper)
+- Mitigación urgente: Etapa pulido precipitación selectiva Mg (+$2.8M CAPEX, +$420k/año OPEX)
+- **Decisión crítica**: Fase 0 DEBE validar rechazo Mg ANTES de piloto $5M
+
+**Tabla Consolidada Escenarios Stress**:
+| Escenario | Probabilidad | Impacto VPN | Mitigación CAPEX | VPN Post-Mitigación | Severidad |
+|-----------|--------------|-------------|------------------|---------------------|-----------|
+| 1. Variabilidad DLE | Media (40%) | -$3.2M | +$2M | -$1.4M | Media |
+| 2. Fouling acelerado | Alta (55%) | -$3.4M | +$1.8M | -$1.2M | Alta |
+| 3. Paradas DLE | Baja (25%) | -$8.6M/año | +$2.2M | -$3.5M | Media-Alta |
+| 4. Energía +60% | Media (35%) | -$2.2M | $0 (PPA) | $0 | Baja |
+| 5. Contaminación Mg | Baja (15%) | -$70M/año | +$2.8M | -$5.6M | **CRÍTICA** |
+
+**Conclusión análisis stress**:
+- Escenarios 1-4: Manejables con mitigaciones razonables (CAPEX +$4-6M total)
+- Escenario 5: **CRÍTICO** - Fase 0 obligatoria para validar rechazo Mg
+- Inversión total mitigaciones: ~$8.8M (incluir en contingencia proyecto)
+- VPN agregado post-mitigación: -$11.7M caso pesimista (probabilidad combinada <8%)
+- **Recomendación**: Proyecto robusto con mitigaciones, pero NO proceder sin Fase 0 exitosa
+
+**11.3 Tarea 9.6 - Matizar Timeline Sección 14** ✅
+- **Ubicación**: Líneas 4874-4889 (después tabla premisas balance)
+- **Contenido agregado**:
+  - Nota aclaratoria: **10 años calendario = 9.04 años operacionales**
+  - Explicación: 330 días/año operación (90% uptime) vs 365 días calendario
+  - Cálculo: 10 años × 330 días = 3,300 días operacionales = 9.04 años producción continua
+  - Contexto downtime: 25 días mantenimiento programado + 10 días no programado = 35 días/año (9.6% tiempo)
+  - **Implicación crítica**: Ahorros OPEX ya calculados sobre 330 días/año, NO requiere ajuste adicional
+  - Comparación MVR: Sistemas convencionales también operan ~330 días/año, comparación económica equivalente base-a-base
+
+**Impacto Sesión 3c**:
+- Reporte completo: +~2,500 palabras (control pH + escenarios stress + clarificación timeline)
+- Análisis robustez: 5 escenarios adversos modelados con mitigaciones cuantificadas
+- Parámetro operacional crítico: Control pH documentado con racionalidad técnica
+- Clarificación temporal: Horizonte evaluación 10 años calendario ≠ 10 años operacionales
+
+**Progreso actualizado**: 95% → **98%** (sustancialmente completo)
 
 ---
 
