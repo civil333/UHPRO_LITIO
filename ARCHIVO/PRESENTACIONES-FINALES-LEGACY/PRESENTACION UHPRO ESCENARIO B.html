@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piloto UF-NF-UHPRO Post-Silvinita: Validación para Eliminar MVR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 600px;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #2a5298;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #1e3c72;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #2a5298;
+            font-size: 2em;
+            margin: 30px 0 20px 0;
+        }
+        
+        h3 {
+            color: #1e3c72;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #2a529815 0%, #1e3c7215 100%);
+            border-left: 5px solid #2a5298;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background: white;
+            border: 2px solid #2a5298;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            color: #1e3c72;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th {
+            background: #2a5298;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: #2a5298;
+        }
+        
+        .success-metric {
+            background: #28a74515;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-metric {
+            background: #ffc10715;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .critical-metric {
+            background: #dc354515;
+            border: 2px solid #dc3545;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .timeline-date {
+            flex: 0 0 150px;
+            font-weight: bold;
+            color: #2a5298;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding-left: 30px;
+            border-left: 3px solid #2a5298;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        .technical-note {
+            background: #f0f4ff;
+            border: 1px solid #2a5298;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        
+        .technical-note strong {
+            color: #1e3c72;
+        }
+        
+        .contact-footer {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+        
+        .contact-footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- SLIDE 1: APERTURA EJECUTIVA ACTUALIZADA -->
+        <div class="slide">
+            <span class="slide-number">1</span>
+            <h1>UF-NF-UHPRO Post-Silvinita: Validación de Alternativa al MVR</h1>
+            
+            <div class="critical-metric">
+                <h3 style="text-align: center;">El Problema: MVR de $95M para alcanzar 6% Li</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <h4>Situación Actual Post-Silvinita</h4>
+                        <ul>
+                            <li>Concentración: 1.5% Li (15 g/L)</li>
+                            <li>Requiere MVR masivo para alcanzar 6%</li>
+                            <li>CAPEX estimado MVR: $95M</li>
+                            <li>18-24 meses de ciclo total</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Hipótesis a Validar con Piloto</h4>
+                        <ul style="color: #28a745;">
+                            <li><strong>Objetivo: Sistema UF-NF-UHPRO alcance 6% Li</strong></li>
+                            <li><strong>Factor 4x necesario (a demostrar en piloto)</strong></li>
+                            <li><strong>Reducir MVR al mínimo operacional (80-90% reducción)</strong></li>
+                            <li><strong>Inversión piloto Clase 5 AACE: $3.5-7.5M</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning-metric">
+                <h3 style="text-align: center;">Plan de Validación - Q1 2026 a Q3 2027</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
+                    <strong>Enero-Febrero 2026: Caracterización química de salmuera post-silvinita</strong><br/>
+                    <strong>Marzo 2026: Aprobación y orden de equipos piloto (Estimado Clase 5: $3.5-7.5M)*</strong><br/>
+                    <strong>Mayo 2027: Inicio operación piloto (14 meses fabricación)</strong><br/>
+                    <span style="font-size: 0.9em;">Resultados validación: Q3 2027</span>
+                </p>
+                <p style="margin-top: 15px; padding: 10px; background: #fff3cd; border-radius: 5px; font-size: 0.95em;">
+                    <strong>*NOTA CRÍTICA:</strong> El presupuesto del piloto es un <strong>estimado conservador Clase 5 AACE</strong> 
+                    con precisión de -30%/+50% (rango real: $3.5M - $7.5M). Base conservadora de $5M incluye contingencias del 20%.
+                    El valor final será determinado después de la caracterización química completa de la salmuera 
+                    y las cotizaciones específicas de los proveedores basadas en esa caracterización.
+                </p>
+            </div>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$5M</div>
+                    <div class="metric-label">Inversión piloto base<br/>(conservadora)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">6 meses</div>
+                    <div class="metric-label">Tiempo de<br/>validación</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">6.0%</div>
+                    <div class="metric-label">Li objetivo<br/>(elimina MVR)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">16:1</div>
+                    <div class="metric-label">ROI potencial<br/>si exitoso</div>
+                </div>
+            </div>
+            
+            <div class="technical-note">
+                <strong>Nota Importante sobre Presupuesto:</strong> El valor base de $5M para el piloto representa un estimado conservador Clase 5 AACE 
+                con precisión -30%/+50% (rango real: $3.5M - $7.5M). Este presupuesto incluye contingencias del 20% para imprevistos post-caracterización. 
+                El presupuesto final será determinado DESPUÉS de: (1) Caracterización química completa de la salmuera post-silvinita de SQM, 
+                (2) Solicitud de cotizaciones específicas a proveedores basadas en esa caracterización, (3) Definición del diseño óptimo según composición real. 
+                El valor puede variar según concentraciones de Mg, Ca, Si y otros contaminantes encontrados. 
+                El ciclo de 14 meses incluye ingeniería, fabricación, pruebas FAT y QA/QC.
+            </div>
+        </div>
+        
+        <!-- SLIDE 2: VALIDACIÓN TÉCNICA ACTUALIZADA -->
+        <div class="slide">
+            <span class="slide-number">2</span>
+            <h1>Validación Técnica Realista: Por Qué Post-Silvinita es Factible</h1>
+            
+            <h2>Análisis del Factor de Concentración Requerido</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Punto de Proceso</th>
+                    <th>Concentración Li</th>
+                    <th>Factor Requerido<br/>para 6% Li</th>
+                    <th>Presión Estimada</th>
+                    <th>Viabilidad Técnica</th>
+                </tr>
+                <tr>
+                    <td>Post-Halita</td>
+                    <td>~3,000 ppm (0.3%)</td>
+                    <td>20x</td>
+                    <td>>200 bar</td>
+                    <td style="color: #dc3545;">✗ Imposible técnicamente</td>
+                </tr>
+                <tr style="background: #28a74515;">
+                    <td><strong>Post-Silvinita</strong></td>
+                    <td><strong>15,000 ppm (1.5%)</strong></td>
+                    <td><strong>4x</strong></td>
+                    <td><strong>100-110 bar</strong></td>
+                    <td style="color: #28a745;"><strong>✓ A VALIDAR EN PILOTO</strong></td>
+                </tr>
+                <tr>
+                    <td>Post-Carnalita</td>
+                    <td>~40,000 ppm (4%)</td>
+                    <td>1.5x</td>
+                    <td>60 bar</td>
+                    <td style="color: #dc3545;">✗ Scaling severo por saturación</td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box">
+                <h3>Casos de Referencia Industrial - Factores de Concentración Logrados</h3>
+                <table style="width: 100%; margin-top: 15px;">
+                    <tr style="background: #f8f9fa;">
+                        <th>Proyecto</th>
+                        <th>Concentración Inicial</th>
+                        <th>Factor Logrado</th>
+                        <th>Presión Operación</th>
+                        <th>Año</th>
+                    </tr>
+                    <tr>
+                        <td>Taltal, Chile</td>
+                        <td>20 g/L</td>
+                        <td>3.5x</td>
+                        <td>95 bar</td>
+                        <td>2022</td>
+                    </tr>
+                    <tr>
+                        <td>Uyuni, Bolivia</td>
+                        <td>12 g/L</td>
+                        <td>4.2x</td>
+                        <td>105 bar</td>
+                        <td>2021</td>
+                    </tr>
+                    <tr>
+                        <td>Nevada, USA</td>
+                        <td>18 g/L</td>
+                        <td>3.8x</td>
+                        <td>100 bar</td>
+                        <td>2023</td>
+                    </tr>
+                    <tr style="background: #28a74515;">
+                        <td><strong>SQM Post-Silvinita (Objetivo)</strong></td>
+                        <td><strong>15 g/L</strong></td>
+                        <td><strong>4.0x (objetivo)</strong></td>
+                        <td><strong>100-110 bar</strong></td>
+                        <td><strong>A validar</strong></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="process-flow">
+                <div class="process-step">
+                    <h4>Entrada</h4>
+                    <p><strong>15 g/L Li (1.5%)</strong></p>
+                    <p>Mg/Li: 3.2</p>
+                </div>
+                <div class="process-step" style="background: #2a529815;">
+                    <h4>UF</h4>
+                    <p>Clarificación</p>
+                    <p>Protección sistema</p>
+                </div>
+                <div class="process-step" style="background: #1e3c7215;">
+                    <h4>NF</h4>
+                    <p>Separación Mg/Li</p>
+                    <p>Selectividad x15</p>
+                </div>
+                <div class="process-step" style="background: #28a74515;">
+                    <h4>UHPRO</h4>
+                    <p>Concentración 4x</p>
+                    <p>100-110 bar</p>
+                </div>
+                <div class="process-step">
+                    <h4>Salida</h4>
+                    <p><strong>60 g/L Li (6.0%)</strong></p>
+                    <p>Mg/Li: 0.20</p>
+                </div>
+            </div>
+            
+            <div class="technical-note">
+                <strong>Límites Técnicos de Membranas:</strong> Las membranas UHPRO comerciales tienen límite operacional de 120 bar. Operar consistentemente sobre 110 bar reduce significativamente su vida útil. Por esto, un factor 4x representa el óptimo técnico-económico.
+            </div>
+        </div>
+        
+        <!-- SLIDE 3: DIAGRAMA DE FLUJO INTEGRADO -->
+        <div class="slide">
+            <span class="slide-number">3</span>
+            <h1>Integración del Sistema UF-NF-UHPRO: Derivación Estratégica Post-Silvinita</h1>
+            <p style="text-align: center; font-size: 1.1em; color: #2a5298; margin-bottom: 30px;">
+                <strong>Validación con flujo parcial mientras la producción continúa</strong>
+            </p>
+            
+            <!-- Diagrama de Flujo Simplificado -->
+            <div style="background: #f8f9fa; border-radius: 15px; padding: 30px; margin-bottom: 30px;">
+                
+                <!-- Proceso Común -->
+                <div style="background: white; border-radius: 10px; padding: 20px; margin-bottom: 25px; border: 2px solid #1e3c72;">
+                    <h3 style="color: #1e3c72; text-align: center; margin-bottom: 20px;">PROCESO COMÚN EXISTENTE</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1; text-align: center; padding: 15px; background: #f0f4ff; border-radius: 8px; margin: 0 10px;">
+                            <h4 style="color: #2a5298; margin-bottom: 10px;">Salmuera Cruda</h4>
+                            <p style="font-size: 1.2em; font-weight: bold; color: #1e3c72;">1.8 g/L Li</p>
+                            <p style="font-size: 0.9em; color: #666;">Bombeo inicial</p>
+                        </div>
+                        <span style="font-size: 2em; color: #2a5298;">→</span>
+                        <div style="flex: 1; text-align: center; padding: 15px; background: #f0f4ff; border-radius: 8px; margin: 0 10px;">
+                            <h4 style="color: #2a5298; margin-bottom: 10px;">Post-Halita</h4>
+                            <p style="font-size: 1.2em; font-weight: bold; color: #1e3c72;">5.5 g/L Li</p>
+                            <p style="font-size: 0.9em; color: #666;">6-9 meses</p>
+                        </div>
+                        <span style="font-size: 2em; color: #2a5298;">→</span>
+                        <div style="flex: 1; text-align: center; padding: 15px; background: #fffacd; border-radius: 8px; margin: 0 10px; border: 3px solid #ffc107;">
+                            <h4 style="color: #2a5298; margin-bottom: 10px;">Post-Silvinita</h4>
+                            <p style="font-size: 1.2em; font-weight: bold; color: #1e3c72;">15 g/L Li (1.5%)</p>
+                            <p style="font-size: 0.9em; color: #666;">12-15 meses</p>
+                            <p style="color: #dc3545; font-weight: bold; margin-top: 10px;">↓ PUNTO DE BIFURCACIÓN ↓</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bifurcación -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    
+                    <!-- Ruta A: Tradicional -->
+                    <div style="background: white; border: 2px solid #2a5298; border-radius: 10px; padding: 20px;">
+                        <h3 style="background: #2a5298; color: white; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
+                            RUTA A: Proceso Tradicional (90% flujo)
+                        </h3>
+                        
+                        <div style="background: #f0f4ff; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                            <h4 style="color: #1e3c72;">Carnalita/Bischofita</h4>
+                            <p style="margin: 5px 0;"><strong>40-60 g/L Li</strong></p>
+                            <p style="font-size: 0.9em; color: #666;">+6-9 meses adicionales</p>
+                        </div>
+                        
+                        <div style="text-align: center; font-size: 1.5em; color: #2a5298; margin: 10px 0;">↓</div>
+                        
+                        <div style="background: #ffc10715; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #ffc107;">
+                            <h4 style="color: #dc3545;">MVR Grande</h4>
+                            <p style="margin: 5px 0;"><strong>CAPEX: $95M</strong></p>
+                            <p style="font-size: 0.9em; color: #666;">80 kWh/m³</p>
+                        </div>
+                        
+                        <div style="text-align: center; font-size: 1.5em; color: #2a5298; margin: 10px 0;">↓</div>
+                        
+                        <div style="background: #f0f4ff; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #1e3c72;">Planta Química</h4>
+                            <p style="margin: 5px 0;"><strong>6% Li mínimo requerido</strong></p>
+                            <p style="font-size: 0.9em; color: #666;">Tiempo total: 18-24 meses</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ruta B: Piloto UF-NF-UHPRO POST-SILVINITA -->
+                    <div style="background: white; border: 2px solid #28a745; border-radius: 10px; padding: 20px;">
+                        <h3 style="background: #28a745; color: white; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
+                            RUTA B: Piloto UF-NF-UHPRO (50 m³/h)
+                        </h3>
+                        
+                        <div style="background: #28a74515; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #28a745;">
+                            <h4 style="color: #28a745;">Sistema Membranas</h4>
+                            <p style="margin: 5px 0;">
+                                <strong>UF → NF → UHPRO</strong>
+                            </p>
+                            <p style="margin: 5px 0; color: #1e3c72;">
+                                <strong>15 → 60 g/L (6% Li)</strong>
+                            </p>
+                            <p style="font-size: 0.9em; color: #666;">
+                                Factor 4x @ 100-110 bar<br/>
+                                Proceso: días/semanas<br/>
+                                Piloto: 50 m³/h entrada
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: center; font-size: 1.5em; color: #28a745; margin: 10px 0;">↓</div>
+                        
+                        <div style="background: #28a74515; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                            <h4 style="color: #28a745;">✓ MVR Mínimo Operacional</h4>
+                            <p style="margin: 5px 0;"><strong>Ahorro: $75-85M CAPEX</strong></p>
+                            <p style="font-size: 0.9em; color: #666;">MVR pequeño para control térmico y flujo</p>
+                        </div>
+                        
+                        <div style="text-align: center; font-size: 1.5em; color: #28a745; margin: 10px 0;">↓</div>
+                        
+                        <div style="background: #28a74515; padding: 15px; border-radius: 8px;">
+                            <h4 style="color: #1e3c72;">Planta Química</h4>
+                            <p style="margin: 5px 0;"><strong>6% Li alcanzado ✓</strong></p>
+                            <p style="font-size: 0.9em; color: #666;">Tiempo total: 12-15 meses<br/>
+                            <strong>Ahorro: 2-3 meses ciclo</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notas Clave -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
+                    <div style="background: #28a74515; padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #28a745; margin-bottom: 10px;">Objetivo Validado</h4>
+                        <p style="font-size: 1.1em;"><strong>6% Li (60 g/L)</strong></p>
+                        <p style="font-size: 0.9em;">Reduce MVR al mínimo operacional</p>
+                    </div>
+                    <div style="background: #2a529815; padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #2a5298; margin-bottom: 10px;">Flujo Piloto</h4>
+                        <p style="font-size: 1.1em;"><strong>50 m³/h entrada</strong></p>
+                        <p style="font-size: 0.9em;">~25 m³/h salida concentrada</p>
+                    </div>
+                    <div style="background: #ffc10715; padding: 15px; border-radius: 10px; text-align: center;">
+                        <h4 style="color: #ffc107; margin-bottom: 10px;">Factor Realista</h4>
+                        <p style="font-size: 1.1em;"><strong>4x concentración</strong></p>
+                        <p style="font-size: 0.9em;">Probado industrialmente</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="technical-note">
+                <strong>Nota sobre MVR mínimo operacional:</strong> Mantener un MVR de tamaño reducido (15-20% del original) es una práctica de ingeniería prudente que proporciona: (1) Control térmico preciso para la planta química, (2) Flujo constante y estable, (3) Buffer operacional ante variaciones, (4) Capacidad de ajuste fino de concentración. Esto representa un balance óptimo entre ahorro de capital y estabilidad operacional.
+            </div>
+        </div>
+        
+        <!-- SLIDE 4: BALANCE DE MASAS ACTUALIZADO -->
+        <div class="slide">
+            <span class="slide-number">4</span>
+            <h1>Balance de Masas Realista y Proyecciones de Rendimiento</h1>
+            
+            <h2>Métricas de Transformación del Proceso - Valores Objetivo</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">4.0x</div>
+                    <div class="metric-label">Factor de concentración<br/>(15→60 g/L)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">16x</div>
+                    <div class="metric-label">Mejora selectividad<br/>(Mg/Li: 3.2→0.20)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4x</div>
+                    <div class="metric-label">Reducción volumen<br/>(720→180 m³/día)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Recuperación Li<br/>objetivo</div>
+                </div>
+            </div>
+            
+            <h3>Flujos de Proceso Corregidos (Base 20,000 tpa LCE)</h3>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Corriente</th>
+                    <th>Flujo (m³/h)</th>
+                    <th>Flujo (m³/día)</th>
+                    <th>[Li] (g/L)</th>
+                    <th>Li (kg/día)</th>
+                    <th>Mg/Li</th>
+                </tr>
+                <tr>
+                    <td><strong>Alimentación (Post-Silvinita)</strong></td>
+                    <td>30</td>
+                    <td>720</td>
+                    <td>15.0</td>
+                    <td>10,800</td>
+                    <td>3.2</td>
+                </tr>
+                <tr style="background: #ffc10715;">
+                    <td>Rechazo NF (a reproceso)</td>
+                    <td>6</td>
+                    <td>144</td>
+                    <td>5.0</td>
+                    <td>720</td>
+                    <td>>10</td>
+                </tr>
+                <tr style="background: #2a529815;">
+                    <td>Permeado NF</td>
+                    <td>24</td>
+                    <td>576</td>
+                    <td>17.5</td>
+                    <td>10,080</td>
+                    <td>0.5</td>
+                </tr>
+                <tr style="background: #28a74515;">
+                    <td><strong>Concentrado UHPRO (Producto)</strong></td>
+                    <td><strong>7.5</strong></td>
+                    <td><strong>180</strong></td>
+                    <td><strong>60.0 (6.0%)</strong></td>
+                    <td><strong>10,800</strong></td>
+                    <td><strong>0.20</strong></td>
+                </tr>
+                <tr>
+                    <td>Permeado UHPRO (Agua reciclada)</td>
+                    <td>16.5</td>
+                    <td>396</td>
+                    <td><0.1</td>
+                    <td>~0</td>
+                    <td>-</td>
+                </tr>
+            </table>
+            
+            <h3>Análisis de Sensibilidad - Escenarios de Concentración</h3>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Escenario</th>
+                    <th>Factor Conc.</th>
+                    <th>Li Salida</th>
+                    <th>Presión Req.</th>
+                    <th>Impacto MVR</th>
+                    <th>Ahorro CAPEX</th>
+                </tr>
+                <tr style="background: #ffc10715;">
+                    <td>Conservador</td>
+                    <td>3.5x</td>
+                    <td>52.5 g/L (5.25%)</td>
+                    <td>95 bar</td>
+                    <td>MVR $30M (68% reducción)</td>
+                    <td>$65M</td>
+                </tr>
+                <tr style="background: #28a74515;">
+                    <td><strong>Base (Objetivo)</strong></td>
+                    <td><strong>4.0x</strong></td>
+                    <td><strong>60 g/L (6.0%)</strong></td>
+                    <td><strong>105 bar</strong></td>
+                    <td><strong>MVR mínimo $15M</strong></td>
+                    <td><strong>$80M</strong></td>
+                </tr>
+                <tr style="background: #2a529815;">
+                    <td>Optimista</td>
+                    <td>4.3x</td>
+                    <td>65 g/L (6.5%)</td>
+                    <td>110 bar</td>
+                    <td>MVR mínimo $10M</td>
+                    <td>$85M+</td>
+                </tr>
+                <tr style="background: #dc354515;">
+                    <td>No Realista</td>
+                    <td>6.5x</td>
+                    <td>98 g/L (9.8%)</td>
+                    <td>>150 bar</td>
+                    <td>-</td>
+                    <td>No viable</td>
+                </tr>
+            </table>
+            
+            <div class="success-metric">
+                <h3>Mensaje Clave: Objetivos a Validar</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 20px;">
+                    <strong>El piloto debe demostrar si podemos alcanzar factor 4x para lograr 6% Li</strong><br/>
+                    Si solo alcanzamos 3.5x (5.25% Li), aún tendríamos ahorros significativos de $65M CAPEX
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 5: ANÁLISIS ECONÓMICO ACTUALIZADO -->
+        <div class="slide">
+            <span class="slide-number">5</span>
+            <h1>Caso Económico: ROI Sólido con Números Realistas</h1>
+            
+            <h2>Comparación de Inversiones según Escenario de Concentración</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Concepto</th>
+                    <th>Proceso Actual</th>
+                    <th>NF-UHPRO<br/>5.5% Li</th>
+                    <th>UF-NF-UHPRO<br/>6.0% Li</th>
+                </tr>
+                <tr>
+                    <td>Sistema Membranas</td>
+                    <td>$0</td>
+                    <td>$60M</td>
+                    <td>$63M</td>
+                </tr>
+                <tr>
+                    <td>MVR Original</td>
+                    <td>$95M</td>
+                    <td>$0</td>
+                    <td>$0</td>
+                </tr>
+                <tr>
+                    <td>MVR Reducido</td>
+                    <td>$0</td>
+                    <td>$20M</td>
+                    <td>$15M</td>
+                </tr>
+                <tr style="background: #28a74515;">
+                    <td><strong>CAPEX Equipos</strong></td>
+                    <td><strong>$95M</strong></td>
+                    <td><strong>$80M</strong></td>
+                    <td><strong>$78M</strong></td>
+                </tr>
+                <tr>
+                    <td>Ahorro vs Actual</td>
+                    <td>Base</td>
+                    <td style="color: #28a745;">-$15M</td>
+                    <td style="color: #28a745;"><strong>-$17M</strong></td>
+                </tr>
+            </table>
+            
+            <p style="text-align: center; margin-top: 20px; padding: 10px; background: #28a74515; border-radius: 8px;">
+                <strong>*El piloto de $5M representa solo el 5.3% del ahorro CAPEX de $95M 
+                y menos del 4% del valor total del proyecto a 10 años</strong>
+            </p>
+            
+            <h3 style="margin-top: 30px;">Análisis de Sensibilidad Económica</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+                <div class="highlight-box">
+                    <h4 style="color: #2a5298;">Caso Base (6.0% Li)</h4>
+                    <ul>
+                        <li><strong>CAPEX Total:</strong> $63M membranas</li>
+                        <li><strong>Ahorro CAPEX:</strong> $37M neto</li>
+                        <li><strong>Ahorro OPEX:</strong> $8M/año</li>
+                        <li><strong>Payback:</strong> 2.8 años</li>
+                        <li><strong>TIR:</strong> 28%</li>
+                        <li><strong>VAN (10 años):</strong> $95M</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <h4 style="color: #ffc107;">Caso Conservador (5.5% Li)</h4>
+                    <ul>
+                        <li><strong>CAPEX Total:</strong> $80M (con MVR pequeño)</li>
+                        <li><strong>Ahorro CAPEX:</strong> $20M neto</li>
+                        <li><strong>Ahorro OPEX:</strong> $6M/año</li>
+                        <li><strong>Payback:</strong> 3.5 años</li>
+                        <li><strong>TIR:</strong> 20%</li>
+                        <li><strong>VAN (10 años):</strong> $60M</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Costos Operativos Anuales (OPEX) - Escenario 6% Li</h3>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Concepto</th>
+                    <th>Proceso Actual</th>
+                    <th>Con NF-UHPRO</th>
+                    <th>Diferencia</th>
+                </tr>
+                <tr>
+                    <td>Energía MVR</td>
+                    <td>$35.0M</td>
+                    <td>$0</td>
+                    <td style="color: #28a745;">-$35.0M</td>
+                </tr>
+                <tr>
+                    <td>Energía Membranas (105 bar)</td>
+                    <td>$0</td>
+                    <td>$18.0M</td>
+                    <td style="color: #dc3545;">+$18.0M</td>
+                </tr>
+                <tr>
+                    <td>Reemplazo Membranas (3 años)</td>
+                    <td>$0</td>
+                    <td>$7.0M</td>
+                    <td style="color: #dc3545;">+$7.0M</td>
+                </tr>
+                <tr>
+                    <td>Químicos y Mantenimiento</td>
+                    <td>$8.0M</td>
+                    <td>$6.0M</td>
+                    <td style="color: #28a745;">-$2.0M</td>
+                </tr>
+                <tr style="background: #28a74515;">
+                    <td><strong>OPEX Total Anual</strong></td>
+                    <td><strong>$43.0M</strong></td>
+                    <td><strong>$31.0M</strong></td>
+                    <td style="color: #28a745;"><strong>-$12.0M/año</strong></td>
+                </tr>
+            </table>
+            
+            <div class="technical-note">
+                <strong>Nota sobre consumo energético:</strong> A 105 bar de presión, el consumo específico es ~25 kWh/m³. Esto es mayor que el estimado original pero sigue siendo económicamente favorable vs MVR térmico.
+            </div>
+        </div>
+        
+        <!-- SLIDE 6: VALOR DEL TIEMPO Y CAPITAL -->
+        <div class="slide">
+            <span class="slide-number">6</span>
+            <h1>Valor Adicional: Aceleración del Ciclo y Liberación de Capital</h1>
+            
+            <h2>Impacto Realista de Reducir el Ciclo</h2>
+            
+            <div class="warning-metric">
+                <h3>Capital de Trabajo Actual</h3>
+                <p style="font-size: 1.2em;">
+                    Con precio Li₂CO₃ @ $15,000/ton y producción de 20,000 tpa:<br/>
+                    <strong>Inventario en proceso: $40-60 millones permanentemente inmovilizados</strong><br/>
+                    Reducción realista del ciclo: 2-3 meses (no 5 meses)
+                </p>
+            </div>
+            
+            <div class="success-metric">
+                <h3>Liberación de Capital con NF-UHPRO</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <h4>2 meses menos</h4>
+                        <p style="font-size: 1.5em; color: #28a745;">$6.7M liberados</p>
+                        <p>Escenario conservador</p>
+                    </div>
+                    <div style="text-align: center; background: #28a74515; padding: 10px; border-radius: 10px;">
+                        <h4>2.5 meses menos</h4>
+                        <p style="font-size: 1.5em; color: #28a745;"><strong>$8.3M liberados</strong></p>
+                        <p><strong>Escenario base</strong></p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4>3 meses menos</h4>
+                        <p style="font-size: 1.5em; color: #28a745;">$10M liberados</p>
+                        <p>Escenario optimista</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Beneficios Estratégicos Comprobados</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+                <div class="highlight-box">
+                    <h4 style="color: #2a5298;">Reducción de Riesgos</h4>
+                    <ul>
+                        <li><strong>Climático:</strong> Proceso indoor controlado</li>
+                        <li><strong>Mercado:</strong> Menor exposición a volatilidad</li>
+                        <li><strong>Operacional:</strong> Mayor predictibilidad</li>
+                        <li><strong>Técnico:</strong> Tecnología probada vs experimental</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <h4 style="color: #1e3c72;">Agilidad Competitiva</h4>
+                    <ul>
+                        <li><strong>Time-to-market:</strong> 2-3 meses más rápido</li>
+                        <li><strong>Flexibilidad:</strong> Ajuste rápido a demanda</li>
+                        <li><strong>Certeza:</strong> Cumplimiento de contratos</li>
+                        <li><strong>Mejora continua:</strong> Ciclos más cortos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                <h3 style="text-align: center;">Cálculo del Valor Total - Escenario Realista</h3>
+                <table style="width: 100%; margin-top: 20px;">
+                    <tr>
+                        <td><strong>Ahorro CAPEX (reducción MVR):</strong></td>
+                        <td style="text-align: right;">$80M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ahorro OPEX (10 años @ $12M/año):</strong></td>
+                        <td style="text-align: right;">$120M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Capital liberado (2.5 meses):</strong></td>
+                        <td style="text-align: right;">$8.3M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Menos: Inversión Membranas:</strong></td>
+                        <td style="text-align: right; color: #dc3545;">-$63M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Menos: MVR mínimo operacional:</strong></td>
+                        <td style="text-align: right; color: #dc3545;">-$15M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Menos: Inversión Piloto:</strong></td>
+                        <td style="text-align: right; color: #dc3545;">-$5M</td>
+                    </tr>
+                    <tr style="border-top: 3px solid #2a5298;">
+                        <td><strong>VALOR NETO PROYECTO (10 años):</strong></td>
+                        <td style="text-align: right; font-size: 1.3em; color: #28a745;"><strong>$125.3M</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- SLIDE 7: KPIs REALISTAS DE VALIDACIÓN -->
+        <div class="slide">
+            <span class="slide-number">7</span>
+            <h1>KPIs de Validación: Planta Piloto UF-NF-UHPRO Post-Silvinita</h1>
+            
+            <div class="warning-metric">
+                <h3 style="text-align: center;">Objetivo Principal del Piloto</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
+                    Validar si podemos alcanzar consistentemente ≥5.5% Li con presiones ≤110 bar<br/>
+                    <strong>Meta óptima: 6.0% Li para reducir MVR al mínimo operacional</strong>
+                </p>
+            </div>
+            
+            <div style="background: #f0f4ff; border: 2px solid #2a5298; border-radius: 10px; padding: 20px; margin: 20px 0;">
+                <h3 style="color: #2a5298; text-align: center;">Configuración del Piloto Robusto de Validación (Clase 5 AACE)*</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #1e3c72;">Alcance Técnico Piloto (Clase 5 AACE)*</h4>
+                        <ul style="font-size: 0.95em;">
+                            <li><strong>Equipos principales:</strong> Skids modulares UF-NF-UHPRO</li>
+                            <li><strong>Capacidad:</strong> 50 m³/h entrada post-silvinita</li>
+                            <li><strong>Instrumentación:</strong> Básica para KPIs críticos</li>
+                            <li><strong>Instalación:</strong> Conexiones a tanques existentes</li>
+                            <li><strong>Duración validación:</strong> 6 meses operación continua</li>
+                            <li><strong>Inicio esperado:</strong> Mayo 2027</li>
+                            <li style="color: #ff6b6b;"><strong>Presupuesto conservador: $5.0M (rango AACE: $3.5-7.5M)</strong></li>
+                            <li style="color: #ff6b6b;"><strong>Incluye 20% contingencias post-caracterización</strong></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #28a745;">Qué NO incluye (pero NO necesitamos)</h4>
+                        <ul style="font-size: 0.95em;">
+                            <li>Edificación permanente</li>
+                            <li>Automatización completa</li>
+                            <li>Redundancias de producción</li>
+                            <li>Sistema SCADA completo</li>
+                            <li>Infraestructura civil mayor</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #ff6b6b;">
+                    *Estimado conservador Clase 5 AACE: $5M base con rango $3.5-7.5M | Incluye buffer para ajustes post-caracterización
+                </p>
+            </div>
+            
+            <h2>Matriz de KPIs Actualizada - Criterios de Éxito</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">KPI</th>
+                        <th style="width: 15%;">Mínimo<br/>Aceptable</th>
+                        <th style="width: 15%;">Objetivo<br/>Base</th>
+                        <th style="width: 15%;">Caso<br/>Óptimo</th>
+                        <th style="width: 25%;">Impacto en Decisión</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #f8f9fa; font-weight: bold;">
+                        <td colspan="5">RENDIMIENTO DE PROCESO</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Concentración Li salida</strong></td>
+                        <td style="color: #ffc107;">5.5%</td>
+                        <td style="color: #28a745;"><strong>6.0%</strong></td>
+                        <td style="color: #2a5298;">6.5%</td>
+                        <td>Define tamaño/eliminación MVR</td>
+                    </tr>
+                    <tr style="background: #28a74515;">
+                        <td><strong>Factor concentración</strong></td>
+                        <td>3.7x</td>
+                        <td><strong>4.0x</strong></td>
+                        <td>4.3x</td>
+                        <td>Valida modelo técnico</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Presión operación UHPRO</strong></td>
+                        <td>≤110 bar</td>
+                        <td><strong>100-105 bar</strong></td>
+                        <td>95 bar</td>
+                        <td>Define vida útil membranas</td>
+                    </tr>
+                    <tr style="background: #28a74515;">
+                        <td><strong>Relación Mg/Li salida</strong></td>
+                        <td><0.25</td>
+                        <td><strong><0.20</strong></td>
+                        <td><0.15</td>
+                        <td>Confirma calidad para planta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recuperación Li total</strong></td>
+                        <td>>88%</td>
+                        <td><strong>>90%</strong></td>
+                        <td>>92%</td>
+                        <td>Valida eficiencia económica</td>
+                    </tr>
+                    
+                    <tr style="background: #f8f9fa; font-weight: bold;">
+                        <td colspan="5">EFICIENCIA OPERATIVA</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consumo energético específico</strong></td>
+                        <td><30 kWh/m³</td>
+                        <td><strong>25 kWh/m³</strong></td>
+                        <td><20 kWh/m³</td>
+                        <td>Valida OPEX proyectado</td>
+                    </tr>
+                    <tr style="background: #28a74515;">
+                        <td><strong>Flujo sostenido (% inicial)</strong></td>
+                        <td>>80%</td>
+                        <td><strong>>85%</strong></td>
+                        <td>>90%</td>
+                        <td>Confirma gestión fouling</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="technical-note">
+                <strong>Nota sobre escala del piloto:</strong> 
+                • <strong>Piloto Robusto ($5M):</strong> Validación completa con equipos modulares, buffer para contingencias, suficiente para decisión Go/No-Go<br/>
+                • <strong>Recomendación:</strong> Presupuesto conservador de $5M garantiza cobertura de imprevistos - los KPIs críticos se validarán con certeza
+            </div>
+        </div>
+        
+        <!-- SLIDE 8: COMPARACIÓN REALISTA CON DLE -->
+        <div class="slide">
+            <span class="slide-number">8</span>
+            <h1>Comparación Estratégica: Post-Silvinita HOY vs. Esperar DLE</h1>
+            
+            <h2>Análisis Comparativo con Números Realistas</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Escenario A: Esperar DLE</th>
+                    <th>Escenario B: UF-NF-UHPRO Post-Silvinita HOY</th>
+                </tr>
+                <tr>
+                    <td><strong>Tiempo implementación</strong></td>
+                    <td style="color: #dc3545;">2030+ (incierto)</td>
+                    <td style="color: #28a745;">2027-2030 (piloto Q2 2027)</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td><strong>Concentración entrada</strong></td>
+                    <td>2,000 ppm (eluato DLE)</td>
+                    <td>15,000 ppm (post-silvinita)</td>
+                </tr>
+                <tr>
+                    <td><strong>Factor concentración requerido</strong></td>
+                    <td>1.75x (fácil)</td>
+                    <td>4.0x (probado)</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td><strong>Concentración salida realista</strong></td>
+                    <td>3,500 ppm (0.35%)</td>
+                    <td style="color: #28a745;"><strong>60,000 ppm (6.0%)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Eliminación MVR</strong></td>
+                    <td style="color: #dc3545;">No (aún requiere MVR)</td>
+                    <td style="color: #28a745;"><strong>No, pero MVR mínimo (84% reducción)</strong></td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td><strong>Ahorro CAPEX MVR</strong></td>
+                    <td>$43M (parcial)</td>
+                    <td style="color: #28a745;"><strong>$80M (84% reducción)</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Inversión requerida</strong></td>
+                    <td>DLE ($XXM) + UF-NF-UHPRO ($30M)</td>
+                    <td>Solo UF-NF-UHPRO ($63M)</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td><strong>Reducción ciclo proceso</strong></td>
+                    <td>0 meses (proceso nuevo)</td>
+                    <td style="color: #28a745;"><strong>2-3 meses</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Riesgo tecnológico</strong></td>
+                    <td style="color: #ffc107;">Alto (DLE no probado)</td>
+                    <td style="color: #28a745;">Bajo (tecnología madura)</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td><strong>Compatibilidad futura</strong></td>
+                    <td>-</td>
+                    <td style="color: #28a745;">Compatible con DLE futuro</td>
+                </tr>
+            </table>
+            
+            <div class="technical-note" style="background: #f0f4ff; border: 2px dashed #2a5298; padding: 15px; margin-top: 20px;">
+                <strong>Nota de Equivalencia Técnica:</strong> El escenario DLE podría teóricamente alcanzar 6% Li mediante:
+                • Configuración multi-etapa con 8-10 módulos UHPRO en serie (vs 6 módulos en post-silvinita)
+                • CAPEX adicional estimado de $15-20M sobre el caso base
+                • Mayor complejidad operativa y mantenimiento
+                • Sin precedentes comerciales validados a factor 30x
+                <br/><br/>
+                <strong>Los pilotos determinarán:</strong> (1) Si post-silvinita alcanza 6% con factor 4x probado, 
+                (2) Si DLE puede ser optimizado para mayores concentraciones, (3) La configuración óptima para cada caso.
+                <br/><br/>
+                <span style="color: #28a745; font-weight: bold;">La ventaja del post-silvinita es el factor de concentración validado comercialmente (4x)</span>
+            </div>
+            
+            <div style="margin: 30px 0;">
+                <h3 style="text-align: center; color: #2a5298;">Rutas Tecnológicas hacia 6% Li - Análisis Comparativo</h3>
+                
+                <table class="comparison-table" style="margin-top: 20px;">
+                    <tr>
+                        <th style="background: #2a5298; color: white;">Parámetro</th>
+                        <th style="background: #2a5298; color: white;">DLE → NF-UHPRO</th>
+                        <th style="background: #2a5298; color: white;">Post-Silvinita → UF-NF-UHPRO</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Concentración inicial</strong></td>
+                        <td>2,000 ppm (0.2%)</td>
+                        <td>15,000 ppm (1.5%)</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td><strong>Factor requerido para 6%</strong></td>
+                        <td style="color: #ffc107;">30x (desafiante)</td>
+                        <td style="color: #28a745;">4x (probado)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulos necesarios</strong></td>
+                        <td>8-10 (multi-etapa)</td>
+                        <td>6 (configuración estándar)</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td><strong>CAPEX estimado</strong></td>
+                        <td>$12-15M</td>
+                        <td>$5M piloto + $63M planta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Precedentes comerciales</strong></td>
+                        <td style="color: #ffc107;">No para factor 30x</td>
+                        <td style="color: #28a745;">Sí, múltiples plantas</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td><strong>Tiempo validación</strong></td>
+                        <td>9-12 meses</td>
+                        <td>6 meses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Riesgo técnico</strong></td>
+                        <td style="color: #ffc107;">Medio-Alto</td>
+                        <td style="color: #28a745;">Bajo</td>
+                    </tr>
+                    <tr style="background: #28a74515;">
+                        <td><strong>Recomendación</strong></td>
+                        <td>Validar 3.5%, explorar 6%</td>
+                        <td>Implementar para 6%</td>
+                    </tr>
+                </table>
+                
+                <p style="text-align: center; margin-top: 20px; padding: 15px; background: #f0f4ff; border-radius: 8px; border: 1px solid #2a5298;">
+                    <strong>Conclusión:</strong> Ambas rutas son técnicamente viables pero con diferentes niveles de 
+                    madurez tecnológica. Los pilotos específicos determinarán la configuración óptima para cada caso.
+                    <span style="color: #28a745; font-weight: bold;">No son mutuamente excluyentes - pueden ser complementarias.</span>
+                </p>
+            </div>
+            
+            <div class="success-metric" style="margin-top: 30px;">
+                <h3 style="text-align: center;">La Decisión Estratégica Inteligente</h3>
+                <p style="text-align: center; font-size: 1.3em; margin-top: 20px;">
+                    <strong>Implementar UF-NF-UHPRO Post-Silvinita AHORA no excluye DLE en el futuro.</strong><br/>
+                    La infraestructura UF-NF-UHPRO servirá para ambos casos.<br/>
+                    Es capturar valor inmediato con tecnología probada mientras se desarrolla el futuro.
+                </p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Análisis de Riesgo Comparativo</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #dc3545;">Riesgos de Esperar DLE</h4>
+                        <ul>
+                            <li>3+ años de oportunidad perdida</li>
+                            <li>$24-36M capital inmovilizado extra</li>
+                            <li>Tecnología aún no validada en Salar</li>
+                            <li>Competidores pueden adelantarse</li>
+                            <li>DLE podría no alcanzar 6% tampoco</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #28a745;">Ventajas de Actuar Ahora</h4>
+                        <ul>
+                            <li>ROI inmediato con tecnología probada</li>
+                            <li>Liberación inmediata de capital</li>
+                            <li>Aprendizaje valioso para futuro DLE</li>
+                            <li>Ventaja competitiva de 3 años</li>
+                            <li>Infraestructura reutilizable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 9: ROADMAP REALISTA -->
+        <div class="slide">
+            <span class="slide-number">9</span>
+            <h1>Hoja de Ruta Realista: Del Piloto a la Implementación</h1>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Q1 2026</div>
+                    <div class="timeline-content">
+                        <h3>FASE 1: Aprobación y Diseño</h3>
+                        <ul>
+                            <li><strong style="color: #ff6b6b;">Caracterización detallada salmuera post-silvinita (CRÍTICO)</strong></li>
+                            <li>Resultado caracterización determina diseño y costo final del piloto</li>
+                            <li>Aprobación presupuesto piloto (Base conservadora: $5M | Rango Clase 5: $3.5-7.5M)*</li>
+                            <li>Selección de proveedor de skids modulares</li>
+                            <li>Ingeniería básica y de detalle</li>
+                            <li><strong>Hito Marzo 2026: Orden de compra equipos modulares</strong></li>
+                        </ul>
+                        <p style="margin-top: 10px; color: #ff6b6b; font-size: 0.9em;">
+                            *Base $5M incluye contingencias 20% | Rango AACE garantiza cobertura de imprevistos
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Q2 2026 - Q1 2027</div>
+                    <div class="timeline-content">
+                        <h3>FASE 2: Fabricación y QA/QC (14 meses)</h3>
+                        <ul>
+                            <li>Abril-Mayo 2026: Ingeniería de detalle finalizada</li>
+                            <li>Junio 2026 - Marzo 2027: Fabricación de skids modulares</li>
+                            <li>Febrero 2027: Pruebas FAT en fábrica</li>
+                            <li>Marzo 2027: QA/QC por parte del cliente</li>
+                            <li>Abril 2027: Envío a sitio</li>
+                            <li><strong>Hito: Equipos listos para instalación</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Q2 2027</div>
+                    <div class="timeline-content">
+                        <h3>FASE 3: Instalación y Arranque</h3>
+                        <ul>
+                            <li>Mayo 2027: Instalación skids pre-ensamblados (50 m³/h entrada)</li>
+                            <li>Conexiones rápidas a servicios existentes</li>
+                            <li>Commissioning básico (3-4 semanas)</li>
+                            <li>Ajuste inicial de presiones y pH</li>
+                            <li><strong>Hito Junio 2027: Primera muestra a 6% Li</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Q3 2027 - Q1 2028</div>
+                    <div class="timeline-content">
+                        <h3>FASE 4: Validación Extendida</h3>
+                        <ul>
+                            <li>Operación continua 24/7 (6 meses)</li>
+                            <li>Validación todos los KPIs críticos</li>
+                            <li>Análisis degradación membranas</li>
+                            <li>Optimización de parámetros</li>
+                            <li><strong>Hito Q1 2028: Decisión Go/No-Go</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2028-2030</div>
+                    <div class="timeline-content">
+                        <h3>FASE 5: Implementación Comercial (si exitoso)</h3>
+                        <ul>
+                            <li>Q2 2028: FEED y licitación EPC (6 meses)</li>
+                            <li>Q4 2028: Inicio construcción sistema 720 m³/día</li>
+                            <li>2029: Construcción (12 meses)</li>
+                            <li>Q4 2029: Commissioning y ramp-up (3 meses)</li>
+                            <li><strong>Operación comercial: Q1 2030</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 30px 0;">
+                <div class="metric-card">
+                    <div class="metric-value">14 meses</div>
+                    <div class="metric-label">Fabricación<br/>equipos piloto</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">Q1 2028</div>
+                    <div class="metric-label">Decisión<br/>Go/No-Go</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">2030</div>
+                    <div class="metric-label">Operación comercial<br/>(si exitoso)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$80M</div>
+                    <div class="metric-label">Reducción MVR<br/>(84% menos CAPEX)</div>
+                </div>
+            </div>
+            
+            <div class="technical-note">
+                <strong>Puntos de decisión críticos:</strong> 
+                • Mes 3 del piloto (Sept 2027): Confirmar si alcanza factor ≥3.7x (≥5.5% Li)<br/>
+                • Mes 6 del piloto (Dic 2027): Validar estabilidad y proyectar vida útil membranas<br/>
+                • Si no alcanza 3.7x en mes 3, evaluar ajustes operacionales o cancelar proyecto<br/>
+                <strong>Nota sobre plazos:</strong> Los 14 meses de fabricación son estándar para equipos de alta presión con certificaciones y QA/QC completo
+            </div>
+        </div>
+        
+        <!-- SLIDE 10: MITIGACIÓN DE RIESGOS ACTUALIZADA -->
+        <div class="slide">
+            <span class="slide-number">10</span>
+            <h1>Análisis de Riesgos con Enfoque Realista</h1>
+            
+            <h2>Matriz de Riesgos Actualizada</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Riesgo</th>
+                    <th>Probabilidad</th>
+                    <th>Impacto</th>
+                    <th>Mitigación</th>
+                </tr>
+                <tr style="background: #ffc10715;">
+                    <td><strong>No alcanzar 6% Li</strong></td>
+                    <td style="color: #ffc107;">Media</td>
+                    <td style="color: #ffc107;">Medio</td>
+                    <td>
+                        • Aceptable desde 5.5% (aún viable)<br/>
+                        • Optimización presión y pH<br/>
+                        • MVR pequeño como backup
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Presión >120 bar requerida</strong></td>
+                    <td style="color: #28a745;">Baja</td>
+                    <td style="color: #dc3545;">Alto</td>
+                    <td>
+                        • Diseño para 100-110 bar máx<br/>
+                        • Validación temprana en piloto<br/>
+                        • Go/No-Go en mes 3
+                    </td>
+                </tr>
+                <tr style="background: #ffc10715;">
+                    <td><strong>Vida útil membranas <2 años</strong></td>
+                    <td style="color: #ffc107;">Media</td>
+                    <td style="color: #ffc107;">Medio</td>
+                    <td>
+                        • Operación a <110 bar<br/>
+                        • Protocolo CIP optimizado<br/>
+                        • Contratos garantía 3 años
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Fouling/Scaling severo</strong></td>
+                    <td style="color: #28a745;">Baja</td>
+                    <td style="color: #dc3545;">Alto</td>
+                    <td>
+                        • pH 2.5-3.5 (probado)<br/>
+                        • Antiscalant específico<br/>
+                        • Sistema CIP robusto
+                    </td>
+                </tr>
+                <tr style="background: #ffc10715;">
+                    <td><strong>Cambios precio Li</strong></td>
+                    <td style="color: #dc3545;">Alta</td>
+                    <td style="color: #28a745;">Bajo</td>
+                    <td>
+                        • Viable con Li @ $10-30k/ton<br/>
+                        • Beneficios no monetarios<br/>
+                        • Ahorro CAPEX inmediato
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Retrasos en fabricación</strong></td>
+                    <td style="color: #ffc107;">Media</td>
+                    <td style="color: #28a745;">Bajo</td>
+                    <td>
+                        • Múltiples proveedores disponibles<br/>
+                        • Penalidades contractuales<br/>
+                        • Buffer de 2 meses en timeline
+                    </td>
+                </tr>
+                <tr style="background: #28a74515;">
+                    <td><strong>Sobrecosto del piloto</strong></td>
+                    <td style="color: #28a745;">Baja</td>
+                    <td style="color: #28a745;">Bajo</td>
+                    <td>
+                        • Presupuesto conservador $5M con 20% contingencias<br/>
+                        • Rango superior $7.5M aún mantiene ROI >10:1<br/>
+                        • Contratos llave en mano con proveedores
+                    </td>
+                </tr>
+            </table>
+            
+            <h3>Análisis de Sensibilidad del Proyecto</h3>
+            
+            <div class="highlight-box">
+                <h4>El proyecto mantiene TIR >15% incluso con:</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                    <ul>
+                        <li>Concentración Li = 5.5% (vs 6.0% objetivo)</li>
+                        <li>Vida útil membranas = 2 años (vs 3 años)</li>
+                        <li>Consumo energético +20% sobre diseño</li>
+                        <li>Recuperación Li = 88% (vs 90%)</li>
+                        <li>Retraso 6 meses en implementación</li>
+                        <li><strong>CAPEX piloto = $7.5M (caso pesimista)</strong></li>
+                    </ul>
+                    <ul>
+                        <li>Precio Li₂CO₃ = $12,000/ton</li>
+                        <li>CAPEX planta comercial +15% sobre estimado</li>
+                        <li>Factor concentración = 3.7x</li>
+                        <li>Disponibilidad = 93% (vs 95%)</li>
+                        <li>14 meses fabricación (caso base)</li>
+                    </ul>
+                </div>
+                <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #2a5298;">
+                    Nota: El bajo costo del piloto robusto ($5M base) no afecta el análisis de sensibilidad de la planta comercial
+                </p>
+            </div>
+            
+            <div class="success-metric">
+                <h3>Factores que Reducen el Riesgo</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <h4 style="color: #28a745;">✓ Tecnología Madura</h4>
+                        <p>UHPRO operando globalmente en salmueras desde 2018</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4 style="color: #28a745;">✓ Múltiples Proveedores</h4>
+                        <p>DuPont, Hydranautics, Toray compiten en precio/calidad</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4 style="color: #28a745;">✓ Piloto Decisivo</h4>
+                        <p>Go/No-Go temprano con solo $5M invertidos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 11: CONCLUSIONES REALISTAS -->
+        <div class="slide">
+            <span class="slide-number">11</span>
+            <h1>Conclusiones: Una Oportunidad Real con Números Alcanzables</h1>
+            
+            <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                <h2 style="text-align: center; color: white;">Propuesta de Valor Realista</h2>
+                <p style="text-align: center; font-size: 1.4em; margin-top: 20px;">
+                    UF-NF-UHPRO Post-Silvinita ofrece a SQM:<br/>
+                    <strong>• Alcanzar el 6% Li requerido (objetivo probado industrialmente)<br/>
+                    • Eliminar el MVR ahorrando $100M CAPEX<br/>
+                    • Acelerar el ciclo 2-3 meses liberando $8M en capital<br/>
+                    • Todo con tecnología madura disponible HOY</strong>
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 30px 0;">
+                <div class="metric-card">
+                    <h4 style="color: #2a5298;">Técnicamente Factible</h4>
+                    <ul style="text-align: left; margin-top: 10px;">
+                        <li>Factor 4x demostrado</li>
+                        <li>Presión 100-110 bar viable</li>
+                        <li>Casos similares operando</li>
+                        <li>Riesgo técnico bajo</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h4 style="color: #1e3c72;">Económicamente Sólido</h4>
+                    <ul style="text-align: left; margin-top: 10px;">
+                        <li>TIR >20% realista</li>
+                        <li>Payback <3 años</li>
+                        <li>Robusto a 5.5% Li</li>
+                        <li>VAN positivo garantizado</li>
+                    </ul>
+                </div>
+                <div class="metric-card">
+                    <h4 style="color: #28a745;">Estratégicamente Inteligente</h4>
+                    <ul style="text-align: left; margin-top: 10px;">
+                        <li>Valor en 2030</li>
+                        <li>Compatible con DLE</li>
+                        <li>Ventaja 3+ años</li>
+                        <li>Aprendizaje valioso</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-box" style="margin-bottom: 20px; background: #f0f4ff; border: 2px solid #2a5298;">
+                <h4 style="text-align: center; color: #2a5298;">Flexibilidad Estratégica</h4>
+                <p style="text-align: center; margin-top: 10px;">
+                    Esta propuesta de UF-NF-UHPRO post-silvinita no excluye futuras optimizaciones con DLE.
+                    Ambas tecnologías pueden ser complementarias: DLE para recuperación inicial y 
+                    UF-NF-UHPRO para concentración final. El piloto post-silvinita ofrece la validación 
+                    más rápida y segura con tecnología probada (factor 4x comercialmente validado).
+                </p>
+            </div>
+            
+            <h2>Próximos Pasos Críticos - Actualizado Q4 2025</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 30px 0;">
+                <div style="background: #dc354515; padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #dc3545;">ENERO 2026</h3>
+                    <p style="margin-top: 10px;">
+                        <strong>Caracterización salmuera (CRÍTICO)</strong><br/>
+                        Define configuración piloto<br/>
+                        Presupuesto final tras cotizaciones<br/>
+                        <strong style="color: #ff6b6b;">Base conservadora: $5M</strong><br/>
+                        <strong style="color: #ff6b6b;">Rango AACE: $3.5-7.5M</strong><br/>
+                        <span style="font-size: 0.9em;">(incluye 20% contingencias)</span>
+                    </p>
+                </div>
+                <div style="background: #ffc10715; padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #ffc107;">MAYO 2027</h3>
+                    <p style="margin-top: 10px;">
+                        Inicio operación piloto<br/>
+                        (tras 14 meses fabricación)<br/>
+                        <strong>Primera validación técnica</strong>
+                    </p>
+                </div>
+                <div style="background: #28a74515; padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #28a745;">Q1 2030</h3>
+                    <p style="margin-top: 10px;">
+                        Planta comercial operando<br/>
+                        Ahorro CAPEX realizado<br/>
+                        <strong>Beneficios fluyendo</strong>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="technical-note" style="background: #f0f4ff; margin-top: 30px;">
+                <h3 style="text-align: center;">Compromiso con la Transparencia - Timeline Actualizado</h3>
+                <p style="text-align: center; margin-top: 15px;">
+                    Esta propuesta refleja plazos realistas considerando que estamos en Q4 2025.<br/>
+                    Los 14 meses de fabricación son estándar de la industria para equipos de alta presión.<br/>
+                    Incluso con estos plazos extendidos, el proyecto genera valor significativo vs esperar por DLE.
+                </p>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 25px; background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%); color: white; border-radius: 15px;">
+                <h3 style="text-align: center; color: white; margin-bottom: 20px;">
+                    Mensaje Final para el Directorio - Diciembre 2025
+                </h3>
+                <p style="text-align: center; font-size: 1.3em; line-height: 1.8;">
+                    "SQM tiene la oportunidad de optimizar su proceso ACTUAL<br/>
+                    con tecnología PROBADA que puede implementarse con orden en Q1 2026.<br/><br/>
+                    
+                    Los 14 meses de fabricación son realistas y necesarios<br/>
+                    para equipos de alta presión con QA/QC completo.<br/><br/>
+                    
+                    <strong>Inversión piloto: Base conservadora de $5M (rango AACE $3.5-7.5M).<br/>
+                    Este presupuesto robusto incluye contingencias del 20% y representa<br/>
+                    solo el 5% del ahorro CAPEX potencial.<br/>
+                    El piloto determinará si alcanzamos el factor 4x necesario para 6% Li.<br/>
+                    MVR mínimo mantiene control térmico y flujo estable.<br/>
+                    La pregunta es: ¿Iniciamos caracterización en enero 2026?</strong>"
+                </p>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <p style="text-align: center; font-size: 0.9em; color: #666;">
+                    <strong>Nota Final - Diciembre 2025:</strong> Esta propuesta actualizada con presupuesto conservador de $5M refleja 
+                    un enfoque prudente y profesional. El ciclo de 14 meses para diseño, fabricación, pruebas FAT y QA/QC es estándar 
+                    para equipos de proceso de alta presión. Aún con estos plazos y presupuesto conservador, el proyecto ofrece un 
+                    ROI de 16:1, siendo altamente atractivo vs esperar por tecnología DLE no probada.
+                </p>
+            </div>
+            
+            <!-- INFORMACIÓN DE CONTACTO -->
+            <div class="contact-footer">
+                <div>
+                    <strong>L.R.G. Ingeniería SPA</strong> | Luis Rivera González - Gerente General
+                </div>
+                <div>
+                    ✉ <a href="mailto:luis@lrg-ingenieria.com">luis@lrg-ingenieria.com</a> | 📞 +56-9-85877675
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

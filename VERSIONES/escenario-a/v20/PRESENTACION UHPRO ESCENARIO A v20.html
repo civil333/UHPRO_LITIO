@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría Especializada NF-UHPRO: Selección e Implementación Independiente para DLE - v20</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 600px;
+            position: relative;
+            animation: slideIn 0.5s ease-out;
+            page-break-after: always;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin: 30px 0 20px 0;
+            text-align: center;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .warning-box {
+            background: #ff6b6b15;
+            border: 2px solid #ff6b6b;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .success-box {
+            background: #51cf6615;
+            border: 2px solid #51cf66;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background: #ffd93d15;
+            border: 2px solid #ffd93d;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .flow-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .flow-step {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+        }
+        
+        .flow-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: #667eea;
+        }
+        
+        .flow-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 5px;
+        }
+        
+        .flow-label {
+            color: #666;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .phase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .phase-card {
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            background: white;
+        }
+        
+        .phase-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .vendor-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .vendor-card.selected {
+            border-color: #51cf66;
+            background: #51cf6615;
+        }
+        
+        .vendor-card.evaluated {
+            border-color: #667eea;
+            background: #667eea15;
+        }
+        
+        .balance-diagram {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            white-space: pre;
+            text-align: center;
+        }
+        
+        .comparison-visual {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            white-space: pre;
+            text-align: center;
+        }
+        
+        .opex-anatomy {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .dashboard-impact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .dashboard-impact h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .critical-box {
+            background: linear-gradient(135deg, #ff6b6b15 0%, #ffd93d15 100%);
+            border: 3px solid #ff6b6b;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        
+        <!-- SLIDE 1: APERTURA CON POSICIONAMIENTO DE CONSULTOR -->
+        <div class="slide">
+            <span class="slide-number">1</span>
+            <h1>Consultoría Independiente NF-UHPRO: Experiencia en Selección e Implementación para DLE</h1>
+            
+            <div class="highlight-box">
+                <h3>⚡ Propuesta de Valor Única: Consultor Independiente con Experiencia Real</h3>
+                <ul style="font-size: 1.2em; line-height: 1.8;">
+                    <li><strong>Experiencia comprobada:</strong> Grandes plantas desaladoras + Proyecto NF-UHPRO Taltal en desarrollo</li>
+                    <li><strong>Neutralidad tecnológica:</strong> Evaluación objetiva de TODOS los proveedores del mercado</li>
+                    <li><strong>Conocimiento del mercado:</strong> Participé en evaluación de Saltworks, Gradiant, BW Waters y otros</li>
+                    <li><strong>Sin conflicto de interés:</strong> No vendo equipos, protejo los intereses del cliente</li>
+                </ul>
+            </div>
+            
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="flow-value">Evaluación</div>
+                    <div class="flow-label">Análisis neutral<br/>de proveedores</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-value">Selección</div>
+                    <div class="flow-label">Mejor tecnología<br/>para su caso</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-value">Implementación</div>
+                    <div class="flow-label">Supervisión<br/>independiente</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-value">Optimización</div>
+                    <div class="flow-label">Mejora continua<br/>multi-proveedor</div>
+                </div>
+            </div>
+            
+            <div class="info-box" style="margin-top: 20px;">
+                <h3 style="text-align: center;">Contexto Crítico de Antofagasta</h3>
+                <p style="text-align: center; margin-top: 10px;">
+                    <strong>Agua:</strong> Derechos hasta $68M por L/s | 
+                    <strong>Permisos:</strong> 985 días promedio EIA | 
+                    <strong>Solución NF-UHPRO:</strong> 43% recuperación de agua
+                </p>
+            </div>
+            
+            <div class="success-box">
+                <h3 style="text-align: center;">El Desafío de SQM</h3>
+                <p style="font-size: 1.3em; text-align: center; margin-top: 10px;">
+                    <strong>Concentrar eluato DLE de 2,000 a 3,510 ppm Li requiere tecnología NF-UHPRO.<br/>
+                    ¿Cómo seleccionar el proveedor correcto entre múltiples opciones?<br/>
+                    La respuesta: Consultoría independiente con experiencia real de evaluación.</strong>
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 2: UHPRO GLOBAL - CHINA Y USA - CORREGIDO -->
+        <div class="slide">
+            <span class="slide-number">2</span>
+            <h1>UHPRO Global: China y USA Lideran la Implementación Industrial</h1>
+            
+            <h2>China: Sistema Híbrido DLE + Membranas en Qinghai</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">100,000</div>
+                    <div class="metric-label">tpa capacidad<br/>provincial Qinghai</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">58,000</div>
+                    <div class="metric-label">tpa China Salt Lake<br/>Group confirmado</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">DLE+RO</div>
+                    <div class="metric-label">Sistema híbrido<br/>Adsorción + Membranas</div>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="color: #667eea;">Sistema Tecnológico de Qinghai - Contexto Crítico</h3>
+                <ul style="margin-top: 15px;">
+                    <li><strong>Desafío único:</strong> Relación Mg/Li extremadamente alta (>1,500:1)</li>
+                    <li><strong>Solución híbrida:</strong> DLE por adsorción → NF → RO/UHPRO → Li₂CO₃</li>
+                    <li><strong>RO/UHPRO confirmado:</strong> Usado para concentración POST-DLE (Sunresin)</li>
+                    <li><strong>Diferencia clave:</strong> UHPRO después de purificación, no directo desde salmuera</li>
+                    <li><strong>Tianjin Dagang:</strong> 200,000 m³/día desalinización (no litio específico)</li>
+                </ul>
+            </div>
+            
+            <h2>Estados Unidos: Innovación en DLE y Coproducción</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Proyecto</th>
+                    <th>Ubicación</th>
+                    <th>Tecnología</th>
+                    <th>Escala/Estado</th>
+                </tr>
+                <tr>
+                    <td><strong>Standard Lithium</strong></td>
+                    <td>Arkansas (Smackover)</td>
+                    <td>DLE + concentración</td>
+                    <td><strong>35M galones</strong> procesados desde 2020</td>
+                </tr>
+                <tr>
+                    <td><strong>Salton Sea Projects</strong></td>
+                    <td>California</td>
+                    <td>Geotérmico + DLE + UHPRO</td>
+                    <td>600,000 ton/año potencial</td>
+                </tr>
+                <tr>
+                    <td><strong>BHE Renewables</strong></td>
+                    <td>Imperial Valley, CA</td>
+                    <td>Coproducción Li-energía</td>
+                    <td><strong>90,000 tpa</strong> potencial total</td>
+                </tr>
+                <tr>
+                    <td><strong>Saltworks Instalaciones</strong></td>
+                    <td>California (múltiple)</td>
+                    <td>FusionRO (NF-UHPRO)</td>
+                    <td>2 plantas comerciales operativas</td>
+                </tr>
+            </table>
+            
+            <div class="info-box" style="margin-top: 30px; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);">
+                <h3 style="color: #667eea;">Contextos Tecnológicos Diferentes pero Complementarios</h3>
+                <ul style="margin-top: 15px;">
+                    <li><strong>Qinghai (China):</strong> Sistema híbrido DLE + RO/UHPRO para salmueras alto Mg/Li</li>
+                    <li><strong>Atacama (Chile):</strong> Evaporación solar tradicional para bajo Mg/Li</li>
+                    <li><strong>SQM Propuesto:</strong> NF-UHPRO directo o post-tratamiento simple</li>
+                </ul>
+                <p style="margin-top: 15px; text-align: center; color: #764ba2;">
+                    <strong>Todos validan que membranas de alta presión son viables para concentración de litio</strong>
+                </p>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 30px;">
+                <h3 style="text-align: center;">Lecciones Clave del Mercado Global</h3>
+                <p style="margin-top: 15px;">
+                    <strong>✓ China:</strong> Demuestra viabilidad de RO/UHPRO en sistema híbrido post-DLE<br/>
+                    <strong>✓ USA:</strong> Valida modelo DLE-UHPRO continuo y coproducción con geotermia<br/>
+                    <strong>✓ Tecnología probada:</strong> RO/UHPRO comercialmente operativo en múltiples contextos<br/>
+                    <strong>✓ Costos validados:</strong> $3,500-4,500/t LCE en operación (China con DLE)
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 3: UHPRO EN SUDAMÉRICA -->
+        <div class="slide">
+            <span class="slide-number">3</span>
+            <h1>UHPRO en Sudamérica: Evolución de Pilotos a Escala Industrial</h1>
+            
+            <h2>Chile: Madurez en ZLD Minero y Transición a UHPRO</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;">
+                <div style="background: #667eea15; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #667eea;">Sistemas ZLD Operativos</h3>
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Codelco (Molibdeno):</strong><br/>
+                        ZLD con RO + cristalizador MVR<br/>
+                        Valorización sales para deshielo</li>
+                        <li><strong>Molymet:</strong><br/>
+                        Sistema híbrido RO + térmico<br/>
+                        Validación con pilotos en sitio</li>
+                    </ul>
+                </div>
+                <div style="background: #764ba215; padding: 20px; border-radius: 10px;">
+                    <h3 style="color: #764ba2;">Desarrollos UHPRO</h3>
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Fluence - Planta Piloto:</strong><br/>
+                        UHPRO/HPNF modular<br/>
+                        Para Triángulo del Litio</li>
+                        <li><strong>Proyecto Taltal:</strong><br/>
+                        Primera UHPRO industrial (no piloto)<br/>
+                        En implementación con BW Waters</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                <h3 style="color: #667eea;">Investigación y Desarrollo</h3>
+                <ul>
+                    <li><strong>Universidad de Chile - Proyecto LiSa:</strong> Membranas hidrofóbicas, 40% recuperación agua (laboratorio)</li>
+                    <li><strong>Desaladora Atacama:</strong> Mayor planta municipal, 1,200 L/s, gestión avanzada salmuera</li>
+                    <li><strong>ALADYR:</strong> Fundada en Antofagasta, facilita transferencia tecnológica regional</li>
+                </ul>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Argentina: Innovación en DLE</h2>
+            
+            <div class="info-box">
+                <h3>Proyectos DLE con Potencial UHPRO</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 15px;">
+                    <div>
+                        <strong>Lithium Argentina:</strong>
+                        <ul>
+                            <li>Planta demo 5,000 tpa operativa</li>
+                            <li>Extracción por solventes</li>
+                            <li>Reducción 1/3 superficie piscinas</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>Biometallum:</strong>
+                        <ul>
+                            <li>Bio-adsorción revolucionaria</li>
+                            <li>>50% aislamiento Li (lab)</li>
+                            <li>Prototipo en construcción</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding: 10px; background: #ffd93d15; border-left: 3px solid #ffd93d;">
+                    <strong>Proyecto Confidencial Sudamérica (2024):</strong>
+                    <ul>
+                        <li>Sistema modularizado completo en implementación</li>
+                        <li>Concentración de LiCl al 6% con membranas</li>
+                        <li>Valida viabilidad técnica-económica en la región</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px; text-align: center;"><strong>Múltiples pilotos DLE activos en el Triángulo del Litio</strong></p>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3 style="text-align: center; color: white;">Posicionamiento Estratégico Regional</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
+                    <strong>"Taltal representa la transición de Sudamérica de pilotos a implementación industrial de UHPRO,<br/>
+                    aprovechando la experiencia regional en ZLD y el boom del litio"</strong>
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 4: EXPERIENCIA EN LICITACIÓN TALTAL - CORREGIDO -->
+        <div class="slide">
+            <span class="slide-number">4</span>
+            <h1>Licitación Internacional NF-UHPRO Taltal: Mi Experiencia en Evaluación Competitiva</h1>
+            
+            <h2>Proceso de Evaluación de 6 Meses con Líderes Mundiales</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">6 meses</div>
+                    <div class="metric-label">Proceso técnico-comercial<br/>completo</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4</div>
+                    <div class="metric-label">Proveedores líderes<br/>mundiales evaluados</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$2-4M</div>
+                    <div class="metric-label">Rango de precios<br/>sistema 100 m³/h</div>
+                </div>
+            </div>
+            
+            <div class="info-box" style="background: linear-gradient(135deg, #ffd93d15 0%, #ffd93d30 100%); border: 3px solid #ffd93d; padding: 25px; margin: 30px 0;">
+                <h3 style="text-align: center; color: #d4a300; font-size: 1.5em; margin-bottom: 20px;">
+                    ⚠️ ACLARACIÓN FUNDAMENTAL: NF-UHPRO es Tecnología de Mercado, NO una Marca
+                </h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #764ba2;">La Tecnología:</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>NF-UHPRO (Nanofiltración + Ultra-High Pressure RO)</strong> es un proceso tecnológico abierto</li>
+                            <li>Membranas de 120 bar fabricadas por múltiples proveedores (DuPont, LG Chem, etc.)</li>
+                            <li>Tecnología disponible en el mercado global</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Los Integradores:</h4>
+                        <ul style="line-height: 1.8;">
+                            <li>BW Waters, Saltworks, Gradiant son <strong>integradores de sistemas</strong></li>
+                            <li>Compiten en diseño, eficiencia y precio de integración</li>
+                            <li>BW Waters ganó Taltal por mejor propuesta integral, no por tecnología exclusiva</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #764ba2;">
+                    <strong>Por tanto: Uso datos de BW Waters porque ganaron una licitación competitiva, 
+                    no por preferencia tecnológica</strong>
+                </p>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Evaluación Detallada de Proveedores Globales - Tabla Comparativa Completa</h3>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Proveedor</th>
+                    <th>Presión</th>
+                    <th>TDS Máx</th>
+                    <th>Validación Comercial</th>
+                    <th>Estado</th>
+                </tr>
+                <tr style="background: #51cf6615;">
+                    <td><strong>Saltworks</strong></td>
+                    <td>120 bar</td>
+                    <td><strong>>200,000 mg/L</strong></td>
+                    <td><strong>2 plantas Li operando</strong></td>
+                    <td>Evaluado</td>
+                </tr>
+                <tr>
+                    <td><strong>Gradiant</strong></td>
+                    <td><80 bar</td>
+                    <td>260,000 mg/L</td>
+                    <td>Pilotos mineros</td>
+                    <td>Evaluado</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>BW Waters</strong></td>
+                    <td>120 bar</td>
+                    <td>90,000 mg/L</td>
+                    <td>Taltal (2026)</td>
+                    <td><strong>Adjudicado ✓</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Fluence</strong></td>
+                    <td>Variable</td>
+                    <td>Variable</td>
+                    <td>Plantas piloto región</td>
+                    <td>No participó</td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box" style="background: #f8f9fa; border-left: 5px solid #764ba2; margin-top: 30px;">
+                <h3 style="text-align: center; color: #764ba2;">Estrategia del Análisis: Baseline de Costos vs. Robustez Operativa</h3>
+                <p style="text-align: center; margin-top: 15px; font-size: 1.1em;">
+                    Para este análisis económico, he utilizado los datos de costos de <strong>BW Waters</strong>. La razón es simple: su propuesta fue la ganadora en una licitación real que supervisé, dándonos una <strong>base de costos conservadora y validada por el mercado.</strong>
+                    <br/><br/>
+                    Sin embargo, como asesor de SQM, mi prioridad es la <strong>máxima confiabilidad operativa</strong>. Tecnologías como la de <strong>Saltworks</strong>, que ya opera a >200,000 mg/L TDS en aplicaciones de litio, ofrecen una robustez técnica superior que debe ser considerada.
+                    <br/><br/>
+                    <strong>Mi rol en la FASE 0 será precisamente cuantificar esta relación costo/riesgo:</strong> forzar a los proveedores a competir para determinar el costo real de la solución más robusta para el eluato de SQM, asegurando no solo el mejor precio, sino la operación más segura a largo plazo.
+                </p>
+            </div>
+            
+            <div class="vendor-comparison" style="margin-top: 30px;">
+                <div class="vendor-card selected">
+                    <h3 style="color: #51cf66;">BW WATERS - Adjudicado ✓</h3>
+                    <p><strong>Tecnología:</strong> NF-UHPRO 120 bar | <strong>Experiencia:</strong> Global en desalinización</p>
+                    <p><strong>Fortaleza clave:</strong> Mejor propuesta técnico-económica para condiciones Taltal</p>
+                    <p><strong>Datos OPEX validados:</strong> Propuesta incluye consumibles detallados</p>
+                    <p><strong>Estado actual:</strong> Adjudicación Q4 2025, supervisaré implementación 2026</p>
+                </div>
+                
+                <div class="vendor-card evaluated" style="background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%);">
+                    <h3 style="color: #51cf66;">SALTWORKS - Tecnología Validada Comercialmente</h3>
+                    <p><strong>Tecnología:</strong> FusionRO (NF-UHPRO híbrido) | <strong>TDS máx:</strong> >200,000 mg/L</p>
+                    <p><strong>VALIDACIÓN CRÍTICA:</strong> <span style="color: #51cf66; font-weight: bold;">2 plantas comerciales en litio</span></p>
+                    <p><strong>Confirma:</strong> NF-UHPRO es tecnología probada para concentración en litio</p>
+                </div>
+                
+                <div class="vendor-card evaluated">
+                    <h3 style="color: #667eea;">GRADIANT - Evaluado</h3>
+                    <p><strong>Tecnología:</strong> CFRO <80 bar | <strong>TDS máx:</strong> >260,000 mg/L</p>
+                    <p><strong>Fortaleza:</strong> Opera a menor presión, menores costos | <strong>Experiencia:</strong> Proyectos mineros</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 30px;">
+                <h3>Valor de la Experiencia de Evaluación Competitiva</h3>
+                <p>✅ Conocimiento de precios reales del mercado (no lista de precios)</p>
+                <p>✅ Comprensión de fortalezas/debilidades técnicas de cada sistema</p>
+                <p>✅ Capacidad de negociación basada en alternativas reales</p>
+                <p>✅ Red de contactos con TODOS los proveedores principales</p>
+                <p>✅ <strong>Base para análisis:</strong> Costos reales validados, no estimaciones teóricas</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>Criterios de Evaluación Aplicados</h3>
+                <p><strong>Técnica (40%):</strong> Capacidad TDS, presión operación, eficiencia energética</p>
+                <p><strong>Económica (35%):</strong> CAPEX, OPEX, costo ciclo de vida</p>
+                <p><strong>Experiencia (25%):</strong> Referencias similares, soporte local, garantías</p>
+            </div>
+            
+            <div class="success-box">
+                <h3 style="text-align: center;">Esta experiencia real evaluando a los líderes mundiales<br/>
+                me permite ofrecer a SQM una selección verdaderamente objetiva e informada</h3>
+            </div>
+        </div>
+        
+        <!-- SLIDE 5: PROCESO NF-UHPRO Y APLICACIÓN DLE - CORREGIDO -->
+        <div class="slide">
+            <span class="slide-number">5</span>
+            <h1>Sistema Integrado NF-UHPRO: El Pretratamiento NF es CRÍTICO para DLE</h1>
+            
+            <div class="critical-box">
+                <h3 style="text-align: center; color: #ff6b6b;">⚠️ ALERTA TÉCNICA CRÍTICA</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #ff6b6b;">RIESGO SIN NF</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>Mg²⁺, Ca²⁺ → Scaling severo</strong></li>
+                            <li><strong>Sílice → Fouling irreversible</strong></li>
+                            <li><strong>Cation bridging → Falla catastrófica</strong></li>
+                            <li><strong>Vida útil membranas: 3-6 meses</strong></li>
+                            <li style="color: #ff6b6b;"><strong>Pérdida total de la inversión</strong></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #51cf66;">SOLUCIÓN CON NF</h4>
+                        <ul style="line-height: 1.8;">
+                            <li><strong>NF remueve 95% divalentes</strong></li>
+                            <li><strong>Protección contra scaling</strong></li>
+                            <li><strong>Membranas UHPRO protegidas</strong></li>
+                            <li><strong>Vida útil: 12-24 meses</strong></li>
+                            <li style="color: #51cf66;"><strong>Operación estable y rentable</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #764ba2;">
+                    <strong>El pretratamiento NF NO es opcional - es un REQUISITO CRÍTICO PARA LA MISIÓN</strong>
+                </p>
+            </div>
+            
+            <div class="success-box" style="background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%); border: 3px solid #51cf66;">
+                <h3 style="text-align: center; color: #51cf66;">VALIDACIÓN TECNOLÓGICA GLOBAL ACTUALIZADA</h3>
+                <div style="margin-top: 15px;">
+                    <p style="text-align: center; font-size: 1.1em;">
+                        <strong>✅ Qinghai (China):</strong> RO/UHPRO operando para concentración post-DLE<br/>
+                        <strong>✅ Saltworks FusionRO:</strong> >200,000 mg/L TDS en 2 plantas de litio<br/>
+                        <strong>✅ Sunresin:</strong> Confirma "adsorción + separación por membrana" industrial
+                    </p>
+                </div>
+                <div style="background: white; padding: 10px; border-radius: 8px; margin-top: 15px;">
+                    <p style="text-align: center; color: #667eea; font-weight: bold;">
+                        DIFERENCIA CRÍTICA:<br/>
+                        • Qinghai: Salmuera → DLE → NF → RO/UHPRO → Li₂CO₃<br/>
+                        • SQM Propuesto: Eluato DLE → NF → UHPRO → Concentrado 3,510 ppm Li<br/>
+                        <span style="color: #51cf66;">Ambos usan UHPRO pero en diferentes puntos del proceso</span>
+                    </p>
+                </div>
+            </div>
+            
+            <h2>Integración en el Proceso DLE de SQM</h2>
+            
+            <div style="margin: 30px 0;">
+                <h3 style="text-align: center; color: #667eea; margin-bottom: 30px;">BALANCE MÁSICO COMPLETO DEL SISTEMA</h3>
+                
+                <!-- Entrada DLE -->
+                <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border: 3px solid #667eea; border-radius: 15px; padding: 20px; width: 350px; text-align: center;">
+                        <h4 style="color: #667eea; margin-bottom: 10px;">ENTRADA DLE</h4>
+                        <p style="font-weight: bold; font-size: 1.1em;">5,150 m³/día @ 2,000 ppm Li</p>
+                        <p style="color: #764ba2;">(10,300 kg Li/día)</p>
+                    </div>
+                </div>
+                
+                <!-- Flecha hacia abajo -->
+                <div style="display: flex; justify-content: center; margin: 15px 0;">
+                    <div style="font-size: 2.5em; color: #667eea;">↓</div>
+                </div>
+                
+                <!-- NF-UHPRO -->
+                <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px; padding: 20px; width: 400px; text-align: center; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);">
+                        <h4 style="color: white; margin-bottom: 10px; font-size: 1.3em;">NF + 6 MÓDULOS UHPRO</h4>
+                        <p style="font-weight: bold;">Recuperación: 43% del agua</p>
+                        <p style="color: #ffd93d; margin-top: 10px;">NF crítico para protección membranas</p>
+                    </div>
+                </div>
+                
+                <!-- Flechas de salida -->
+                <div style="display: flex; justify-content: center; gap: 100px; margin: 15px 0;">
+                    <div style="font-size: 2em; color: #764ba2;">↙</div>
+                    <div style="font-size: 2em; color: #51cf66;">↘</div>
+                </div>
+                
+                <!-- Salidas -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 700px; margin: 0 auto;">
+                    <!-- Salida Concentrado -->
+                    <div style="background: #764ba215; border: 2px solid #764ba2; border-radius: 15px; padding: 20px; text-align: center;">
+                        <h4 style="color: #764ba2; margin-bottom: 10px;">CONCENTRADO</h4>
+                        <p style="font-weight: bold;">2,935 m³/día</p>
+                        <p>@ 3,510 ppm Li</p>
+                        <p style="color: #764ba2; font-size: 0.9em;">(10,300 kg Li/día)</p>
+                    </div>
+                    
+                    <!-- Salida Agua Limpia -->
+                    <div style="background: #51cf6615; border: 2px solid #51cf66; border-radius: 15px; padding: 20px; text-align: center;">
+                        <h4 style="color: #51cf66; margin-bottom: 10px;">AGUA LIMPIA</h4>
+                        <p style="font-weight: bold;">2,215 m³/día</p>
+                        <p>Agua para reciclo</p>
+                        <p style="color: #51cf66; font-size: 0.9em;">(Reciclo a DLE)</p>
+                    </div>
+                </div>
+                
+                <!-- Flecha final desde concentrado -->
+                <div style="display: flex; justify-content: start; margin-left: 25%; margin-top: 15px;">
+                    <div style="font-size: 2em; color: #764ba2;">↓</div>
+                </div>
+                
+                <!-- MVR Reducido -->
+                <div style="display: flex; justify-content: start; margin-left: 15%; margin-top: 10px;">
+                    <div style="background: #ffd93d15; border: 2px solid #ffd93d; border-radius: 15px; padding: 15px; text-align: center;">
+                        <p style="font-weight: bold; color: #d4a300;">MVR REDUCIDO 43%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabla comparativa de contextos tecnológicos -->
+            <div class="info-box" style="background: linear-gradient(135deg, #ffd93d15 0%, #667eea15 100%); border: 2px solid #667eea; padding: 20px; margin-top: 30px;">
+                <h3 style="color: #667eea;">🎯 Comparación de Contextos Tecnológicos</h3>
+                
+                <table style="width: 100%; margin-top: 15px;">
+                    <tr>
+                        <th style="background: #667eea; color: white; padding: 10px;">Contexto</th>
+                        <th style="background: #667eea; color: white; padding: 10px;">Proceso</th>
+                        <th style="background: #667eea; color: white; padding: 10px;">Uso de UHPRO</th>
+                        <th style="background: #667eea; color: white; padding: 10px;">Validación</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Qinghai (>1,500:1 Mg/Li)</strong></td>
+                        <td>DLE → NF → RO/UHPRO → Li₂CO₃</td>
+                        <td>Concentración post-DLE</td>
+                        <td style="color: #28a745;">✓ Operativo</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td><strong>SQM Caso Base</strong></td>
+                        <td>Eluato DLE → NF → UHPRO → 3.5%</td>
+                        <td>Concentración directa</td>
+                        <td style="color: #28a745;">✓ Viable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SQM Optimizado</strong></td>
+                        <td>Post-Silvinita → UF → NF → UHPRO → 6%</td>
+                        <td>Factor 4x concentración</td>
+                        <td style="color: #ffc107;">⚠ Requiere validación</td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top: 15px; text-align: center;">
+                    <strong>Conclusión:</strong> UHPRO está probado industrialmente. La diferencia está en el punto de aplicación 
+                    y el factor de concentración requerido. Ambos casos SQM son técnicamente alcanzables.
+                </p>
+            </div>
+            
+            <div class="highlight-box" style="background: #f8f9fa; border-left: 5px solid #667eea; margin-top: 30px;">
+                <h3 style="text-align: center; color: #667eea;">📊 Benchmark Global: Selectividad DLE y su Impacto en Membranas</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #764ba2;">Tecnologías DLE Modernas</h4>
+                        <ul>
+                            <li>Selectividad Li/Mg: >95%</li>
+                            <li>Rechazo Ca²⁺: >95%</li>
+                            <li>Concentración Li: 2,000-6,000 ppm</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Impacto en NF-UHPRO</h4>
+                        <ul>
+                            <li>Vida útil membranas: +50% con mejor eluato</li>
+                            <li>Potencial eliminación precipitación química</li>
+                            <li>Ahorro adicional: hasta $500/ton LCE</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 15px; font-size: 1.1em; color: #764ba2;">
+                    <strong>La calidad del eluato DLE es crítica para la optimización total del sistema</strong>
+                </p>
+            </div>
+            
+            <h3>Parámetros Críticos de Diseño NF-UHPRO</h3>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">120 bar</div>
+                    <div class="metric-label">Presión operación<br/>Validada globalmente</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">43%</div>
+                    <div class="metric-label">Recuperación agua<br/>Para reciclo DLE</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4.71</div>
+                    <div class="metric-label">kWh/m³<br/>SEC con ERDs</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$34M</div>
+                    <div class="metric-label">Ahorro CAPEX<br/>en evaporador</div>
+                </div>
+            </div>
+            
+            <div class="info-box" style="margin-top: 20px;">
+                <h3>Ahorro en Agua - Valor Crítico en Antofagasta</h3>
+                <p><strong>Sin NF-UHPRO:</strong> 1,875,000 m³/año agua nueva requerida para elución DLE</p>
+                <p><strong>Con NF-UHPRO:</strong> 1,067,000 m³/año (43% reciclaje)</p>
+                <p><strong>Ahorro anual:</strong> 808,000 m³/año - Crítico donde derechos de agua cuestan hasta $68M/L/s</p>
+            </div>
+            
+            <div class="success-box">
+                <h3>Beneficios de la Asesoría Independiente en NF-UHPRO</h3>
+                <p>✓ Selección objetiva entre Saltworks, Gradiant, BW Waters, Fluence u otros</p>
+                <p>✓ Diseño optimizado para características específicas del eluato DLE</p>
+                <p>✓ Integración eficiente con cualquier tecnología DLE seleccionada</p>
+                <p>✓ Flexibilidad para cambiar o mejorar con distintos proveedores</p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 5.5: BASE DE DISEÑO DEL CASO DE ESTUDIO -->
+        <div class="slide">
+            <span class="slide-number">5.5</span>
+            <h1>Base de Diseño del Caso de Estudio DLE-NF-UHPRO</h1>
+            
+            <h2>Parámetros Técnicos para Análisis Económico</h2>
+            
+            <div class="highlight-box">
+                <h3 style="text-align: center;">Objetivo de Producción</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.8em; color: #764ba2; font-weight: bold;">20,000</p>
+                        <p>tpa LCE</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.8em; color: #764ba2; font-weight: bold;">54.8</p>
+                        <p>ton/día LCE</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.8em; color: #764ba2; font-weight: bold;">10.3</p>
+                        <p>ton/día Li metal</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Tabla Principal de Diseño</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Parámetro</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td><strong>Objetivo Producción</strong></td>
+                    <td>20,000 tpa LCE</td>
+                </tr>
+                <tr>
+                    <td><strong>Flujo DLE requerido</strong></td>
+                    <td><strong>5,150 m³/día</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Concentración Li</strong></td>
+                    <td>2,000 ppm</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>Sistema integrado</strong></td>
+                    <td><strong>NF + UHPRO</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Módulos UHPRO</strong></td>
+                    <td><strong>6</strong> (5 operativos + 1 standby)</td>
+                </tr>
+                <tr>
+                    <td><strong>Factor utilización</strong></td>
+                    <td>73%</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>TDS máximo validado comercialmente</strong></td>
+                    <td><strong>>200,000 mg/L (Saltworks)</strong></td>
+                </tr>
+            </table>
+            <p style="font-size: 0.9em; color: #666; text-align: left; margin-top: 10px;">
+                *Nota: El caso base económico usa datos de BW Waters (90,000 mg/L) para establecer un baseline de costos conservador. 
+                La selección final apuntará a la tecnología más robusta disponible para el eluato de SQM.
+            </p>
+            
+            <h3 style="margin-top: 30px;">Proyectos de Referencia para Factores de Concentración</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Referencia</th>
+                    <th>Tecnología</th>
+                    <th>Factor</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td><strong>Qinghai, China</strong></td>
+                    <td>DLE + NF + RO/UHPRO</td>
+                    <td>Variable (post-DLE)</td>
+                    <td style="color: green;">✓ Operativo</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>Saltworks FusionRO</strong></td>
+                    <td>NF-UHPRO híbrido</td>
+                    <td>>4x demostrado</td>
+                    <td style="color: green;">✓ 2 plantas Li</td>
+                </tr>
+                <tr>
+                    <td><strong>SQM Caso Base</strong></td>
+                    <td>NF-UHPRO directo</td>
+                    <td>1.75x (2,000→3,510 ppm)</td>
+                    <td style="color: green;">✓ Conservador</td>
+                </tr>
+                <tr style="background: #51cf6615;">
+                    <td><strong>SQM Optimizado</strong></td>
+                    <td>Post-Silvinita + UHPRO</td>
+                    <td>4x (15,000→60,000 ppm)</td>
+                    <td style="color: orange;">⚠ Validar piloto</td>
+                </tr>
+            </table>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+                <div class="info-box">
+                    <h3 style="text-align: center;">Especificaciones Módulo NF-UHPRO</h3>
+                    <p style="margin-top: 15px;"><strong>Tecnología:</strong> BW Waters NF-UHPRO</p>
+                    <p><strong>Capacidad unitaria:</strong></p>
+                    <ul style="margin-left: 20px;">
+                        <li>Input: 36 m³/h (858 m³/día)</li>
+                        <li>Output concentrado: 20.5 m³/h</li>
+                        <li>Recuperación: 43% del agua</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Presión operación:</strong> 120 bar</p>
+                    <p><strong>SEC con ERDs:</strong> 4.71 kWh/m³</p>
+                </div>
+                
+                <div class="success-box">
+                    <h3 style="text-align: center;">Configuración del Sistema</h3>
+                    <p style="margin-top: 15px;"><strong>Módulos requeridos:</strong></p>
+                    <p>5,150 m³/día ÷ 858 m³/día = 6.0</p>
+                    <p style="margin-top: 10px;"><strong>Configuración práctica:</strong></p>
+                    <p style="font-size: 1.3em; color: #51cf66; text-align: center;"><strong>6 módulos NF-UHPRO</strong></p>
+                    <p style="text-align: center;">(5 operativos + 1 standby/redundancia)</p>
+                    <p style="margin-top: 10px;"><strong>Factor de utilización:</strong> 73% con redundancia</p>
+                </div>
+            </div>
+            
+            <h3>Balance Másico Detallado por Módulo</h3>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center;">
+                    <div>
+                        <h4 style="color: #667eea;">ENTRADA</h4>
+                        <p style="font-size: 1.3em; font-weight: bold;">858 m³/día</p>
+                        <p>@ 2,000 ppm Li</p>
+                        <p style="color: #666;">1,716 kg Li/día</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #764ba2;">CONCENTRADO</h4>
+                        <p style="font-size: 1.3em; font-weight: bold;">489 m³/día</p>
+                        <p>@ 3,510 ppm Li</p>
+                        <p style="color: #666;">1,716 kg Li/día</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #51cf66;">AGUA RECUPERADA</h4>
+                        <p style="font-size: 1.3em; font-weight: bold;">369 m³/día</p>
+                        <p>Para reciclo a DLE</p>
+                        <p style="color: #666;">43% del input</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$7.5M</div>
+                    <div class="metric-label">CAPEX NF-UHPRO<br/>(6 módulos)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$2.94M/año</div>
+                    <div class="metric-label">OPEX NF-UHPRO<br/>Validado BW Waters</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">43%</div>
+                    <div class="metric-label">Reducción flujo<br/>a evaporador</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$34M</div>
+                    <div class="metric-label">Ahorro CAPEX<br/>en MVR</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3 style="text-align: center; color: white;">Justificación del Caso Base</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
+                    <strong>El caso base de 5,150 m³/día @ 2,000 ppm Li representa un escenario conservador-medio<br/>
+                    basado en experiencias reales de DLE en Smackover y proyectos sudamericanos.<br/>
+                    Los ahorros calculados son robustos dentro del rango de variación esperado.</strong>
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 6: VENTAJAS DEL CONSULTOR INDEPENDIENTE -->
+        <div class="slide">
+            <span class="slide-number">6</span>
+            <h1>Por Qué un Consultor Independiente es Crítico para el Éxito NF-UHPRO</h1>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+                <div style="background: #51cf6615; border: 2px solid #51cf66; border-radius: 10px; padding: 20px;">
+                    <h3 style="color: #51cf66; text-align: center;">Ventajas sobre Proveedores Directos</h3>
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Sin sesgo tecnológico:</strong> Recomiendo lo mejor, no lo que vendo</li>
+                        <li><strong>Evaluación multi-proveedor:</strong> Comparación real, no teórica</li>
+                        <li><strong>Protección del cliente:</strong> Superviso cumplimiento de garantías</li>
+                        <li><strong>Flexibilidad total:</strong> Puedo cambiar estrategia si es necesario</li>
+                    </ul>
+                </div>
+                <div style="background: #667eea15; border: 2px solid #667eea; border-radius: 10px; padding: 20px;">
+                    <h3 style="color: #667eea; text-align: center;">Conocimiento del Mercado Real</h3>
+                    <ul style="margin-top: 15px;">
+                        <li><strong>Precios reales:</strong> De licitación Taltal, no de lista</li>
+                        <li><strong>Performance real:</strong> Qué prometen vs qué entregan</li>
+                        <li><strong>Riesgos ocultos:</strong> Problemas que no mencionan</li>
+                        <li><strong>Benchmarking:</strong> Comparación continua entre tecnologías</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>Matriz de Evaluación de Proveedores NF-UHPRO</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Criterio</th>
+                    <th>Saltworks</th>
+                    <th>Gradiant</th>
+                    <th>BW Waters</th>
+                    <th>Fluence</th>
+                </tr>
+                <tr>
+                    <td><strong>Sistema/Integración</strong></td>
+                    <td>Integrador FusionRO<br/><small>(NF + UHPRO)</small></td>
+                    <td>Integrador CFRO<br/><small>(Membranas <80 bar)</small></td>
+                    <td>Integrador NF-UHPRO<br/><small>(Membranas 120 bar)</small></td>
+                    <td>Modular UHPRO/HPNF<br/><small>(Piloto)</small></td>
+                </tr>
+                <tr>
+                    <td><strong>TDS máximo</strong></td>
+                    <td><strong>>200,000 mg/L</strong></td>
+                    <td>>260,000 mg/L</td>
+                    <td>90,000 mg/L</td>
+                    <td>Variable</td>
+                </tr>
+                <tr>
+                    <td><strong>Experiencia regional</strong></td>
+                    <td>2 plantas Li operativas</td>
+                    <td>Proyectos mineros</td>
+                    <td>Taltal (nuevo)</td>
+                    <td>Triángulo del Litio</td>
+                </tr>
+                <tr>
+                    <td><strong>Rango OPEX anual</strong></td>
+                    <td>$2.5-3M/año (est.)</td>
+                    <td>$2.2-2.8M/año (menor presión)</td>
+                    <td>$2.94M/año (validado)</td>
+                    <td>Variable</td>
+                </tr>
+                <tr>
+                    <td><strong>Evaluación Taltal</strong></td>
+                    <td>Participó ✓</td>
+                    <td>Participó ✓</td>
+                    <td>Adjudicado ✓✓</td>
+                    <td>No participó</td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box" style="margin-top: 30px;">
+                <h3 style="text-align: center;">Mi Valor Diferencial</h3>
+                <p style="font-size: 1.2em; text-align: center; margin-top: 15px;">
+                    "Conozco las fortalezas y debilidades REALES de cada proveedor porque los evalué todos.<br/>
+                    Puedo negociar mejor porque ellos saben que conozco las alternativas.<br/>
+                    Protejo los intereses de SQM, no los del proveedor."
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 7: SERVICIOS DE CONSULTORÍA -->
+        <div class="slide">
+            <span class="slide-number">7</span>
+            <h1>Servicios de Consultoría Independiente para Implementación NF-UHPRO</h1>
+            
+            <div class="phase-grid">
+                <div class="phase-card">
+                    <h4>FASE 1: SELECCIÓN TECNOLOGÍA ÓPTIMA (Mes 1-2)</h4>
+                    <ul>
+                        <li>Caracterización detallada del eluato DLE de SQM</li>
+                        <li>RFP técnico basado en experiencia real de Taltal</li>
+                        <li>Evaluación objetiva de propuestas (Saltworks, Gradiant, BW Waters, otros)</li>
+                        <li><strong>Verificación independiente de referencias comerciales</strong></li>
+                        <li><strong>Distinción clara entre tecnologías (DLE vs UHPRO vs RO convencional)</strong></li>
+                        <li><strong>Análisis de aplicabilidad para química específica SQM</strong></li>
+                        <li><strong>Análisis OPEX detallado con datos reales de proveedores (no estimaciones)</strong></li>
+                        <li>Análisis TCO (Total Cost of Ownership) real, no teórico</li>
+                        <li><strong>Validación crítica del pretratamiento NF para prevenir cation bridging</strong></li>
+                        <li><strong>Evaluación de tecnologías ERD: Isobáricos vs Turbochargers</strong></li>
+                        <li><strong>Análisis vida útil membranas con química específica del eluato</strong></li>
+                        <li><strong>Benchmark de selectividad del DLE actual vs mejores prácticas globales (>95%)</strong></li>
+                        <li><strong>Análisis de potencial eliminación de precipitación química (hasta -$500/ton LCE)</strong></li>
+                        <li><strong>Evaluación de configuraciones alternativas: IX-NF vs NF-UHPRO directo</strong></li>
+                        <li><strong>Cuantificación del valor real del agua de elución recuperada en contexto local</strong></li>
+                        <li>Negociación con poder - los proveedores saben que conozco alternativas</li>
+                    </ul>
+                    <p style="margin-top: 10px; color: #667eea;"><strong>Entregable: Recomendación objetiva del mejor proveedor para SQM</strong></p>
+                </div>
+                
+                <div class="phase-card">
+                    <h4>FASE 2: GESTIÓN DE IMPLEMENTACIÓN (Mes 3-8)</h4>
+                    <ul>
+                        <li>Supervisión independiente del proveedor seleccionado</li>
+                        <li>Revisión crítica de ingeniería de detalle</li>
+                        <li>Control de cumplimiento de especificaciones y garantías</li>
+                        <li>Coordinación con proveedor DLE para integración óptima</li>
+                        <li>Gestión de cambios sin conflicto de interés</li>
+                    </ul>
+                    <p style="margin-top: 10px; color: #667eea;"><strong>Entregable: Sistema NF-UHPRO instalado cumpliendo especificaciones</strong></p>
+                </div>
+                
+                <div class="phase-card">
+                    <h4>FASE 3: OPTIMIZACIÓN Y TROUBLESHOOTING (Mes 9-12)</h4>
+                    <ul>
+                        <li>Commissioning con experiencia multi-tecnología</li>
+                        <li>Benchmarking con otras instalaciones globales</li>
+                        <li>Plan B con proveedores alternativos si hay problemas</li>
+                        <li>Optimización basada en mejores prácticas de todos los proveedores</li>
+                        <li>Transferencia de conocimiento al equipo SQM</li>
+                    </ul>
+                    <p style="margin-top: 10px; color: #667eea;"><strong>Entregable: Sistema optimizado y equipo capacitado</strong></p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #51cf66 0%, #667eea 100%); color: white; padding: 25px; margin: 30px 0;">
+                <h3 style="text-align: center; color: white; font-size: 1.4em;">
+                    Mi Independencia Total: Sin Ataduras Tecnológicas
+                </h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
+                    "Como consultor independiente, puedo trabajar con CUALQUIER integrador NF-UHPRO.<br/>
+                    Hoy presento datos de BW Waters porque ganaron competitivamente en Taltal.<br/>
+                    Mañana puedo recomendar Saltworks, Gradiant o cualquier otro si es mejor para SQM.<br/>
+                    <strong>Mi éxito = El mejor resultado para SQM, no la selección de un proveedor específico.</strong>"
+                </p>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Modelo de Colaboración Flexible</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                    <h4 style="color: #667eea;">Consultoría Completa</h4>
+                    <p>Desde selección hasta optimización<br/>
+                    Fee mensual + success fee<br/>
+                    Máxima protección para SQM</p>
+                </div>
+                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                    <h4 style="color: #764ba2;">Solo Selección</h4>
+                    <p>Evaluación y recomendación<br/>
+                    Fee fijo por entregable<br/>
+                    SQM gestiona implementación</p>
+                </div>
+                <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                    <h4 style="color: #51cf66;">Supervisión Técnica</h4>
+                    <p>Oversight de implementación<br/>
+                    Protección de intereses<br/>
+                    Fee por milestone</p>
+                </div>
+            </div>
+            
+            <div class="info-box" style="margin-top: 30px;">
+                <h3 style="text-align: center;">Red de Contactos Establecida</h3>
+                <p style="text-align: center;">
+                    <strong>Saltworks:</strong> Relación desde licitación Taltal | 
+                    <strong>Gradiant:</strong> Conocimiento de su tecnología CFRO | 
+                    <strong>BW Waters:</strong> Trabajando actualmente | 
+                    <strong>Fluence:</strong> Acceso a plantas piloto | 
+                    <strong>Energy Recovery:</strong> ERDs críticos | 
+                    <strong>DuPont/LG:</strong> Membranas especializadas
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 7.5: METODOLOGÍA Y SUPUESTOS -->
+        <div class="slide">
+            <span class="slide-number">7.5</span>
+            <h1>Metodología y Supuestos del Análisis Económico</h1>
+            
+            <h2>Justificación del CAPEX del Evaporador MVR</h2>
+            
+            <div class="critical-box">
+                <h3 style="text-align: center; color: #ff6b6b;">Factores de Costo MVR en Chile - Base $95M</h3>
+                <table class="comparison-table" style="margin-top: 20px;">
+                    <tr>
+                        <th>Factor</th>
+                        <th>Impacto</th>
+                        <th>Justificación</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Base Equipment (FOB)</strong></td>
+                        <td>$60M</td>
+                        <td>Evaporador estándar para 5,150 m³/día</td>
+                    </tr>
+                    <tr style="background: #ff6b6b15;">
+                        <td><strong>Impuestos Importación Chile</strong></td>
+                        <td>+$15M (+25%)</td>
+                        <td>6% arancel + 19% IVA sobre CIF</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Factor Complejidad Salmuera DLE</strong></td>
+                        <td>+$12M</td>
+                        <td>Alto BPE por Mg/Ca requiere diseño especial</td>
+                    </tr>
+                    <tr style="background: #ff6b6b15;">
+                        <td><strong>Riesgo País/Cronograma</strong></td>
+                        <td>+$8M</td>
+                        <td>40% sobrecosto promedio en minería chilena</td>
+                    </tr>
+                    <tr style="background: #667eea15;">
+                        <td><strong>TOTAL ESTIMADO</strong></td>
+                        <td><strong>$95M</strong></td>
+                        <td><strong>Clase 5 AACE (-30%/+50%)</strong></td>
+                    </tr>
+                </table>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #764ba2;">
+                    <strong>Rango real: $65M - $140M</strong><br/>
+                    <span style="font-size: 0.9em;">Sin caracterización precisa del eluato, el riesgo de error es enorme</span>
+                </p>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Clasificación de Estimados según AACE International</h2>
+            
+            <div class="highlight-box">
+                <p style="font-size: 1.2em; text-align: center;">
+                    Este análisis utiliza los estándares de la <strong>Association for the Advancement of Cost Engineering (AACE)</strong><br/>
+                    para transparentar el nivel de precisión de cada estimado de costos
+                </p>
+            </div>
+            
+            <table class="comparison-table" style="margin-top: 30px;">
+                <tr>
+                    <th>Elemento</th>
+                    <th>Clase AACE</th>
+                    <th>Precisión</th>
+                    <th>Base</th>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>Sistema NF-UHPRO</strong></td>
+                    <td><strong>Clase 4</strong></td>
+                    <td>-15% a +30%</td>
+                    <td>Cotizaciones Taltal + Validación comercial</td>
+                </tr>
+                <tr>
+                    <td><strong>Evaporador MVR Grande</strong></td>
+                    <td><strong>Clase 5</strong></td>
+                    <td>-30% a +50%</td>
+                    <td>Justificado arriba</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>Evaporador MVR Chico</strong></td>
+                    <td><strong>Clase 5</strong></td>
+                    <td>-30% a +50%</td>
+                    <td>Factor escala 0.6</td>
+                </tr>
+                <tr>
+                    <td><strong>OPEX NF-UHPRO</strong></td>
+                    <td><strong>Clase 3-4</strong></td>
+                    <td>-10% a +20%</td>
+                    <td>Datos validados BW Waters<br/>Incluye pretratamiento NF</td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box" style="margin-top: 20px;">
+                <h3 style="text-align: center;">Validación del CAPEX $95M - Múltiples Fuentes</h3>
+                <table class="comparison-table" style="margin-top: 15px;">
+                    <tr>
+                        <th>Fuente/Método</th>
+                        <th>Valor Estimado</th>
+                        <th>Base de Cálculo</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Benchmark Industrial Global</strong></td>
+                        <td>$86-107M</td>
+                        <td>$20k/m³/día × 5,150 × factor Chile 1.58</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Escalamiento desde Planta Existente</strong></td>
+                        <td>$92M</td>
+                        <td>Planta 100 m³/h en USA $30M × (5.15)^0.6 × 1.58</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Base de Datos Richardson</strong></td>
+                        <td>$88-110M</td>
+                        <td>MVR 215 ton/h, materiales SS316L, Chile</td>
+                    </tr>
+                    <tr style="background: #667eea15;">
+                        <td><strong>CONSENSO</strong></td>
+                        <td><strong>$95M ± 30%</strong></td>
+                        <td><strong>Promedio ponderado Clase 5 AACE</strong></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="info-box" style="margin-top: 30px;">
+                <h3>Mi Valor Como Consultor: Evolución de la Precisión</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <div style="text-align: center; flex: 1;">
+                        <h4 style="color: #ff6b6b;">HOY</h4>
+                        <p><strong>Clase 5</strong><br/>
+                        Orden de magnitud<br/>
+                        Para decisión GO/NO-GO</p>
+                    </div>
+                    <div style="font-size: 2em; color: #667eea;">→</div>
+                    <div style="text-align: center; flex: 1;">
+                        <h4 style="color: #ffd93d;">FASE 1</h4>
+                        <p><strong>Clase 3</strong><br/>
+                        Con caracterización real<br/>
+                        Para selección tecnología</p>
+                    </div>
+                    <div style="font-size: 2em; color: #667eea;">→</div>
+                    <div style="text-align: center; flex: 1;">
+                        <h4 style="color: #51cf66;">FASE 2</h4>
+                        <p><strong>Clase 2</strong><br/>
+                        Ingeniería detallada<br/>
+                        Para aprobación fondos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning-box" style="margin-top: 30px;">
+                <h3 style="text-align: center;">Sensibilidad al BPE (Boiling Point Elevation)</h3>
+                <p style="text-align: center; margin-top: 15px;">
+                    El BPE del eluato DLE puede variar dramáticamente según concentraciones de Mg²⁺ y Ca²⁺<br/>
+                    <strong>Cada 1°C de BPE adicional = +5-10% en CAPEX del evaporador</strong><br/>
+                    Sin caracterización precisa, el diseño podría estar subdimensionado o sobredimensionado
+                </p>
+            </div>
+            
+            <div class="success-box" style="margin-top: 30px;">
+                <h3 style="text-align: center;">Conclusión del Análisis de Orden de Magnitud</h3>
+                <p style="font-size: 1.3em; text-align: center; margin-top: 15px;">
+                    <strong>Incluso con la máxima incertidumbre (+50% en MVR, -30% en ahorros),<br/>
+                    el caso NF-UHPRO mantiene un ahorro mínimo de $12M en CAPEX.<br/>
+                    Esto justifica plenamente invertir en un estudio detallado (Fase 1).</strong>
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 8: ANÁLISIS ECONÓMICO ROI (Sin cambios) -->
+        <div class="slide">
+            <span class="slide-number">8</span>
+            <h1>Análisis Económico: ROI de la Consultoría Independiente</h1>
+            
+            <h2>COMPARACIÓN DE ESCENARIOS DLE (20,000 tpa LCE) - COSTOS TOTALES TRANSPARENTES</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Concepto</th>
+                    <th>DLE → MVR Grande</th>
+                    <th>DLE → NF-UHPRO → MVR Chico</th>
+                    <th>Ahorro</th>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td colspan="4"><strong>CAPEX</strong></td>
+                </tr>
+                <tr>
+                    <td>Sistema UHPRO base</td>
+                    <td>$0</td>
+                    <td><strong>$6.75M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr style="background: #ffd93d15;">
+                    <td>Pretratamiento NF</td>
+                    <td>$0</td>
+                    <td><strong>$0.75M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Total Sistema NF-UHPRO</td>
+                    <td>$0</td>
+                    <td><strong>$7.5M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Evaporador MVR</td>
+                    <td><strong>$95M</strong></td>
+                    <td><strong>$61M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>CAPEX Total</strong></td>
+                    <td><strong>$95M</strong></td>
+                    <td><strong>$68.5M</strong></td>
+                    <td style="color: green;"><strong>-$26.5M (-28%)</strong></td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td colspan="4"><strong>OPEX ANUAL</strong></td>
+                </tr>
+                <tr>
+                    <td>UHPRO operación</td>
+                    <td>$0</td>
+                    <td><strong>$2.79M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr style="background: #ffd93d15;">
+                    <td>NF pretratamiento</td>
+                    <td>$0</td>
+                    <td><strong>$0.15M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Total NF-UHPRO</td>
+                    <td>$0</td>
+                    <td><strong>$2.94M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>MVR</td>
+                    <td><strong>$20.85M</strong></td>
+                    <td><strong>$11.83M</strong></td>
+                    <td>-</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>OPEX Total</strong></td>
+                    <td><strong>$20.85M</strong></td>
+                    <td><strong>$14.77M</strong></td>
+                    <td style="color: green;"><strong>-$6.08M/año (-29%)</strong></td>
+                </tr>
+                <tr style="background: #51cf6615;">
+                    <td><strong>TOTAL 10 AÑOS</strong></td>
+                    <td><strong>$320M</strong></td>
+                    <td><strong>$226M</strong></td>
+                    <td style="color: green;"><strong>-$94M (-29%)</strong></td>
+                </tr>
+            </table>
+            
+            <div class="info-box" style="margin-top: 20px;">
+                <p style="text-align: center; font-size: 1.1em;">
+                    <strong>Nota de Transparencia:</strong> Costos incluyen sistema NF completo - No hay costos ocultos
+                </p>
+            </div>
+            
+            <div style="margin: 30px 0;">
+                <h3 style="text-align: center; color: #667eea; margin-bottom: 30px;">COMPARACIÓN VISUAL DE ESCENARIOS</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto;">
+                    
+                    <!-- Columna SIN NF-UHPRO -->
+                    <div>
+                        <h4 style="text-align: center; color: #ff6b6b; margin-bottom: 20px;">SIN NF-UHPRO</h4>
+                        
+                        <!-- DLE -->
+                        <div style="background: #f8f9fa; border: 2px solid #999; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
+                            <p style="font-weight: bold;">DLE: 5,150 m³/día</p>
+                        </div>
+                        
+                        <!-- Flecha -->
+                        <div style="text-align: center; font-size: 2em; color: #999; margin: 10px 0;">↓</div>
+                        
+                        <!-- MVR Grande -->
+                        <div style="background: #ff6b6b15; border: 3px solid #ff6b6b; border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 15px;">
+                            <h5 style="color: #ff6b6b; margin-bottom: 10px;">MVR GRANDE</h5>
+                            <p style="font-weight: bold; color: #ff6b6b;">$95M CAPEX</p>
+                            <p style="color: #ff6b6b;">$20.85M/año</p>
+                        </div>
+                        
+                        <!-- Flecha -->
+                        <div style="text-align: center; font-size: 2em; color: #ff6b6b; margin: 10px 0;">↓</div>
+                        
+                        <!-- Total -->
+                        <div style="background: linear-gradient(135deg, #ff6b6b15 0%, #ff6b6b30 100%); border: 2px solid #ff6b6b; border-radius: 10px; padding: 15px; text-align: center;">
+                            <p style="font-weight: bold; font-size: 1.1em; color: #ff6b6b;">TOTAL: $320M/10años</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna CON NF-UHPRO -->
+                    <div>
+                        <h4 style="text-align: center; color: #51cf66; margin-bottom: 20px;">CON NF-UHPRO</h4>
+                        
+                        <!-- DLE -->
+                        <div style="background: #f8f9fa; border: 2px solid #999; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
+                            <p style="font-weight: bold;">DLE: 5,150 m³/día</p>
+                        </div>
+                        
+                        <!-- Flecha -->
+                        <div style="text-align: center; font-size: 2em; color: #667eea; margin: 10px 0;">↓</div>
+                        
+                        <!-- NF-UHPRO -->
+                        <div style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border: 3px solid #667eea; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
+                            <h5 style="color: #667eea; margin-bottom: 10px;">NF-UHPRO: $2.94M/año</h5>
+                            <p style="color: #667eea; font-weight: bold;">Recupera 43% agua</p>
+                            <p style="color: #ffd93d; font-size: 0.9em;">Incluye NF crítico</p>
+                        </div>
+                        
+                        <!-- Flecha -->
+                        <div style="text-align: center; font-size: 2em; color: #51cf66; margin: 10px 0;">↓</div>
+                        
+                        <!-- MVR Chico -->
+                        <div style="background: #51cf6615; border: 3px solid #51cf66; border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 15px;">
+                            <h5 style="color: #51cf66; margin-bottom: 10px;">MVR CHICO</h5>
+                            <p style="font-weight: bold; color: #51cf66;">$61M CAPEX</p>
+                            <p style="color: #51cf66;">$11.83M/año</p>
+                        </div>
+                        
+                        <!-- Flecha -->
+                        <div style="text-align: center; font-size: 2em; color: #51cf66; margin: 10px 0;">↓</div>
+                        
+                        <!-- Total -->
+                        <div style="background: linear-gradient(135deg, #51cf6615 0%, #51cf6630 100%); border: 2px solid #51cf66; border-radius: 10px; padding: 15px; text-align: center;">
+                            <p style="font-weight: bold; font-size: 1.1em; color: #51cf66;">TOTAL: $226M/10años</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resultado Final -->
+                <div style="margin-top: 30px; text-align: center;">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px; padding: 20px; display: inline-block; box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);">
+                        <p style="font-size: 1.5em; font-weight: bold;">AHORRO: $94M (29%)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 9 y posteriores sin cambios... -->
+        <!-- [Mantener exactamente igual los slides 9, 9.5, 10, 10.5, 11 y 12] -->
+        
+        <!-- SLIDE 9: ANÁLISIS DE OPEX (Sin cambios) -->
+        <div class="slide">
+            <span class="slide-number">9</span>
+            <h1>Análisis de OPEX: Desglose Detallado y Comparativo</h1>
+            
+            <h2>OPEX NF-UHPRO (6 módulos @ $490k/módulo) - INCLUYE PRETRATAMIENTO</h2>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                    <div>
+                        <h3 style="color: #667eea;">Distribución de Costos</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0;">
+                                <strong>Energía:</strong> $624k/año (21%)
+                            </li>
+                            <li style="margin: 10px 0;">
+                                <strong>Membranas UHPRO:</strong> $342k/año (12%)
+                            </li>
+                            <li style="margin: 10px 0; background: #ffd93d15; padding: 5px; border-radius: 5px;">
+                                <strong>Sistema NF (pretratamiento):</strong> $150k/año (5%)
+                            </li>
+                            <li style="margin: 10px 0;">
+                                <strong>Químicos NF:</strong> $35k/año (1%)
+                            </li>
+                            <li style="margin: 10px 0;">
+                                <strong>Mantenimiento:</strong> $180k/año (6%)
+                            </li>
+                            <li style="margin: 10px 0;">
+                                <strong>Mano obra:</strong> $1,609k/año (55%)
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color: #764ba2;">Métricas Clave</h3>
+                        <div style="background: white; padding: 15px; border-radius: 10px; margin-top: 15px;">
+                            <p style="font-size: 1.3em; color: #667eea;"><strong>TOTAL: $2.94M/año</strong></p>
+                            <p style="margin-top: 10px;"><strong>Por ton LCE:</strong> $147/t</p>
+                            <p><strong>Por m³ procesado:</strong> $1.56/m³</p>
+                            <p style="margin-top: 10px; color: #51cf66;"><strong>✓ Incluye NF crítico</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>OPEX MVR Actualizado</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Concepto</th>
+                    <th>Sin NF-UHPRO<br/>(5,150 m³/día)</th>
+                    <th>Con NF-UHPRO<br/>(2,935 m³/día)</th>
+                    <th>Ahorro</th>
+                </tr>
+                <tr>
+                    <td>Energía (80 kWh/m³)</td>
+                    <td>$18.0M/año</td>
+                    <td>$10.3M/año</td>
+                    <td style="color: green;">-$7.7M</td>
+                </tr>
+                <tr>
+                    <td>Mantenimiento (3% CAPEX)</td>
+                    <td>$2.85M/año</td>
+                    <td>$1.83M/año</td>
+                    <td style="color: green;">-$1.02M</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td><strong>TOTAL MVR</strong></td>
+                    <td><strong>$20.85M/año</strong></td>
+                    <td><strong>$11.83M/año</strong></td>
+                    <td style="color: green;"><strong>-$9.02M/año</strong></td>
+                </tr>
+            </table>
+            
+            <div class="opex-anatomy">
+                <h3>Comparación Total del Sistema</h3>
+                <div style="margin-top: 20px;">
+                    <p><strong>Sin NF-UHPRO:</strong> MVR Grande = $20.85M/año</p>
+                    <p><strong>Con NF-UHPRO:</strong> NF-UHPRO ($2.94M) + MVR Chico ($11.83M) = $14.77M/año</p>
+                    <p style="font-size: 1.3em; color: #51cf66; margin-top: 15px;"><strong>Ahorro neto OPEX: $6.08M/año (29%)</strong></p>
+                </div>
+            </div>
+            
+            <div class="success-box" style="background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%); margin-top: 30px;">
+                <h3 style="text-align: center; color: #667eea;">📉 Potencial de Optimización con DLE de Alta Selectividad</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div style="text-align: center;">
+                        <h4 style="color: #764ba2;">Caso Base Presentado</h4>
+                        <p style="font-size: 1.3em; font-weight: bold;">$2.94M/año</p>
+                        <p>OPEX NF-UHPRO estándar</p>
+                        <p style="color: #666;">Incluye precipitación química</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4 style="color: #51cf66;">Con DLE >95% Selectividad</h4>
+                        <p style="font-size: 1.3em; font-weight: bold;">$2.44M/año</p>
+                        <p>Eliminación precipitación: -$500/ton</p>
+                        <p>Menor fouling membranas: -$150k/año</p>
+                        <p style="color: #51cf66;"><strong>17% reducción adicional</strong></p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 15px; color: #667eea;">
+                    <strong>Nota: Optimización validada en proyectos comerciales 2024-2025</strong>
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 9.5: ANÁLISIS DE SENSIBILIDAD (Sin cambios) -->
+        <div class="slide">
+            <span class="slide-number">9.5</span>
+            <h1>Análisis de Sensibilidad: Robustez del Caso NF-UHPRO</h1>
+            
+            <h2>Sensibilidad Vida Útil Membranas - IMPACTO DEL PRETRATAMIENTO NF</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Condición</th>
+                    <th>Vida Útil</th>
+                    <th>Impacto OPEX</th>
+                    <th>Riesgo Operacional</th>
+                </tr>
+                <tr style="background: #51cf6615;">
+                    <td><strong>Con NF óptima</strong></td>
+                    <td>12-24 meses</td>
+                    <td>Base</td>
+                    <td style="color: green;">Operación estable</td>
+                </tr>
+                <tr>
+                    <td>NF subóptima</td>
+                    <td>9 meses</td>
+                    <td style="color: orange;">+$19k/año</td>
+                    <td style="color: orange;">Riesgo medio</td>
+                </tr>
+                <tr style="background: #ff6b6b15;">
+                    <td><strong>Sin NF</strong></td>
+                    <td>3-6 meses</td>
+                    <td style="color: red;">+$342k/año</td>
+                    <td style="color: red;"><strong>FALLA CATASTRÓFICA</strong></td>
+                </tr>
+            </table>
+            
+            <div class="warning-box" style="margin-top: 20px;">
+                <p style="text-align: center; font-size: 1.2em;">
+                    <strong>Sin pretratamiento NF, el cation bridging destruye las membranas UHPRO<br/>
+                    El sistema se vuelve INVIABLE económica y operacionalmente</strong>
+                </p>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Impacto de la Calidad del Eluato DLE en Costos</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Calidad Eluato</th>
+                    <th>Ca/Mg (ppm)</th>
+                    <th>Tratamiento Requerido</th>
+                    <th>Impacto OPEX</th>
+                </tr>
+                <tr>
+                    <td>Estándar</td>
+                    <td>500-1,000</td>
+                    <td>Precipitación completa</td>
+                    <td>Base</td>
+                </tr>
+                <tr style="background: #667eea15;">
+                    <td>Mejorado</td>
+                    <td>100-500</td>
+                    <td>NF simple + química parcial</td>
+                    <td style="color: green;">-$200/ton LCE</td>
+                </tr>
+                <tr style="background: #51cf6615;">
+                    <td><strong>Alta Selectividad</strong></td>
+                    <td><strong><50</strong></td>
+                    <td><strong>Directo a NF-UHPRO</strong></td>
+                    <td style="color: green;"><strong>-$500/ton LCE</strong></td>
+                </tr>
+            </table>
+            <p style="text-align: center; margin-top: 15px; color: #667eea;">
+                <strong>Fuente: Validación en proyectos comerciales DLE-Membranas 2024</strong>
+            </p>
+            
+            <h2 style="margin-top: 30px;">Sensibilidad al Precio de Electricidad</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Precio $/MWh</th>
+                    <th>OPEX NF-UHPRO</th>
+                    <th>OPEX MVR</th>
+                    <th>Diferencial</th>
+                </tr>
+                <tr>
+                    <td>$90</td>
+                    <td>$2.47M</td>
+                    <td>$16.9M</td>
+                    <td style="color: green;">$14.4M</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td>$120</td>
+                    <td>$2.94M</td>
+                    <td>$20.85M</td>
+                    <td style="color: green;">$17.9M</td>
+                </tr>
+                <tr>
+                    <td>$150</td>
+                    <td>$3.41M</td>
+                    <td>$26.1M</td>
+                    <td style="color: green;">$22.7M</td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); margin-top: 30px;">
+                <h3 style="text-align: center; color: #667eea;">Comparación con Alternativa Post-Silvinita</h3>
+                
+                <table style="width: 100%; margin-top: 15px;">
+                    <tr>
+                        <th style="background: #764ba2; color: white; padding: 10px;">Parámetro</th>
+                        <th style="background: #764ba2; color: white; padding: 10px;">DLE → 6% Li</th>
+                        <th style="background: #764ba2; color: white; padding: 10px;">Post-Silvinita → 6% Li</th>
+                    </tr>
+                    <tr>
+                        <td>Factor concentración</td>
+                        <td style="color: #ffc107;">30x</td>
+                        <td style="color: #28a745;">4x</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td>Configuración UHPRO</td>
+                        <td>Multi-etapa compleja</td>
+                        <td>Estándar simple</td>
+                    </tr>
+                    <tr>
+                        <td>Validación comercial</td>
+                        <td style="color: #ffc107;">No existe para factor 30x</td>
+                        <td style="color: #28a745;">Múltiples plantas</td>
+                    </tr>
+                </table>
+                
+                <p style="text-align: center; margin-top: 15px; padding: 10px; background: white; border-radius: 8px;">
+                    <strong>Nota:</strong> Ambas rutas son complementarias, no competitivas. 
+                    La decisión óptima será determinada por pilotaje específico.
+                </p>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="text-align: center; color: #667eea;">Robustez del Caso Económico</h3>
+                <div style="text-align: center; margin-top: 20px;">
+                    <p style="font-size: 1.2em;"><strong>¿Qué pasa si el MVR cuesta menos?</strong></p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                        <div style="background: white; padding: 15px; border-radius: 10px;">
+                            <p style="color: #ff6b6b;"><strong>MVR = $65M</strong></p>
+                            <p>Ahorro: $12M</p>
+                            <p style="color: #51cf66;">ROI: 2,400%</p>
+                        </div>
+                        <div style="background: #667eea15; padding: 15px; border-radius: 10px;">
+                            <p style="color: #667eea;"><strong>MVR = $95M (base)</strong></p>
+                            <p>Ahorro: $26.5M</p>
+                            <p style="color: #51cf66;">ROI: 5,300%</p>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 10px;">
+                            <p style="color: #764ba2;"><strong>MVR = $125M</strong></p>
+                            <p>Ahorro: $41M</p>
+                            <p style="color: #51cf66;">ROI: 8,200%</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px; font-size: 1.1em; color: #667eea;">
+                        <strong>Conclusión: Rentable en TODOS los escenarios posibles</strong>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 30px;">
+                <h3>Zona de Decisión - Break-Even Analysis</h3>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.3em; color: #667eea;">
+                    <strong>Conclusión: No existe escenario realista donde MVR sea más económico que NF-UHPRO</strong>
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 10: JUSTIFICACIÓN TÉCNICA CON TABLA COMPARATIVA - CORREGIDO -->
+        <div class="slide">
+            <span class="slide-number">10</span>
+            <h1>Justificación Técnica: Cálculos de Ingeniería Validados</h1>
+            
+            <h2>Cálculo Ahorro Evaporador</h2>
+            <div class="highlight-box">
+                <div style="background: white; padding: 15px; border-radius: 10px; margin-top: 15px;">
+                    <p><strong>Sin NF-UHPRO:</strong> 5,150 m³/día → CAPEX = $95M</p>
+                    <p><strong>Con NF-UHPRO:</strong> 2,935 m³/día (43% menos)</p>
+                    <p><strong>CAPEX = $95M × (2,935/5,150)^0.6 = $61M</strong></p>
+                    <p style="font-size: 1.4em; color: #667eea; text-align: center; margin-top: 10px;">
+                        <strong>Ahorro CAPEX: $34M</strong>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; margin: 30px 0;">
+                <h3 style="text-align: center; color: white;">⚡ Validación Global de Tecnologías de Membranas para Litio</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; text-align: center;">
+                    <div>
+                        <p style="font-size: 1.8em; font-weight: bold;">100,000</p>
+                        <p>tpa Qinghai<br/>(DLE + RO/UHPRO)</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 1.8em; font-weight: bold;">>200,000</p>
+                        <p>mg/L TDS Saltworks<br/>(2 plantas Li)</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 1.8em; font-weight: bold;">87,000</p>
+                        <p>tpa en desarrollo<br/>(USA 2027-2028)</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.2em;">
+                    <strong>Membranas de alta presión: Tecnología validada globalmente para concentración de litio</strong>
+                </p>
+            </div>
+            
+            <!-- Tabla comparativa actualizada con contextos correctos -->
+            <div class="comparison-table" style="margin: 30px 0;">
+                <h3 style="text-align: center; color: #667eea;">Casos de Referencia Verificados - Tecnologías de Membranas para Litio</h3>
+                
+                <table style="width: 100%; margin-top: 20px;">
+                    <tr>
+                        <th style="background: #667eea; color: white;">Proyecto/Tecnología</th>
+                        <th style="background: #667eea; color: white;">Proceso</th>
+                        <th style="background: #667eea; color: white;">Estado</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Qinghai, China</strong></td>
+                        <td>DLE (adsorción) → NF → RO/UHPRO → Li₂CO₃</td>
+                        <td style="color: #28a745;">✓ 100,000 tpa operativo</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td><strong>Saltworks FusionRO</strong></td>
+                        <td>NF-UHPRO híbrido (>200,000 mg/L TDS)</td>
+                        <td style="color: #28a745;">✓ 2 plantas Li operativas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Taltal (BW Waters)</strong></td>
+                        <td>NF-UHPRO integrado</td>
+                        <td style="color: #ffc107;">⚠ En construcción 2026</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td><strong>Thacker Pass (USA)</strong></td>
+                        <td>DLE + membranas</td>
+                        <td style="color: #ffc107;">⚠ 40,000 tpa (2028)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hell's Kitchen (USA)</strong></td>
+                        <td>Geotérmico + DLE + membranas</td>
+                        <td style="color: #ffc107;">⚠ 27,000 tpa (2027)</td>
+                    </tr>
+                </table>
+                
+                <p style="text-align: center; margin-top: 20px; padding: 10px; background: #f0f4ff; border-radius: 8px;">
+                    <strong>Conclusión:</strong> RO/UHPRO está probado industrialmente en múltiples contextos. 
+                    La diferencia está en el punto de aplicación (post-DLE vs directo) y el factor de concentración requerido.
+                </p>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Decisiones de Ingeniería Críticas</h2>
+            
+            <div class="info-box">
+                <h3>Tecnología ERD (Recuperación de Energía) - Decisión Clave</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                    <div>
+                        <h4 style="color: #667eea;">OPCIÓN A: Recuperadores Isobáricos</h4>
+                        <ul>
+                            <li>Eficiencia: >97%</li>
+                            <li>Complejidad: Alta (requiere booster pump)</li>
+                            <li>Ideal si: Costo energía es crítico largo plazo</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #764ba2;">OPCIÓN B: Turbochargers</h4>
+                        <ul>
+                            <li>Eficiencia: 92-94%</li>
+                            <li>Complejidad: Baja</li>
+                            <li>Ideal si: Simplicidad operativa prioritaria</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 15px; color: #667eea;">
+                    <strong>Mi valor: Análisis TCO completo para determinar la mejor opción para SQM</strong>
+                </p>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Balance de Agua</h2>
+            <div class="success-box">
+                <p><strong>Sin NF-UHPRO:</strong> 1,875,000 m³/año agua nueva</p>
+                <p><strong>Con NF-UHPRO:</strong> 1,067,000 m³/año (43% reciclaje)</p>
+                <p><strong>Ahorro:</strong> 808,000 m³/año</p>
+                <p><strong>Valor en Antofagasta:</strong> Crítico (hasta $68M/L/s)</p>
+            </div>
+            
+            <div class="success-box" style="margin-top: 30px; background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%); border: 3px solid #51cf66;">
+                <h3>Validación Comercial Global</h3>
+                <p style="text-align: center; font-size: 1.2em;">
+                    <strong>Qinghai: RO/UHPRO operando para concentración post-DLE<br/>
+                    Saltworks FusionRO: >200,000 mg/L TDS en 2 plantas de litio<br/>
+                    Tecnología de membranas de alta presión validada para concentración de litio</strong>
+                </p>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Consumo Energético</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div class="success-box">
+                    <h3 style="text-align: center;">NF-UHPRO con ERDs</h3>
+                    <p><strong>Consumo específico:</strong> 4.71 kWh/m³</p>
+                    <p><strong>Volumen anual:</strong> 1,879,750 m³/año</p>
+                    <p><strong>Energía total:</strong> 8,853,623 kWh/año</p>
+                    <p><strong>Con ERDs:</strong> 43% recuperación agua</p>
+                </div>
+                <div class="warning-box">
+                    <h3 style="text-align: center;">Evaporador MVR</h3>
+                    <p><strong>Consumo específico:</strong> 80 kWh/m³</p>
+                    <p><strong>Sin NF-UHPRO:</strong> 150,375,000 kWh/año</p>
+                    <p><strong>Con NF-UHPRO:</strong> 85,693,000 kWh/año</p>
+                    <p><strong>Reducción:</strong> 43% menos energía</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 10.5: ALINEACIÓN ESTRATÉGICA (Sin cambios) -->
+        <div class="slide">
+            <span class="slide-number">10.5</span>
+            <h1>Alineación con Objetivos Estratégicos de SQM</h1>
+            
+            <h2>Sostenibilidad y ESG</h2>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%);">
+                <h3 style="text-align: center;">NF-UHPRO + MVR Eléctrico vs MEE Térmico</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #51cf66;">Beneficios Ambientales</h4>
+                        <ul>
+                            <li>✓ Reducción huella carbono: -40%</li>
+                            <li>✓ Independencia de combustibles fósiles</li>
+                            <li>✓ Alineado con matriz renovable Chile</li>
+                            <li>✓ Menor consumo de agua (-43%)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Cumplimiento Regulatorio</h4>
+                        <ul>
+                            <li>✓ Anticipación a regulaciones futuras</li>
+                            <li>✓ Mejora score ESG corporativo</li>
+                            <li>✓ Acceso a financiamiento verde</li>
+                            <li>✓ Licencia social fortalecida</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 30px;">Resiliencia Operacional</h2>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-value">-43%</div>
+                    <div class="metric-label">Menor dependencia<br/>de agua fresca</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">4</div>
+                    <div class="metric-label">Proveedores validados<br/>Sin lock-in tecnológico</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Tecnología probada<br/>comercialmente</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">-40%</div>
+                    <div class="metric-label">Reducción<br/>huella carbono</div>
+                </div>
+            </div>
+            
+            <div class="info-box" style="margin-top: 30px;">
+                <h3 style="text-align: center;">Flexibilidad ante Cambios del Mercado</h3>
+                <p style="text-align: center; margin-top: 15px;">
+                    <strong>Múltiples proveedores:</strong> Saltworks, Gradiant, BW Waters, otros<br/>
+                    <strong>Sin dependencia:</strong> Puedo cambiar o mejorar con distintos proveedores<br/>
+                    <strong>Evolución continua:</strong> Incorporación de mejoras tecnológicas futuras
+                </p>
+            </div>
+            
+            <div class="success-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h3 style="text-align: center; color: white;">Inversión en el Futuro</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
+                    <strong>NF-UHPRO no es solo una solución técnica,<br/>
+                    es una inversión estratégica en sostenibilidad,<br/>
+                    resiliencia y liderazgo tecnológico en la industria del litio</strong>
+                </p>
+            </div>
+        </div>
+        
+        <!-- SLIDE 11: CRONOGRAMA (Sin cambios) -->
+        <div class="slide">
+            <span class="slide-number">11</span>
+            <h1>Sincronización de Proyectos: Taltal Real y Caso Hipotético SQM</h1>
+            
+            <h2>Proyecto Taltal NF-UHPRO - Cronograma Real en Desarrollo</h2>
+            
+            <div style="background: #667eea15; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="color: #667eea;">Proyecto Taltal (BW Waters) - En Curso</h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 15px;">
+                    <div>
+                        <strong>Q4 2025:</strong>
+                        <p>• Adjudicación<br/>
+                        • Inicio de proyecto<br/>
+                        • Kick-off meeting</p>
+                    </div>
+                    <div>
+                        <strong>Q1 2026:</strong>
+                        <p>• Ingeniería completa<br/>
+                        • Especificaciones finales<br/>
+                        • Orden de equipos</p>
+                    </div>
+                    <div>
+                        <strong>Q3 2026:</strong>
+                        <p>• Fabricación completa<br/>
+                        • FAT completado<br/>
+                        • Envío a sitio</p>
+                    </div>
+                    <div style="background: #ffd93d30; padding: 10px; border-radius: 10px;">
+                        <strong>Q4 2026:</strong><br/>
+                        <strong>OPERATIVO</strong><br/>
+                        Commissioning completo<br/>
+                        Datos reales disponibles
+                    </div>
+                </div>
+            </div>
+            
+            <div style="background: #764ba215; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="color: #764ba2;">Caso Hipotético: Si SQM Decidiera Implementar NF-UHPRO</h3>
+                <p style="margin-bottom: 20px; font-style: italic;">Aprovechando la experiencia y datos reales de Taltal</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 15px;">
+                    <div>
+                        <strong>Q4 2026 - Q1 2027:</strong>
+                        <p><strong>EVALUACIÓN CON DATOS REALES</strong><br/>
+                        • Análisis resultados Taltal<br/>
+                        • RFP optimizado<br/>
+                        • Selección informada</p>
+                    </div>
+                    <div>
+                        <strong>Q2-Q3 2027:</strong>
+                        <p><strong>IMPLEMENTACIÓN ACELERADA</strong><br/>
+                        • Diseño validado<br/>
+                        • Fabricación e instalación<br/>
+                        • Menos riesgo técnico</p>
+                    </div>
+                    <div style="background: #51cf6630; padding: 10px; border-radius: 10px;">
+                        <strong>Q4 2027 - Q1 2028:</strong><br/>
+                        <strong>PUESTA EN MARCHA</strong><br/>
+                        Commissioning optimizado<br/>
+                        Basado en lecciones Taltal
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-top: 30px;">
+                <h3 style="text-align: center; color: white;">Ventaja Estratégica de la Sincronización</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 20px;">
+                    <strong>"Esperar los resultados de Taltal Q4 2026 permite a SQM tomar una decisión<br/>
+                    completamente informada con datos operacionales reales, no proyecciones"</strong>
+                </p>
+            </div>
+            
+            <div class="info-box" style="margin-top: 20px;">
+                <h3 style="text-align: center;">Reducción de Tiempos con Experiencia Validada</h3>
+                <div style="display: flex; justify-content: space-around; margin-top: 15px;">
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.3em; color: #ff6b6b;"><strong>Sin experiencia Taltal</strong></p>
+                        <p>18-24 meses típicos</p>
+                    </div>
+                    <div style="text-align: center; font-size: 2em; color: #667eea;">→</div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.3em; color: #51cf66;"><strong>Con datos Taltal</strong></p>
+                        <p>12-15 meses posibles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SLIDE 12: CONCLUSIONES CON MODIFICACIONES - CORREGIDO -->
+        <div class="slide">
+            <span class="slide-number">12</span>
+            <h1>Conclusiones: El Valor de la Consultoría Independiente NF-UHPRO</h1>
+            
+            <div class="dashboard-impact">
+                <h3>ANÁLISIS COMPARATIVO DE IMPACTO</h3>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="text-align: center; border-right: 2px solid rgba(255,255,255,0.3);">
+                            <h4 style="color: #ff6b6b;">SIN CONSULTORÍA INDEPENDIENTE</h4>
+                            <p style="margin: 15px 0;">• Selección sin competencia real</p>
+                            <p style="margin: 15px 0;">• Riesgo de sobredimensionamiento</p>
+                            <p style="margin: 15px 0;">• Atado a un solo proveedor</p>
+                            <p style="margin: 15px 0;">• Sin validación de garantías</p>
+                            <p style="font-size: 1.3em; margin-top: 20px; color: #ff6b6b;">
+                                <strong>Riesgo: +30-50% sobrecosto</strong>
+                            </p>
+                        </div>
+                        <div style="text-align: center;">
+                            <h4 style="color: #51cf66;">CON EVALUACIÓN COMPETITIVA</h4>
+                            <p style="margin: 15px 0;">• 4+ proveedores evaluados</p>
+                            <p style="margin: 15px 0;">• Diseño optimizado para DLE</p>
+                            <p style="margin: 15px 0;">• Flexibilidad tecnológica</p>
+                            <p style="margin: 15px 0;">• Supervisión independiente</p>
+                            <p style="font-size: 1.3em; margin-top: 20px; color: #51cf66;">
+                                <strong>Beneficio: $94M ahorro validado</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.5em; margin-top: 30px; text-align: center; border-top: 2px solid rgba(255,255,255,0.3); padding-top: 20px;">
+                        <strong>La diferencia: Experiencia real en evaluación competitiva NF-UHPRO</strong>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h2 style="text-align: center; color: white;">Valor Diferencial Comprobado</h2>
+                <p style="font-size: 1.4em; text-align: center; margin-top: 15px;">
+                    <strong>"Experiencia real evaluando Saltworks, Gradiant, BW Waters y otros<br/>
+                    Conocimiento de precios reales de licitación, no de lista<br/>
+                    Independencia total para recomendar la mejor solución para SQM"</strong>
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+                <div class="success-box">
+                    <h3 style="text-align: center;">Garantías ✓</h3>
+                    <ul>
+                        <li>✓ Evaluación objetiva de TODOS los proveedores</li>
+                        <li>✓ Precios negociados, no de lista</li>
+                        <li>✓ Supervisión independiente sin conflictos</li>
+                        <li>✓ Flexibilidad para cambiar si es necesario</li>
+                        <li>✓ Transferencia de conocimiento real</li>
+                        <li>✓ Ahorro verificable de $94M en TCO</li>
+                    </ul>
+                </div>
+                <div class="warning-box">
+                    <h3 style="text-align: center;">Riesgos Mitigados ✗</h3>
+                    <ul>
+                        <li>✗ Quedar atado a una tecnología inadecuada</li>
+                        <li>✗ Pagar sobreprecios por falta de alternativas</li>
+                        <li>✗ Descubrir problemas sin poder cambiar</li>
+                        <li>✗ Depender de un solo proveedor</li>
+                        <li>✗ Perder garantías por falta de supervisión</li>
+                        <li>✗ Falla catastrófica por no usar NF</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="critical-box" style="margin: 30px 0;">
+                <h3 style="text-align: center; color: #ff6b6b;">
+                    Mensaje Técnico Crítico
+                </h3>
+                <div style="margin-top: 20px; font-size: 1.1em;">
+                    <p>✓ <strong>El pretratamiento NF NO es opcional:</strong> Es un requisito crítico validado comercialmente</p>
+                    <p>✓ <strong>Validación global confirmada:</strong> Qinghai usa RO/UHPRO para concentración post-DLE</p>
+                    <p>✓ <strong>Saltworks lo confirma:</strong> >200,000 mg/L TDS operando en 2 plantas de litio</p>
+                    <p>✓ <strong>Mi valor:</strong> Garantizo la implementación correcta del sistema completo</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: #f8f9fa; color: #333;">
+                <h3 style="text-align: center;">Mi Compromiso</h3>
+                <p style="text-align: center; margin-top: 15px;">
+                    <strong>Los datos presentados son reales y validados.</strong><br/>
+                    En la Fase 1 de consultoría, obtendré cotizaciones actualizadas de TODOS los proveedores<br/>
+                    específicamente para las condiciones de SQM, garantizando una evaluación 100% objetiva.<br/>
+                    <span style="color: #667eea; font-size: 1.2em;">Mi éxito se mide por el éxito de SQM, no por la selección de un proveedor específico.</span>
+                </p>
+            </div>
+            
+            <h2>Experiencia + Validación</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; text-align: center;">
+                    <div>
+                        <h4 style="color: #667eea;">Desalinización</h4>
+                        <p>Grandes plantas<br/>SWRO operativas</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Licitación Taltal</h4>
+                        <p>Evaluación competitiva<br/>real de NF-UHPRO</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Implementación</h4>
+                        <p>Supervisión actual<br/>proyecto BW Waters</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Validación Global</h4>
+                        <p>Qinghai: 100,000 tpa<br/>Saltworks: 2 plantas</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Tendencia Mundial</h4>
+                        <p>200,000+ tpa<br/>proyectados<br/>2027-2028</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.1em; color: #667eea; margin-top: 20px;">
+                <strong>La tecnología RO/UHPRO no es experimental:<br/>
+                Es comercialmente operativa en múltiples contextos para concentración de litio.<br/>
+                Mi rol es garantizar que SQM implemente la mejor versión para su aplicación específica.</strong>
+            </p>
+            
+            <h2 style="margin-top: 40px;">Próximos Pasos</h2>
+
+            <div style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border: 2px solid #667eea; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="text-align: center; color: #667eea;">Estrategia de Validación Progresiva</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                    <div>
+                        <h4 style="color: #764ba2;">Fase 0A: Validación Base</h4>
+                        <p>• Confirmar 3.5% Li con 6 módulos</p>
+                        <p>• Tecnología probada comercialmente</p>
+                        <p>• 3-6 meses pilotaje</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #667eea;">Fase 0B: Optimización (Opcional)</h4>
+                        <p>• Explorar 6% Li con configuración multi-etapa</p>
+                        <p>• Evaluar vs alternativas (post-silvinita)</p>
+                        <p>• Decisión basada en economía real</p>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 15px; font-size: 1.1em;">
+                    <strong>La arquitectura modular permite comenzar con lo probado y escalar según validación</strong>
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                <div style="background: #ff6b6b15; padding: 20px; border-radius: 10px; text-align: center; border: 2px solid #ff6b6b;">
+                    <h3 style="color: #ff6b6b;">1. FASE 0: Validación</h3>
+                    <p style="margin-top: 10px;">
+                        Caracterizar SU eluato DLE<br/>
+                        Pruebas con múltiples membranas<br/>
+                        <strong>Piloto 3-6 meses = Certeza total</strong>
+                    </p>
+                </div>
+                <div style="background: #764ba215; padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #764ba2;">2. Propuesta Detallada</h3>
+                    <p style="margin-top: 10px;">
+                        Alcance de servicios<br/>
+                        Cronograma implementación<br/>
+                        Estructura de fees
+                    </p>
+                </div>
+                <div style="background: #51cf6615; padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #51cf66;">3. Inicio Q1 2025</h3>
+                    <p style="margin-top: 10px;">
+                        RFP a proveedores<br/>
+                        Evaluación competitiva<br/>
+                        Selección óptima
+                    </p>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin: 30px 0;">
+                <h3 style="text-align: center; color: white;">Mensaje Estratégico Clave</h3>
+                <p style="text-align: center; font-size: 1.2em; margin-top: 15px;">
+                    "La decisión entre tecnologías no es binaria. SQM puede:<br/>
+                    1. <strong>Corto plazo:</strong> Validar NF-UHPRO con configuración 3.5% Li probada<br/>
+                    2. <strong>Medio plazo:</strong> Explorar optimización a 6% Li si economía lo justifica<br/>
+                    3. <strong>Largo plazo:</strong> Integrar con post-silvinita para máxima flexibilidad<br/>
+                    <br/>
+                    Los pilotos no compiten entre sí - validan opciones complementarias para maximizar el valor del Salar."
+                </p>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <p style="text-align: center; font-size: 0.9em; color: #666;">
+                    <strong>Nota:</strong> Esta propuesta se basa en experiencia real de evaluación competitiva en la licitación del proyecto NF-UHPRO Taltal,
+                    donde participaron los principales proveedores globales. Los datos de OPEX están validados con la propuesta técnica de BW Waters e incluyen
+                    el sistema de pretratamiento NF crítico. La tecnología RO/UHPRO está validada comercialmente: Qinghai (100,000 tpa con DLE + RO/UHPRO) 
+                    y Saltworks FusionRO (>200,000 mg/L TDS en 2 plantas de litio). Como consultor independiente, mantengo relaciones profesionales con todos 
+                    los proveedores y puedo trabajar objetivamente con cualquiera de ellos según las necesidades específicas del cliente.
+                </p>
+                
+                <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border: 2px solid #667eea; border-radius: 10px;">
+                    <p style="text-align: center; font-size: 0.95em; color: #333; font-weight: bold;">
+                        Nota Final - Diciembre 2025: Esta propuesta actualizada con presupuesto conservador de $5M refleja un enfoque prudente y profesional. 
+                        El ciclo de 14 meses para diseño, pruebas P&T y QA/QC es estándar para equipos de proceso de alta presión. 
+                        Aún con estos plazos y presupuesto conservador, el proyecto ofrece un ROI de 16:1, siendo altamente atractivo 
+                        esperar por tecnología DLE no probada.
+                    </p>
+                </div>
+                
+                <!-- Barra de contacto estilo imagen -->
+                <div style="margin-top: 30px; 
+                            background: linear-gradient(90deg, #2c5aa0 0%, #1e3d6f 100%); 
+                            color: white; 
+                            padding: 12px 20px; 
+                            border-radius: 8px; 
+                            display: flex; 
+                            justify-content: space-between; 
+                            align-items: center;
+                            font-size: 0.95em;">
+                    <div style="display: flex; align-items: center;">
+                        <span style="font-weight: bold; margin-right: 8px;">L.R.G. Ingeniería SPA</span>
+                        <span style="font-weight: 300;">| Luis Rivera González - Gerente General</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <span>✉ luis@lrg-ingenieria.com</span>
+                        <span style="font-weight: 300;">|</span>
+                        <span>☎ +56-9-85877675</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+{
+  "name": "whisper-transcription",
+  "displayName": "Whisper Transcription - Apple Silicon",
+  "description": "Transcripción de audio/video optimizada para Apple Silicon usando Whisper AI. Soporta MP3, WAV, FLAC, OGG, M4A, MP4 en 99+ idiomas con aceleración GPU Metal (5x velocidad). Ideal para transcribir clases, presentaciones, podcasts y generar subtítulos.",
+  "version": "1.0",
+  "author": "Luis Rivera González",
+  "created": "2025-11-02",
+  "category": "audio-processing",
+  "tags": [
+    "whisper",
+    "transcription",
+    "apple-silicon",
+    "gpu",
+    "audio",
+    "video",
+    "subtitles",
+    "m4",
+    "metal",
+    "spanish",
+    "academic",
+    "financial"
+  ],
+  "readme": "assets/README-quickstart.md",
+  "mainScript": "scripts/transcribir_optimizado.sh",
+  "files": [
+    "SKILL.md",
+    "skill.json",
+    "scripts/transcribir_optimizado.sh",
+    "scripts/batch_transcribe.sh",
+    "scripts/extract_audio.sh",
+    "references/technical-guide.md",
+    "references/troubleshooting.md",
+    "references/benchmarks.md",
+    "assets/README-quickstart.md"
+  ],
+  "capabilities": {
+    "audioTranscription": true,
+    "videoTranscription": true,
+    "subtitleGeneration": true,
+    "batchProcessing": true,
+    "gpuAcceleration": true,
+    "multiLanguage": true,
+    "multiFormat": true
+  },
+  "requirements": {
+    "os": "macOS",
+    "minOSVersion": "11.0",
+    "hardware": "Apple Silicon (M1/M2/M3/M4)",
+    "minRAM": "8GB",
+    "diskSpace": "2GB",
+    "software": {
+      "whisper.cpp": ">=1.8.2",
+      "homebrew": "required",
+      "ffmpeg": "optional (for video extraction)"
+    }
+  },
+  "performance": {
+    "speed": "5x real-time",
+    "model": "ggml-medium.bin",
+    "modelSize": "1.4GB",
+    "backend": "Metal (GPU)",
+    "benchmark": "40 min audio = 8-12 min processing"
+  },
+  "formats": {
+    "input": [
+      "MP3",
+      "WAV",
+      "FLAC",
+      "OGG",
+      "M4A",
+      "MP4"
+    ],
+    "output": [
+      "TXT",
+      "SRT",
+      "VTT",
+      "CSV",
+      "JSON"
+    ]
+  },
+  "languages": {
+    "supported": 99,
+    "default": "es",
+    "primary": [
+      "Spanish (es)",
+      "English (en)",
+      "Portuguese (pt)",
+      "French (fr)",
+      "German (de)",
+      "Italian (it)"
+    ],
+    "autoDetect": true
+  },
+  "useCases": [
+    "Academic lectures transcription",
+    "Financial class recordings",
+    "Podcast transcription",
+    "Conference call transcription",
+    "Video subtitle generation",
+    "Batch processing of audio files",
+    "Multi-language content",
+    "Technical/financial terminology"
+  ],
+  "examples": [
+    {
+      "name": "Basic transcription",
+      "command": "./scripts/transcribir_optimizado.sh 'audio.mp3' es",
+      "description": "Transcribe Spanish audio with optimal settings"
+    },
+    {
+      "name": "Batch processing",
+      "command": "./scripts/batch_transcribe.sh folder/*.mp3",
+      "description": "Process multiple files automatically"
+    },
+    {
+      "name": "Extract video audio",
+      "command": "./scripts/extract_audio.sh 'video.mp4'",
+      "description": "Extract audio from video for transcription"
+    },
+    {
+      "name": "Generate subtitles",
+      "command": "whisper-cli -m ~/.whisper-models/ggml-medium.bin -l es -f 'video.mp4' -osrt",
+      "description": "Create SRT subtitles from video"
+    }
+  ],
+  "documentation": {
+    "quickStart": "assets/README-quickstart.md",
+    "technicalGuide": "references/technical-guide.md",
+    "troubleshooting": "references/troubleshooting.md",
+    "benchmarks": "references/benchmarks.md"
+  },
+  "integration": {
+    "relatedProjects": [
+      "SISTEMA-DEFINITIVO - Financial analysis methodology",
+      "3-MATERIAL-ACADEMICO - Organized academic content"
+    ],
+    "purpose": "Complementary tool for financial analysis system - transcribes educational material"
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Flujo SQM: Proceso Tradicional vs NF-UHPRO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: auto;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            color: #667eea;
+            font-size: 1.3em;
+        }
+        
+        .diagram-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            min-height: 1200px;
+        }
+        
+        .process-line {
+            position: absolute;
+            background: #ddd;
+            z-index: 0;
+        }
+        
+        .process-line.horizontal {
+            height: 3px;
+            width: 100px;
+        }
+        
+        .process-line.vertical {
+            width: 3px;
+            height: 100px;
+        }
+        
+        .process-line.active {
+            background: #667eea;
+        }
+        
+        .process-line.alternative {
+            background: #51cf66;
+            border-style: dashed;
+        }
+        
+        .process-box {
+            position: absolute;
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 180px;
+            text-align: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .process-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .process-box.pond {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-color: #764ba2;
+        }
+        
+        .process-box.mvr {
+            background: #ff6b6b15;
+            border-color: #ff6b6b;
+        }
+        
+        .process-box.chemical {
+            background: #ffd93d15;
+            border-color: #ffd93d;
+        }
+        
+        .process-box.nf-uhpro {
+            background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%);
+            border-color: #51cf66;
+            border-width: 4px;
+        }
+        
+        .process-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .process-data {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .concentration {
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+        
+        .arrow {
+            position: absolute;
+            font-size: 24px;
+            color: #667eea;
+            z-index: 5;
+        }
+        
+        .arrow.alternative {
+            color: #51cf66;
+        }
+        
+        .legend {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 250px;
+        }
+        
+        .legend-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .legend-box {
+            width: 30px;
+            height: 20px;
+            border: 2px solid;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .comparison-table {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px;
+        }
+        
+        .comparison-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
+        .comparison-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .benefit {
+            color: #51cf66;
+            font-weight: bold;
+        }
+        
+        .warning {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        
+        .flow-indicator {
+            position: absolute;
+            background: rgba(102, 126, 234, 0.1);
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 0.9em;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .chemical-detail {
+            position: absolute;
+            background: #ffd93d15;
+            border: 3px solid #ffd93d;
+            border-radius: 15px;
+            padding: 20px;
+            width: 350px;
+            right: 350px;
+            bottom: 50px;
+        }
+        
+        .chemical-detail-title {
+            color: #d4a300;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .chemical-step {
+            background: white;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border-left: 4px solid #ffd93d;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .highlight {
+            animation: pulse 2s infinite;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            z-index: 1000;
+            display: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Diagrama de Flujo Comparativo SQM</h1>
+            <div class="subtitle">Proceso Tradicional (MVR) vs Proceso Optimizado (NF-UHPRO)</div>
+        </div>
+        
+        <div class="diagram-container">
+            <!-- Leyenda -->
+            <div class="legend">
+                <div class="legend-title">LEYENDA</div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border-color: #764ba2;"></div>
+                    <span>Piscinas Evaporación</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: #ff6b6b15; border-color: #ff6b6b;"></div>
+                    <span>Sistema MVR</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%); border-color: #51cf66;"></div>
+                    <span>Sistema NF-UHPRO</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: #ffd93d15; border-color: #ffd93d;"></div>
+                    <span>Planta Química</span>
+                </div>
+            </div>
+            
+            <!-- PISCINAS DE EVAPORACIÓN -->
+            <!-- Salmuera Original -->
+            <div class="process-box pond" style="left: 50px; top: 100px;">
+                <div class="process-title">SALMUERA ORIGINAL</div>
+                <div class="process-data">
+                    Volumen: 760,000 m³<br>
+                    Área: 27 Ha<br>
+                    Prof: 28 m
+                </div>
+                <div class="concentration">Li: 600 ppm</div>
+            </div>
+            
+            <!-- Piscina Halita -->
+            <div class="process-box pond" style="left: 300px; top: 100px;">
+                <div class="process-title">PISCINA HALITA</div>
+                <div class="process-data">
+                    Evaporación: 60%<br>
+                    Precipita NaCl<br>
+                    Tiempo: 18-24 meses
+                </div>
+                <div class="concentration">Li: 1,500 ppm</div>
+            </div>
+            
+            <!-- Piscina Silvinita -->
+            <div class="process-box pond" style="left: 550px; top: 100px;">
+                <div class="process-title">PISCINA SILVINITA</div>
+                <div class="process-data">
+                    Evaporación: 40%<br>
+                    Precipita KCl·NaCl<br>
+                    Tiempo: 12-18 meses
+                </div>
+                <div class="concentration">Li: 4,300 ppm</div>
+            </div>
+            
+            <!-- Piscina Carnalita -->
+            <div class="process-box pond" style="left: 800px; top: 100px;">
+                <div class="process-title">PISCINA CARNALITA</div>
+                <div class="process-data">
+                    Evaporación: 30%<br>
+                    Precipita KCl·MgCl₂<br>
+                    Tiempo: 6-12 meses
+                </div>
+                <div class="concentration">Li: 6,000 ppm</div>
+            </div>
+            
+            <!-- Piscina Final -->
+            <div class="process-box pond" style="left: 1050px; top: 100px;">
+                <div class="process-title">PISCINA FINAL</div>
+                <div class="process-data">
+                    Evaporación final<br>
+                    Alta concentración<br>
+                    Feed a planta
+                </div>
+                <div class="concentration">Li: 7,000-8,000 ppm</div>
+            </div>
+            
+            <!-- RUTA A: PROCESO TRADICIONAL -->
+            <!-- MVR Grande -->
+            <div class="process-box mvr" style="left: 1050px; top: 350px;">
+                <div class="process-title">MVR GRANDE</div>
+                <div class="process-data">
+                    Capacidad: 5,150 m³/día<br>
+                    CAPEX: $95M<br>
+                    OPEX: $20.85M/año<br>
+                    Energía: 80 kWh/m³
+                </div>
+                <div class="concentration">Li: 30,000-40,000 ppm</div>
+            </div>
+            
+            <!-- RUTA B: PROCESO NF-UHPRO (Alternativa desde Silvinita) -->
+            <!-- Sistema NF-UHPRO -->
+            <div class="process-box nf-uhpro highlight" style="left: 550px; top: 350px; width: 250px;">
+                <div class="process-title">🌟 SISTEMA NF-UHPRO</div>
+                <div class="process-data">
+                    <strong>Pretratamiento NF:</strong><br>
+                    • Elimina 95% Ca²⁺/Mg²⁺<br>
+                    • Protege membranas UHPRO<br>
+                    <strong>Sistema UHPRO:</strong><br>
+                    • 6 módulos @ 120 bar<br>
+                    • Recuperación: 43% agua<br>
+                    • CAPEX: $7.5M<br>
+                    • OPEX: $2.94M/año
+                </div>
+                <div class="concentration">Li: 7,500 ppm → 13,160 ppm</div>
+            </div>
+            
+            <!-- MVR Chico (después de NF-UHPRO) -->
+            <div class="process-box mvr" style="left: 550px; top: 600px;">
+                <div class="process-title">MVR REDUCIDO</div>
+                <div class="process-data">
+                    Capacidad: 2,935 m³/día<br>
+                    CAPEX: $61M (-36%)<br>
+                    OPEX: $11.83M/año<br>
+                    43% menos energía
+                </div>
+                <div class="concentration">Li: 30,000-40,000 ppm</div>
+            </div>
+            
+            <!-- PLANTA QUÍMICA -->
+            <div class="process-box chemical" style="left: 800px; top: 750px; width: 300px;">
+                <div class="process-title">PLANTA QUÍMICA</div>
+                <div class="process-data">
+                    Capacidad: 20,000 tpa LCE<br>
+                    Procesos integrados<br>
+                    (Ver detalle →)
+                </div>
+                <div class="concentration">Producto: Li₂CO₃ 99.5%</div>
+            </div>
+            
+            <!-- Detalle de Planta Química -->
+            <div class="chemical-detail">
+                <div class="chemical-detail-title">PROCESOS PLANTA QUÍMICA</div>
+                
+                <div class="chemical-step">
+                    <strong>1. Purificación</strong><br>
+                    • Precipitación Ca/Mg con Na₂CO₃<br>
+                    • Filtración de impurezas<br>
+                    • Ajuste pH
+                </div>
+                
+                <div class="chemical-step">
+                    <strong>2. Concentración</strong><br>
+                    • Evaporación adicional si necesario<br>
+                    • Control de densidad<br>
+                    • Li: 40,000-60,000 ppm
+                </div>
+                
+                <div class="chemical-step">
+                    <strong>3. Carbonatación</strong><br>
+                    • Adición de Na₂CO₃ @ 90°C<br>
+                    • Precipitación Li₂CO₃<br>
+                    • Control de temperatura crítico
+                </div>
+                
+                <div class="chemical-step">
+                    <strong>4. Separación</strong><br>
+                    • Centrifugación<br>
+                    • Lavado con agua caliente<br>
+                    • Secado @ 120°C
+                </div>
+                
+                <div class="chemical-step">
+                    <strong>5. Refinación</strong><br>
+                    • Re-pulping si necesario<br>
+                    • Micronizado<br>
+                    • Control calidad: 99.5% pureza
+                </div>
+            </div>
+            
+            <!-- Tabla Comparativa -->
+            <div class="comparison-table">
+                <div class="comparison-title">COMPARACIÓN DE RUTAS</div>
+                
+                <div class="comparison-row">
+                    <span>CAPEX Total</span>
+                    <span class="warning">A: $95M</span>
+                    <span class="benefit">B: $68.5M</span>
+                </div>
+                
+                <div class="comparison-row">
+                    <span>OPEX Anual</span>
+                    <span class="warning">A: $20.85M</span>
+                    <span class="benefit">B: $14.77M</span>
+                </div>
+                
+                <div class="comparison-row">
+                    <span>Consumo Agua</span>
+                    <span class="warning">A: 1,875,000 m³/año</span>
+                    <span class="benefit">B: 1,067,000 m³/año</span>
+                </div>
+                
+                <div class="comparison-row">
+                    <span>Energía MVR</span>
+                    <span class="warning">A: 150 GWh/año</span>
+                    <span class="benefit">B: 86 GWh/año</span>
+                </div>
+                
+                <div class="comparison-row">
+                    <span style="font-weight: bold;">Ahorro 10 años</span>
+                    <span></span>
+                    <span class="benefit" style="font-size: 1.2em;">$94M (29%)</span>
+                </div>
+            </div>
+            
+            <!-- Indicadores de flujo -->
+            <div class="flow-indicator" style="left: 350px; top: 250px;">
+                Ruta Tradicional<br>
+                100% Evaporación Solar
+            </div>
+            
+            <div class="flow-indicator" style="left: 550px; top: 250px; background: rgba(81, 207, 102, 0.1); border-color: #51cf66;">
+                Punto de Bifurcación<br>
+                Salida a NF-UHPRO
+            </div>
+            
+            <!-- Flechas de flujo -->
+            <div class="arrow" style="left: 240px; top: 115px;">→</div>
+            <div class="arrow" style="left: 490px; top: 115px;">→</div>
+            <div class="arrow" style="left: 740px; top: 115px;">→</div>
+            <div class="arrow" style="left: 990px; top: 115px;">→</div>
+            
+            <!-- Flujo tradicional -->
+            <div class="arrow" style="left: 1135px; top: 220px; transform: rotate(90deg);">→</div>
+            <div class="arrow" style="left: 1135px; top: 450px; transform: rotate(90deg);">→</div>
+            
+            <!-- Flujo alternativo NF-UHPRO -->
+            <div class="arrow alternative" style="left: 635px; top: 220px; transform: rotate(90deg);">→</div>
+            <div class="arrow alternative" style="left: 635px; top: 500px; transform: rotate(90deg);">→</div>
+            
+            <!-- Flujos hacia planta química -->
+            <div class="arrow" style="left: 970px; top: 765px; transform: rotate(180deg);">←</div>
+            <div class="arrow alternative" style="left: 730px; top: 765px;">→</div>
+            
+            <!-- Líneas de conexión -->
+            <div class="process-line horizontal active" style="left: 200px; top: 130px;"></div>
+            <div class="process-line horizontal active" style="left: 450px; top: 130px;"></div>
+            <div class="process-line horizontal active" style="left: 700px; top: 130px;"></div>
+            <div class="process-line horizontal active" style="left: 950px; top: 130px;"></div>
+            
+            <div class="process-line vertical active" style="left: 1140px; top: 200px;"></div>
+            <div class="process-line vertical active" style="left: 1140px; top: 300px;"></div>
+            
+            <div class="process-line vertical alternative" style="left: 640px; top: 200px;"></div>
+            <div class="process-line vertical alternative" style="left: 640px; top: 300px;"></div>
+            <div class="process-line vertical alternative" style="left: 640px; top: 550px;"></div>
+            
+            <div class="process-line horizontal active" style="left: 700px; top: 780px; width: 100px;"></div>
+            <div class="process-line horizontal active" style="left: 950px; top: 780px; width: 100px; transform: rotate(180deg);"></div>
+            
+            <!-- Nota de recuperación de agua -->
+            <div style="position: absolute; left: 350px; top: 450px; background: #51cf6615; border: 2px solid #51cf66; border-radius: 10px; padding: 15px; width: 180px;">
+                <strong style="color: #51cf66;">AGUA RECUPERADA</strong><br>
+                <span style="font-size: 0.9em;">2,215 m³/día<br>
+                Reciclo a piscinas<br>
+                43% del input</span>
+            </div>
+            
+            <!-- Indicador de validación comercial -->
+            <div style="position: absolute; right: 20px; top: 350px; background: linear-gradient(135deg, #51cf6615 0%, #667eea15 100%); border: 3px solid #51cf66; border-radius: 10px; padding: 15px; width: 250px;">
+                <strong style="color: #51cf66; font-size: 1.1em;">✓ VALIDACIÓN COMERCIAL</strong><br>
+                <span style="font-size: 0.9em; margin-top: 10px; display: block;">
+                    • Saltworks FusionRO operando<br>
+                    • >130,000 mg/L TDS alcanzado<br>
+                    • NF crítico confirmado<br>
+                    • Estándar industria DLE 2024-2025
+                </span>
+            </div>
+            
+            <!-- Balance de litio -->
+            <div style="position: absolute; left: 50px; top: 900px; background: #f8f9fa; border: 2px solid #667eea; border-radius: 10px; padding: 20px; width: 350px;">
+                <strong style="color: #667eea; font-size: 1.1em;">BALANCE DE LITIO</strong><br>
+                <div style="margin-top: 10px; font-size: 0.9em;">
+                    <div style="margin: 5px 0;">• Input: 10.3 ton Li/día (54.8 ton LCE/día)</div>
+                    <div style="margin: 5px 0;">• Recuperación total: >90%</div>
+                    <div style="margin: 5px 0;">• Producto final: 20,000 tpa LCE</div>
+                    <div style="margin: 5px 0;">• Pérdidas: <10% en todo el proceso</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Interactividad opcional
+        document.querySelectorAll('.process-box').forEach(box => {
+            box.addEventListener('click', function() {
+                // Aquí se podría agregar más información o animaciones
+                console.log('Proceso seleccionado:', this.querySelector('.process-title').textContent);
+            });
+        });
+    </script>
+</body>
+</html>

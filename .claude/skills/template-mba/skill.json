@@ -1,0 +1,31 @@
+{
+  "name": "template-mba",
+  "displayName": "Template MBA FEN UChile",
+  "description": "Template académico MBA FEN UChile v5.1 - Logo optimizado ancho completo + TOC mejorado + Numeración automática multinivel + Formato de portada correcto + Espaciado optimizado",
+  "version": "5.1",
+  "author": "Luis Rivera González",
+  "created": "2025-10-25",
+  "category": "document-generation",
+  "tags": ["mba", "academic", "fen", "uchile", "template", "word", "docx"],
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md",
+  "mainScript": "crear_documento_mba.py",
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "CHANGELOG.md",
+    "crear_documento_mba.py",
+    "TEMPLATE_MBA_OPTIMIZADO.docx",
+    "mba_header_logo.png"
+  ],
+  "capabilities": {
+    "documentGeneration": true,
+    "automaticNumbering": true,
+    "tableOfContents": true,
+    "professionalFormatting": true
+  },
+  "requirements": {
+    "python": ">=3.7",
+    "packages": ["python-docx"]
+  }
+}
